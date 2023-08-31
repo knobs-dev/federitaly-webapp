@@ -1,0 +1,12 @@
+/node_modules
+/coverage
+/build
+
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+.github
+.changeset
+*.md
+.vercel
