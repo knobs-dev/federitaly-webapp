@@ -1,6 +1,6 @@
-import { defineConfig } from "unocss";
 import presetUno from "@unocss/preset-uno";
 import transformerVariantGroup from "@unocss/transformer-variant-group";
+import { defineConfig } from "unocss";
 
 const colors = {};
 

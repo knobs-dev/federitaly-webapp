@@ -1,5 +1,15 @@
 {
-  "Home": {
-    "title": "Hello world!"
+  "Home": {},
+  "Sidebar": {
+    "navigation": {
+      "home": "Home",
+      "certification-process": "The Certification process",
+      "certified-companies": "Certified companies",
+      "faq": "FAQ",
+      "contacts": "Contacts",
+      "privacy-policy": "Privacy Policy",
+      "language-version": "Versione italiana"
+    },
+    "partner": "Partner"
   }
 }

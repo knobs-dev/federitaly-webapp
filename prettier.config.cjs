@@ -1,4 +1,4 @@
-/** @typedef  {import("prettier").Config} PrettierConfig*/
+/** @typedef  {import("prettier").Config} PrettierConfig */
 
 /** @type { PrettierConfig  } */
 const config = {
@@ -22,6 +22,16 @@ const config = {
     "^(react/(.*)$)|^(react$)",
     "^(next/(.*)$)|^(next$)",
     "<THIRD_PARTY_MODULES>",
+    "",
+    "^(@components/(.*)$)|^(@components$)",
+    "",
+    "^(@store/(.*)$)|^(@store$)",
+    "^@constants$",
+    "",
+    "^@types$",
+    "",
+    "^@images$",
+    "^@icons$",
     "",
     "^[./]",
     "",

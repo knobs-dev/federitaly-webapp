@@ -1,0 +1,10 @@
+export { default as IconMenu } from "./menu.svg";
+export { default as IconClose } from "./close.svg";
+export { default as IconHome } from "./home.svg";
+export { default as IconCertifications } from "./certifications.svg";
+export { default as IconSearch } from "./search.svg";
+export { default as IconFaq } from "./faq.svg";
+export { default as IconContacts } from "./contacts.svg";
+export { default as IconPrivacyPolicy } from "./privacy-policy.svg";
+export { default as IconItalyFlag } from "./italy-flag.svg";
+export { default as IconUKFlag } from "./uk-flag.svg";

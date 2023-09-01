@@ -20,7 +20,13 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@components": ["./src/components"],
+      "@images": ["./src/assets/images"],
+      "@icons": ["./src/assets/icons"],
+      "@store/*": ["./src/store/*"],
+      "@constants": ["./src/imports/constants"],
+      "@types": ["./src/imports/types"]
     }
   },
   "include": [
