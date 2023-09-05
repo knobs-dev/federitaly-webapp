@@ -71,6 +71,14 @@
     "import/no-extraneous-dependencies": "off",
     "react/require-default-props": "off",
     "react/no-array-index-key": "warn",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "controlComponents": ["Checkbox"],
+        "assert": "both",
+        "depth": 3
+      }
+    ]
   }
 }

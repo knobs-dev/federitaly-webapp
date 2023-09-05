@@ -39,14 +39,18 @@ const Sidebar = () => (
           <li>
             <Link href="/" className="flex items-center space-x-6">
               <IconHome className="h-5 w-5 stroke-white" />
-              <span>{clientT.value?.Sidebar.navigation.home}</span>
+              <span>{clientT.value?.Common.sidebar.navigation.home}</span>
             </Link>
           </li>
           <li>
             <Link href="/" className="flex items-center space-x-6">
               <IconCertifications className="h-5 w-5 stroke-white" />
               <span>
-                {clientT.value?.Sidebar.navigation["certification-process"]}
+                {
+                  clientT.value?.Common.sidebar.navigation[
+                    "certification-process"
+                  ]
+                }
               </span>
             </Link>
           </li>
@@ -54,26 +58,32 @@ const Sidebar = () => (
             <Link href="/" className="flex items-center space-x-6">
               <IconSearch className="h-5 w-5 stroke-white" />
               <span>
-                {clientT.value?.Sidebar.navigation["certified-companies"]}
+                {
+                  clientT.value?.Common.sidebar.navigation[
+                    "certified-companies"
+                  ]
+                }
               </span>
             </Link>
           </li>
           <li>
             <Link href="/" className="flex items-center space-x-6">
               <IconFaq className="h-5 w-5 stroke-white" />
-              <span>{clientT.value?.Sidebar.navigation.faq}</span>
+              <span>{clientT.value?.Common.sidebar.navigation.faq}</span>
             </Link>
           </li>
           <li>
             <Link href="/" className="flex items-center space-x-6">
               <IconContacts className="h-5 w-5 fill-white" />
-              <span>{clientT.value?.Sidebar.navigation.contacts}</span>
+              <span>{clientT.value?.Common.sidebar.navigation.contacts}</span>
             </Link>
           </li>
           <li>
             <Link href="/" className="flex items-center space-x-6">
               <IconPrivacyPolicy className="h-5 w-5 fill-white" />
-              <span>{clientT.value?.Sidebar.navigation["privacy-policy"]}</span>
+              <span>
+                {clientT.value?.Common.sidebar.navigation["privacy-policy"]}
+              </span>
             </Link>
           </li>
           <li className="pt-8">
@@ -89,7 +99,7 @@ const Sidebar = () => (
                 <IconUKFlag className="h-5 w-5" />
               )}
               <span>
-                {clientT.value?.Sidebar.navigation["language-version"]}
+                {clientT.value?.Common.sidebar.navigation["language-version"]}
               </span>
             </Link>
           </li>
@@ -98,7 +108,7 @@ const Sidebar = () => (
     </main>
     <footer className="z-2 px-8 py-5">
       <h2 className="px-2 text-xs font-bold uppercase">
-        {clientT.value?.Sidebar.partner}
+        {clientT.value?.Common.sidebar.partner}
       </h2>
       <hr className="mt-1 border-[#D1D3D499]" />
       <ul className="mt-5 flex items-center justify-between px-2">

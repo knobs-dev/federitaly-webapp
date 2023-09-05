@@ -1,6 +1,19 @@
 {
   "Common": {
-    "expiration_date": "Scadenza"
+    "expiration_date": "Scadenza",
+    "no_certified_companies": "Nessuna azienda certificata",
+    "sidebar": {
+      "navigation": {
+        "home": "Home",
+        "certification-process": "La Certificazione",
+        "certified-companies": "Aziende Certificate",
+        "faq": "FAQ",
+        "contacts": "Contatti",
+        "privacy-policy": "Privacy Policy",
+        "language-version": "English Version"
+      },
+      "partner": "Partner"
+    }
   },
   "Home": {
     "slides": [
@@ -24,16 +37,18 @@
       "show_all": "Vedi tutte"
     }
   },
-  "Sidebar": {
-    "navigation": {
-      "home": "Home",
-      "certification-process": "La Certificazione",
-      "certified-companies": "Aziende Certificate",
-      "faq": "FAQ",
-      "contacts": "Contatti",
-      "privacy-policy": "Privacy Policy",
-      "language-version": "English Version"
-    },
-    "partner": "Partner"
+  "CertifiedCompanies": {
+    "filters": {
+      "search_company": "Cerca azienda",
+      "sort_by": {
+        "placeholder": "Ordina per",
+        "options": {
+          "most_recent": "Certificazioni più recenti",
+          "least_recent": "Certificazioni meno recenti",
+          "most_recent_expiration_date": "Data scadenza più recente",
+          "least_recent_expiration_date": "Data scadenza meno recente"
+        }
+      }
+    }
   }
 }

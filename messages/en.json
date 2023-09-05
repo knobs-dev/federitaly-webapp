@@ -1,6 +1,19 @@
 {
   "Common": {
-    "expiration_date": "Expiration"
+    "expiration_date": "Expiration",
+    "no_certified_companies": "No certified companies",
+    "sidebar": {
+      "navigation": {
+        "home": "Home",
+        "certification-process": "The Certification",
+        "certified-companies": "Certified companies",
+        "faq": "FAQ",
+        "contacts": "Contacts",
+        "privacy-policy": "Privacy Policy",
+        "language-version": "Versione italiana"
+      },
+      "partner": "Partner"
+    }
   },
   "Home": {
     "slides": [
@@ -24,16 +37,18 @@
       "show_all": "Show all"
     }
   },
-  "Sidebar": {
-    "navigation": {
-      "home": "Home",
-      "certification-process": "The Certification",
-      "certified-companies": "Certified companies",
-      "faq": "FAQ",
-      "contacts": "Contacts",
-      "privacy-policy": "Privacy Policy",
-      "language-version": "Versione italiana"
-    },
-    "partner": "Partner"
+  "CertifiedCompanies": {
+    "filters": {
+      "search_company": "Search company",
+      "sort_by": {
+        "placeholder": "Sort by",
+        "options": {
+          "most_recent": "Most recent certifications",
+          "least_recent": "Least recent certifications",
+          "most_recent_expiration_date": "Most recent expiration date",
+          "least_recent_expiration_date": "Least recent expiration date"
+        }
+      }
+    }
   }
 }

@@ -144,7 +144,7 @@ type Data = {
   "Certification Access Request Date"?: AtecoCode;
   "Company Audit Date"?: AtecoCode;
   Auditors?: AtecoCode;
-  "Certification Issuance Date"?: AtecoCode;
+  "Certification Issuance Date": AtecoCode;
   "Certification Expiration Date": AtecoCode;
   "Publication of Certificate on Blockchain"?: AtecoCode;
   "ATECO Code"?: AtecoCode;

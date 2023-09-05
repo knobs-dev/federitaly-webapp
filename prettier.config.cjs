@@ -27,6 +27,7 @@ const config = {
     "",
     "^(@store/(.*)$)|^(@store$)",
     "^@api/(.*)$",
+    "^@hooks$",
     "^@constants$",
     "^@utils$",
     "",

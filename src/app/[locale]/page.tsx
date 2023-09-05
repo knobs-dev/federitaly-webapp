@@ -24,6 +24,7 @@ const HomeContent: FC<HomeContentProps> = ({
   certifiedCompaniesDataFormatted,
 }) => {
   const t = useTranslations("Home");
+  const commonT = useTranslations("Common");
 
   return (
     <>
@@ -93,25 +94,34 @@ const HomeContent: FC<HomeContentProps> = ({
           <h2 className="text-base font-semibold">
             {t("certifications_section.title")}
           </h2>
-          <Link href="/" className="flex translate-x-2 p-2 text-xs font-medium">
+          <Link
+            href="/certified-companies"
+            className="flex translate-x-2 p-2 text-xs font-medium"
+          >
             {t("certifications_section.show_all")}
             <IconArrowRight className="ml-2 w-2 fill-white" />
           </Link>
         </header>
         <div className="mt-2 space-y-1.5">
-          {certifiedCompaniesDataFormatted.map(
-            ({
-              companyProfilePhoto,
-              companyName,
-              certificationExpirationDate,
-            }) => (
-              <Card
-                key={companyName}
-                profilePhoto={companyProfilePhoto}
-                name={companyName}
-                expirationDate={certificationExpirationDate}
-              />
-            ),
+          {certifiedCompaniesDataFormatted.length > 0 &&
+            certifiedCompaniesDataFormatted.map(
+              ({
+                companyProfilePhoto,
+                companyName,
+                certificationExpirationDate,
+              }) => (
+                <Card
+                  key={companyName}
+                  profilePhoto={companyProfilePhoto}
+                  name={companyName}
+                  expirationDate={certificationExpirationDate}
+                />
+              ),
+            )}
+          {certifiedCompaniesDataFormatted.length === 0 && (
+            <p className="py-16 text-center text-sm">
+              {commonT("no_certified_companies")}
+            </p>
           )}
         </div>
       </section>

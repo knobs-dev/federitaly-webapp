@@ -25,6 +25,7 @@
       "@components/*": ["src/components/*"],
       "@store/*": ["./src/store/*"],
       "@api/*": ["./src/api/*"],
+      "@hooks": ["./src/hooks"],
       "@constants": ["./src/imports/constants"],
       "@utils": ["src/imports/utils"],
       "@env": ["./src/env.mjs"],

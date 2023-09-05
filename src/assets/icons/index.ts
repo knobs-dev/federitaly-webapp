@@ -9,3 +9,4 @@ export { default as IconPrivacyPolicy } from "./privacy-policy.svg";
 export { default as IconItalyFlag } from "./italy-flag.svg";
 export { default as IconUKFlag } from "./uk-flag.svg";
 export { default as IconArrowRight } from "./arrow-right.svg";
+export { default as IconCheck } from "./check.svg";
