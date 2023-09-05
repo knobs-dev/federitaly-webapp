@@ -1,9 +1,33 @@
 {
-  "Home": {},
+  "Common": {
+    "expiration_date": "Scadenza"
+  },
+  "Home": {
+    "slides": [
+      {
+        "title": "100% Made in Italy",
+        "body": "La nostra mission è tutelare e promuovere le eccellenze italiane in tutto il mondo. Il Marchio 100% Made in Italy identifica solo il meglio della produzione totalmente italiana. Una  barriera al fenomeno  dell'italian sounding.",
+        "action": "Contattaci"
+      },
+      {
+        "title": "Un Marchio di origine e qualità per le eccellenze Italiane",
+        "body": "• Origine di qualità \n • Fiducia per il consumatore \n • Proteggi il tuo marchio \n • Autenticità del prodotto \n • Sicurezza \n • Dati su blockchain",
+        "action": "Scopri di più"
+      },
+      {
+        "title": "La Blockchain al servizio del vero \"Made in Italy\"",
+        "body": "L'uso della tecnologia blockchain è un passo importante per ridare fiducia ai consumatori e garantire che le informazioni siano affidabili e veritiere. FederItaly crede che  le aziende che  investono nella  qualità dei loro  prodotti siano i veri  protagonisti  dell'economia italiana."
+      }
+    ],
+    "certifications_section": {
+      "title": "Ultime Certificazioni",
+      "show_all": "Vedi tutte"
+    }
+  },
   "Sidebar": {
     "navigation": {
       "home": "Home",
-      "certification-process": "Il processo di Certificazione",
+      "certification-process": "La Certificazione",
       "certified-companies": "Aziende Certificate",
       "faq": "FAQ",
       "contacts": "Contatti",

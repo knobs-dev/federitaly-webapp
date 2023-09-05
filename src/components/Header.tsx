@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <>
       <AnimatePresence>{isSidebarOpen && <Sidebar />}</AnimatePresence>
-      <header className="absolute left-0 top-0 h-20 w-full flex items-center justify-between px-4">
+      <header className="fixed left-0 top-0 z-2 h-16 w-full flex items-center justify-between px-4">
         <Image
           src="/assets/images/logo-white.png"
           width={196}

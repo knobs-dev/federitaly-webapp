@@ -1,4 +1,8 @@
-const withNextIntl = require("next-intl/plugin")("./i18n.ts");
+import nextIntl from "next-intl/plugin";
+
+import env from "./src/env.mjs";
+
+const [protocol, hostname] = env.API_ENDPOINT.split("://");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -19,7 +23,7 @@ const nextConfig = {
       {
         test: /\.svg$/i,
         issuer: fileLoaderRule.issuer,
-        resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
+        resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] },
         use: [
           {
             loader: "@svgr/webpack",
@@ -33,6 +37,16 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol,
+        hostname,
+      },
+    ],
+  },
 };
 
-module.exports = withNextIntl(nextConfig);
+const withNextIntl = nextIntl("./i18n.ts");
+
+export default withNextIntl(nextConfig);

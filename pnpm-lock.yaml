@@ -6,6 +6,7 @@ specifiers:
   '@ianvs/prettier-plugin-sort-imports': ^4.1.0
   '@preact/signals': ^1.2.1
   '@svgr/webpack': ^8.1.0
+  '@t3-oss/env-nextjs': ^0.6.1
   '@total-typescript/ts-reset': ^0.5.1
   '@types/node': 20.5.7
   '@types/react': 18.2.21
@@ -26,6 +27,7 @@ specifiers:
   eslint-plugin-react-hooks: ^4.6.0
   framer-motion: ^10.16.2
   husky: ^8.0.3
+  jsonrepair: ^3.2.0
   negotiator: ^0.6.3
   next: 13.4.19
   next-intl: 3.0.0-beta.14
@@ -34,21 +36,27 @@ specifiers:
   prettier: ^3.0.3
   react: 18.2.0
   react-dom: 18.2.0
+  swiper: ^10.2.0
+  tailwind-merge: ^1.14.0
   typescript: 5.2.2
   unocss: ^0.55.3
-  valibot: ^0.13.1
+  zod: ^3.22.2
 
 dependencies:
   '@formatjs/intl-localematcher': 0.4.0
   '@preact/signals': 1.2.1_preact@10.17.1
+  '@t3-oss/env-nextjs': 0.6.1_v7htcrlgukgf7qsxduvbwauwy4
   framer-motion: 10.16.2_biqbaboplfbrettd7655fr4n2y
+  jsonrepair: 3.2.0
   negotiator: 0.6.3
   next: 13.4.19_biqbaboplfbrettd7655fr4n2y
   next-intl: 3.0.0-beta.14_next@13.4.19+react@18.2.0
   preact: 10.17.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  valibot: 0.13.1
+  swiper: 10.2.0
+  tailwind-merge: 1.14.0
+  zod: 3.22.2
 
 devDependencies:
   '@commitlint/config-conventional': 17.7.0
@@ -1888,6 +1896,27 @@ packages:
     resolution: {integrity: sha512-sJ902EfIzn1Fa+qYmjdQqh8tPsoxyBz+8yBKC2HKUxyezKJFwPGOn7pv4WY6QuQW//ySQi5lJjA/ZT9sNWWNTg==}
     dependencies:
       tslib: 2.6.2
+    dev: false
+
+  /@t3-oss/env-core/0.6.1_v7htcrlgukgf7qsxduvbwauwy4:
+    resolution: {integrity: sha512-KQD7qEDJtkWIWWmTVjNvk0wnHpkvAQ6CRbUxbWMFNG/fiosBQDQvtRpBNu6USxBscJCoC4z6y7P9MN52/mLOzw==}
+    peerDependencies:
+      typescript: '>=4.7.2'
+      zod: ^3.0.0
+    dependencies:
+      typescript: 5.2.2
+      zod: 3.22.2
+    dev: false
+
+  /@t3-oss/env-nextjs/0.6.1_v7htcrlgukgf7qsxduvbwauwy4:
+    resolution: {integrity: sha512-z1dIC++Vxj9kmzX5nSPfcrCSkszy3dTEPC4Ssx7Ap5AqR3c2Qa7S0xf8axn6coy7D/vCXDAAnHYnCMDhtcY3SQ==}
+    peerDependencies:
+      typescript: '>=4.7.2'
+      zod: ^3.0.0
+    dependencies:
+      '@t3-oss/env-core': 0.6.1_v7htcrlgukgf7qsxduvbwauwy4
+      typescript: 5.2.2
+      zod: 3.22.2
     dev: false
 
   /@total-typescript/ts-reset/0.5.1:
@@ -4070,6 +4099,11 @@ packages:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
     dev: true
 
+  /jsonrepair/3.2.0:
+    resolution: {integrity: sha512-6eHBc2z5vipym4S8rzTcCXQBLWpkSzi9bk7I3xTdUxRzXyYvfjoVZzJ97N4C/9vcKI9NgNp3slPwHufDr0rFYw==}
+    hasBin: true
+    dev: false
+
   /jsx-ast-utils/3.3.5:
     resolution: {integrity: sha512-ZZow9HBI5O6EPgSJLUb8n2NKgmVWTwCvHGwFuJlMjvLFqlGG6pjirPhtdsseaLZjSibD8eegzmYpUZwoIlj2cQ==}
     engines: {node: '>=4.0'}
@@ -4945,6 +4979,11 @@ packages:
       picocolors: 1.0.0
     dev: true
 
+  /swiper/10.2.0:
+    resolution: {integrity: sha512-nktQsOtBInJjr3f5DicxC8eHYGcLXDVIGPSon0QoXRaO6NjKnATCbQ8SZsD3dN1Ph1RH4EhVPwSYCcuDRFWHGQ==}
+    engines: {node: '>= 4.7.0'}
+    dev: false
+
   /synckit/0.8.5:
     resolution: {integrity: sha512-L1dapNV6vu2s/4Sputv8xGsCdAVlb5nRDMFU/E27D44l5U6cw1g0dGd45uLc+OXjNMmF4ntiMdCimzcjFKQI8Q==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -4952,6 +4991,10 @@ packages:
       '@pkgr/utils': 2.4.2
       tslib: 2.6.2
     dev: true
+
+  /tailwind-merge/1.14.0:
+    resolution: {integrity: sha512-3mFKyCo/MBcgyOTlrY8T7odzZFx+w+qKSMAmdFzRvqBfLlSigU6TZnlFHK0lkMwj9Bj8OYU+9yW9lmGuS0QEnQ==}
+    dev: false
 
   /tapable/2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
@@ -5059,7 +5102,6 @@ packages:
     resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
   /ufo/1.3.0:
     resolution: {integrity: sha512-bRn3CsoojyNStCZe0BG0Mt4Nr/4KF+rhFlnNXybgqt5pXHNFRlqinSoQaTrGyzE4X8aHplSb+TorH+COin9Yxw==}
@@ -5177,10 +5219,6 @@ packages:
       react: 18.2.0
     dev: false
 
-  /valibot/0.13.1:
-    resolution: {integrity: sha512-SG2W1RHqE2LShl3p6tyERt6I+G6PQa9ZFVfkyNKXz01HBzL+tBeH5kXw/5AQeAzPJSjI3djVGBl1CyozA1kyBQ==}
-    dev: false
-
   /watchpack/2.4.0:
     resolution: {integrity: sha512-Lcvm7MGST/4fup+ifyKi2hjyIAwcdI4HRgtvTpIUxBRhB+RFtUh8XtDOxUfctVCnhVi+QQj49i91OyvzkJl6cg==}
     engines: {node: '>=10.13.0'}
@@ -5264,4 +5302,8 @@ packages:
 
   /zod/3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+    dev: false
+
+  /zod/3.22.2:
+    resolution: {integrity: sha512-wvWkphh5WQsJbVk1tbx1l1Ly4yg+XecD+Mq280uBGt9wa5BKSWf4Mhp6GmrkPixhMxmabYY7RbzlwVP32pbGCg==}
     dev: false

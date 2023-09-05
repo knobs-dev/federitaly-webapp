@@ -1,2 +1,18 @@
 @import "@unocss/reset/tailwind.css";
 @unocss all;
+
+@layer utilities {
+  .float-shape-image-certified {
+    shape-outside: inset(calc(100% - 3.5rem) 0 0);
+  }
+
+  .float-shape-image-blockchain {
+    shape-outside: inset(calc(50% - 5rem) 0);
+  }
+}
+
+@layer components {
+  .button {
+    @apply rounded-xl from-[#2563EB] to-[#3A4D78] bg-gradient-to-b px-6 py-2.5 text-sm font-bold text-white;
+  }
+}

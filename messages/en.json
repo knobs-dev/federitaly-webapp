@@ -1,9 +1,33 @@
 {
-  "Home": {},
+  "Common": {
+    "expiration_date": "Expiration"
+  },
+  "Home": {
+    "slides": [
+      {
+        "title": "100% Made in Italy",
+        "body": "Our mission is to protect and promote Italian excellence all over the world. The 100% Made in Italy brand identifies only the best of totally Italian production. A barrier to the phenomenon of Italian sounding.",
+        "action": "Contact us"
+      },
+      {
+        "title": "A brand of origin and quality for Italian excellence",
+        "body": "• Quality origin \n • Confidence for the consumer \n • Protect your brand \n • Product authenticity \n • Safety \n • Data on blockchain",
+        "action": "Find out more"
+      },
+      {
+        "title": "La Blockchain al servizio del vero \"Made in Italy\"",
+        "body": "The use of blockchain technology is an important step in restoring consumer confidence and ensuring that information is reliable and truthful. FederItaly believes that companies that invest in the quality of their products are the real protagonists of the Italian economy."
+      }
+    ],
+    "certifications_section": {
+      "title": "Latest Certifications",
+      "show_all": "Show all"
+    }
+  },
   "Sidebar": {
     "navigation": {
       "home": "Home",
-      "certification-process": "The Certification process",
+      "certification-process": "The Certification",
       "certified-companies": "Certified companies",
       "faq": "FAQ",
       "contacts": "Contacts",

@@ -6,6 +6,8 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components";
 import { useLocale, useMessages } from "next-intl";
 
+import type { Translations } from "@types";
+
 import Providers from "../providers";
 
 import "../globals.css";
@@ -40,14 +42,27 @@ const RootLayout: FC<PropsWithChildren<RootLayoutProps>> = ({
 
   return (
     <html lang={locale} className={poppins.className}>
-      <body>
-        <div id="root" className="absolute left-0 top-0 h-screen w-screen">
-          <div className="absolute h-full w-full from-[#272770] via-[#090919] to-black from-10% to-55% via-35% bg-gradient-to-b">
-            <Image src="/assets/images/bg-cover-mobile.png" fill alt="" />
+      <body className="overflow-hidden">
+        <div
+          id="root"
+          className="absolute left-0 top-0 h-screen w-screen flex flex-col -z-1"
+        >
+          <div className="absolute h-full w-full from-[#272770] via-[#090919] to-black from-10% to-55% via-35% bg-gradient-to-b -z-1">
+            <Image
+              src="/assets/images/bg-cover-mobile.png"
+              fill
+              alt=""
+              priority
+            />
           </div>
           <Header />
-          <Providers locale={locale} messages={messages}>
-            <main>{children}</main>
+          <Providers
+            locale={locale}
+            messages={messages as unknown as Translations}
+          >
+            <main className="absolute left-0 top-16 h-[calc(100%-4rem)] w-full flex flex-1 flex-col overflow-y-auto p-4 text-white -z-1">
+              {children}
+            </main>
           </Providers>
         </div>
       </body>

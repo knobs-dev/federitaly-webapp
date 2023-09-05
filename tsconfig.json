@@ -22,11 +22,15 @@
     "paths": {
       "@/*": ["./src/*"],
       "@components": ["./src/components"],
-      "@images": ["./src/assets/images"],
-      "@icons": ["./src/assets/icons"],
+      "@components/*": ["src/components/*"],
       "@store/*": ["./src/store/*"],
+      "@api/*": ["./src/api/*"],
       "@constants": ["./src/imports/constants"],
-      "@types": ["./src/imports/types"]
+      "@utils": ["src/imports/utils"],
+      "@env": ["./src/env.mjs"],
+      "@types": ["./src/imports/types"],
+      "@images": ["./src/assets/images"],
+      "@icons": ["./src/assets/icons"]
     }
   },
   "include": [

@@ -30,12 +30,12 @@ const Sidebar = () => (
       x: "100%",
       transition: { duration: 0.3 },
     }}
-    className="fixed right-0 top-0 h-full w-full flex flex-col"
+    className="fixed right-0 top-0 h-full w-full flex flex-col text-white"
   >
-    <div className="absolute h-full w-full from-[#060654] to-black bg-gradient-to-b -z-1" />
-    <main className="flex-1 px-12 pt-28 text-lg text-white">
+    <div className="absolute z-1 h-full w-full from-[#060654] to-black bg-gradient-to-b" />
+    <main className="z-2 flex-1 px-10 pt-24 text-lg">
       <nav>
-        <ul className="flex flex-col space-y-6">
+        <ul className="space-y-6">
           <li>
             <Link href="/" className="flex items-center space-x-6">
               <IconHome className="h-5 w-5 stroke-white" />
@@ -96,12 +96,12 @@ const Sidebar = () => (
         </ul>
       </nav>
     </main>
-    <footer className="px-8 py-5">
-      <h2 className="px-4 text-sm font-bold text-white">
-        {clientT.value?.Sidebar.partner.toUpperCase()}
+    <footer className="z-2 px-8 py-5">
+      <h2 className="px-2 text-xs font-bold uppercase">
+        {clientT.value?.Sidebar.partner}
       </h2>
       <hr className="mt-1 border-[#D1D3D499]" />
-      <ul className="mt-5 flex items-center justify-between px-4">
+      <ul className="mt-5 flex items-center justify-between px-2">
         <li>
           <a href="https://dfinity.org/" target="_blank" rel="noreferrer">
             <Image
