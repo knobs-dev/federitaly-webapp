@@ -17,7 +17,8 @@
     },
     "header_titles": {
       "certified_companies": "Certified companies",
-      "certified_company": "Certified company"
+      "certified_company": "Certified company",
+      "privacy_policy": "Privacy Policy"
     },
     "screen_readers_labels": {
       "close": "Close",
@@ -99,5 +100,14 @@
       "certified_by": "Certified By",
       "president_federitaly": "President FEDERITALY"
     }
+  },
+  "PrivacyPolicy": {
+    "content": [
+      "Federitaly with the European Regulation on the Protection of Personal Data 2016/679 (“GDPR”) wishes to provide further details on the processing of your Personal Data.",
+      "Data controller: FEDERITALY – C.so della Repubblica, 205 – 03043 CASSINO (FR) – C.F. 90046140605",
+      "As the owner of your personal data, Federitaly is responsible for how such data is collected and used. In respect of your privacy, Federitaly undertakes to protect all personal data collected and to process them in accordance with the legal regulations in force regarding the protection of privacy.",
+      "Type of data collected",
+      "Federitaly is in possession of some of your personal data. “Personal data” is defined as data that can identify you or that can be linked to you (“Data”). Federitaly has collected the Data in the context of the professional relationship established as well as those spontaneously provided by you, for example during communications via e-mail or other channels, or when subscribing to newsletters, alerts, or other information material. The Data collected includes name, postal address, email address, telephone number, postal address and private email address"
+    ]
   }
 }

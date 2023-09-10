@@ -61,7 +61,7 @@ const RootLayout: FC<PropsWithChildren<RootLayoutProps>> = ({
           >
             <Header />
             <main className="absolute left-0 top-16 h-[calc(100%-4rem)] w-full flex flex-1 flex-col overflow-y-auto p-4 text-white -z-1">
-              {children}
+              <div className="min-h-full">{children}</div>
             </main>
           </Providers>
         </div>

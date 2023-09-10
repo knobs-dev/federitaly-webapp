@@ -39,6 +39,7 @@ const Header = () => {
       clientT.value?.Common.header_titles.certified_companies,
     "/certified-company/[id]":
       clientT.value?.Common.header_titles.certified_company,
+    "/privacy-policy": clientT.value?.Common.header_titles.privacy_policy,
   };
 
   const getPageTitle = () => {

@@ -87,7 +87,10 @@ const Sidebar = () => {
               </Link>
             </li>
             <li>
-              <Link href="/" className="flex items-center space-x-6">
+              <Link
+                href="/privacy-policy"
+                className="flex items-center space-x-6"
+              >
                 <IconPrivacyPolicy className="h-5 w-5 fill-white" />
                 <span>
                   {clientT.value?.Common.sidebar.navigation["privacy-policy"]}

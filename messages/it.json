@@ -17,7 +17,8 @@
     },
     "header_titles": {
       "certified_companies": "Aziende Certificate",
-      "certified_company": "Azienda Certificata"
+      "certified_company": "Azienda Certificata",
+      "privacy_policy": "Privacy Policy"
     },
     "screen_readers_labels": {
       "close": "Chiudi",
@@ -99,5 +100,14 @@
       "certified_by": "Certificato Da",
       "president_federitaly": "Presidente FEDERITALY"
     }
+  },
+  "PrivacyPolicy": {
+    "content": [
+      "Federitaly con il Regolamento Europeo in materia di Protezione dei Dati Personali 2016/679 (“GDPR”) desidera fornirle maggiori dettagli sul trattamento dei Suoi Dati Personali.",
+      "Titolare del trattamento dei dati: FEDERITALY – C.so della Repubblica, 205 – 03043 CASSINO (FR) – C.F. 90046140605",
+      "In quanto titolare dei Suoi dati personali, Federitaly è responsabile di come tali dati vengono raccolti e utilizzati. Nel rispetto della Sua privacy, Federitaly si impegna a proteggere tutti i dati personali raccolti e a trattarli in conformità con le norme giuridiche vigenti in materia di tutela della privacy.",
+      "Tipologia dei dati raccolti",
+      "Federitaly è in possesso di alcuni Suoi dati personali. Sono definiti “dati personali” quei dati che possono identificarLa o che sono collegabili a Lei (“Dati”). Federitaly ha raccolto i Dati nel contesto del rapporto professionale instaurato nonché quelli da Lei spontaneamente forniti, per esempio in occasione di comunicazioni via e-mail o altri canali, o in occasione di sottoscrizione di newsletter, alert, o altro materiale informativo. I Dati raccolti comprendono nome, indirizzo postale, indirizzo mail, numero di telefono, indirizzo postale ed indirizzo mail privato"
+    ]
   }
 }
