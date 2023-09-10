@@ -1,10 +1,12 @@
 "use client";
 
 import { Children, useState, type FC, type PropsWithChildren } from "react";
+import { FreeMode } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { twMerge } from "tailwind-merge";
 
 import "swiper/css";
+import "swiper/css/free-mode";
 
 type SliderPaginationProps = {
   currentSlide: number;
@@ -36,13 +38,17 @@ const SliderPagination: FC<SliderPaginationProps> = ({
 
 type SliderProps = {
   className?: string;
+  withPagination?: boolean;
   paginationClassName?: string;
+  freeMode?: boolean;
 };
 
 const Slider: FC<PropsWithChildren<SliderProps>> = ({
   className,
+  withPagination,
   paginationClassName,
   children,
+  freeMode,
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -51,19 +57,29 @@ const Slider: FC<PropsWithChildren<SliderProps>> = ({
   return (
     <Swiper
       initialSlide={currentSlide ?? 0}
-      className={twMerge("w-full h-full", className)}
+      slidesPerView={freeMode ? "auto" : 1}
+      freeMode={freeMode}
+      modules={[FreeMode]}
       onSlideChange={({ realIndex }) => {
         setCurrentSlide(realIndex);
       }}
+      className={twMerge("w-full h-full", className)}
     >
       {Children.map(children, (child, index) => (
-        <SwiperSlide key={`slide-${index}`}>{child}</SwiperSlide>
+        <SwiperSlide
+          key={`slide-${index}`}
+          className={freeMode ? "!w-auto" : "w-full"}
+        >
+          {child}
+        </SwiperSlide>
       ))}
-      <SliderPagination
-        currentSlide={currentSlide}
-        numberOfSlides={numberOfSlides}
-        className={paginationClassName}
-      />
+      {withPagination && (
+        <SliderPagination
+          currentSlide={currentSlide}
+          numberOfSlides={numberOfSlides}
+          className={paginationClassName}
+        />
+      )}
     </Swiper>
   );
 };

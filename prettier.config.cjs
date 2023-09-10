@@ -20,6 +20,7 @@ const config = {
   singleAttributePerLine: false,
   importOrder: [
     "^(react/(.*)$)|^(react$)",
+    "^(react-dom/(.*)$)|^(react-dom$)",
     "^(next/(.*)$)|^(next$)",
     "<THIRD_PARTY_MODULES>",
     "",

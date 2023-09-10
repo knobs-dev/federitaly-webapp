@@ -10,3 +10,7 @@ export { default as IconItalyFlag } from "./italy-flag.svg";
 export { default as IconUKFlag } from "./uk-flag.svg";
 export { default as IconArrowRight } from "./arrow-right.svg";
 export { default as IconCheck } from "./check.svg";
+export { default as IconFacebook } from "./facebook.svg";
+export { default as IconInstagram } from "./instagram.svg";
+export { default as IconLinkedin } from "./linkedin.svg";
+export { default as IconYoutube } from "./youtube.svg";

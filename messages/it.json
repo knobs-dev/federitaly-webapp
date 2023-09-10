@@ -2,6 +2,7 @@
   "Common": {
     "expiration_date": "Scadenza",
     "no_certified_companies": "Nessuna azienda certificata",
+    "see_more": "Vedi altro",
     "sidebar": {
       "navigation": {
         "home": "Home",
@@ -13,6 +14,16 @@
         "language-version": "English Version"
       },
       "partner": "Partner"
+    },
+    "header_titles": {
+      "certified_companies": "Aziende Certificate",
+      "certified_company": "Azienda Certificata"
+    },
+    "screen_readers_labels": {
+      "close": "Chiudi",
+      "go_back": "Torna indietro",
+      "open_menu": "Apri menu",
+      "close_menu": "Chiudi menu"
     }
   },
   "Home": {
@@ -49,6 +60,44 @@
           "least_recent_expiration_date": "Data scadenza meno recente"
         }
       }
+    }
+  },
+  "CertifiedCompany": {
+    "show_certification": "Visualizza certificato",
+    "certification_date": "Data certificazione",
+    "tabs": {
+      "the_company": "L'azienda",
+      "certificate_data": "Dati Certificato"
+    },
+    "sections": {
+      "the_company": {
+        "registered_products": "Prodotti registrati",
+        "company_description": "Descrizione dell'Azienda",
+        "certification_process": "Il Processo di Certificazione"
+      },
+      "certificate_data": {
+        "company_name": "Nome Azienda",
+        "operational_headquarters_and_factory": "Sede Operativa e Stabilimento",
+        "phone_number": "Telefono",
+        "website": "Sito Web",
+        "ateco_code": "Codice ATECO",
+        "chamber_of_commerce_registration": "Iscrizione Camera di Commercio",
+        "registered_office": "Sede Legale",
+        "other_operational_locations": "Altre Sedi Operative",
+        "email": "Email",
+        "social_media": "Social Media",
+        "vat_number": "Partita IVA",
+        "activities_description": "Descrizione Attività"
+      }
+    },
+    "certification": {
+      "slogan": ["100% MADE IN ITALY", "CERTIFICATO"],
+      "company_name": "Nome Azienda",
+      "company_address": "Indirizzo Azienda",
+      "vat_number": "Partita IVA",
+      "certification_valid_until": "Certificazione Valida Fino Al",
+      "certified_by": "Certificato Da",
+      "president_federitaly": "Presidente FEDERITALY"
     }
   }
 }

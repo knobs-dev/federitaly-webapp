@@ -1,15 +1,18 @@
 "use client";
 
 import { useEffect, useRef, useState, type FC } from "react";
+import { createPortal } from "react-dom";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import Fuse from "fuse.js";
 import debounce from "lodash.debounce";
+import Link from "next-intl/link";
 
 import {
   Card,
   Checkbox,
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@components";
 
@@ -119,13 +122,14 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = ({
               {clientT.value?.CertifiedCompanies.filters.sort_by.placeholder}
               <IconArrowRight className="h-4 w-4 rotate-90 fill-white" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="mt-2 w-[calc(100vw-2rem)] border-0 from-[#596DA1] to-[#181F31] bg-gradient-to-b p-4 text-white space-y-3">
-              <div
-                role="button"
-                tabIndex={0}
+            <DropdownMenuContent className="mt-2 w-[calc(100vw-2rem)] border-0 bg-[#55567a] p-4 text-white space-y-3">
+              {createPortal(
+                <div className="overlay-dropdown fixed left-0 top-16 h-[calc(100vh-4rem)] w-screen rounded-t-3xl" />,
+                document.body,
+              )}
+              <DropdownMenuItem
                 className="flex items-center text-sm font-normal"
                 onClick={() => handleSortByFilterCheck("most-recent")}
-                onKeyDown={() => handleSortByFilterCheck("most-recent")}
               >
                 <Checkbox
                   id="most-recent"
@@ -136,13 +140,10 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = ({
                   clientT.value?.CertifiedCompanies.filters.sort_by.options
                     .most_recent
                 }
-              </div>
-              <div
-                role="button"
-                tabIndex={0}
+              </DropdownMenuItem>
+              <DropdownMenuItem
                 className="flex items-center text-sm font-normal"
                 onClick={() => handleSortByFilterCheck("least-recent")}
-                onKeyDown={() => handleSortByFilterCheck("least-recent")}
               >
                 <Checkbox
                   id="least-recent"
@@ -153,15 +154,10 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = ({
                   clientT.value?.CertifiedCompanies.filters.sort_by.options
                     .least_recent
                 }
-              </div>
-              <div
-                role="button"
-                tabIndex={0}
+              </DropdownMenuItem>
+              <DropdownMenuItem
                 className="flex items-center text-sm font-normal"
                 onClick={() =>
-                  handleSortByFilterCheck("most-recent-expiration-date")
-                }
-                onKeyDown={() =>
                   handleSortByFilterCheck("most-recent-expiration-date")
                 }
               >
@@ -174,15 +170,10 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = ({
                   clientT.value?.CertifiedCompanies.filters.sort_by.options
                     .most_recent_expiration_date
                 }
-              </div>
-              <div
-                role="button"
-                tabIndex={0}
+              </DropdownMenuItem>
+              <DropdownMenuItem
                 className="flex items-center text-sm font-normal"
                 onClick={() =>
-                  handleSortByFilterCheck("least-recent-expiration-date")
-                }
-                onKeyDown={() =>
                   handleSortByFilterCheck("least-recent-expiration-date")
                 }
               >
@@ -195,7 +186,7 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = ({
                   clientT.value?.CertifiedCompanies.filters.sort_by.options
                     .least_recent_expiration_date
                 }
-              </div>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
@@ -219,19 +210,24 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = ({
                     transform: `translateY(${start}px)`,
                   }}
                 >
-                  <Card
-                    profilePhoto={
-                      filteredCertifiedCompaniesDataFormatted[index]
-                        .companyProfilePhoto
-                    }
-                    name={
-                      filteredCertifiedCompaniesDataFormatted[index].companyName
-                    }
-                    expirationDate={
-                      filteredCertifiedCompaniesDataFormatted[index]
-                        .certificationExpirationDate
-                    }
-                  />
+                  <Link
+                    href={`/certified-company/${filteredCertifiedCompaniesDataFormatted[index].id}`}
+                  >
+                    <Card
+                      profilePhoto={
+                        filteredCertifiedCompaniesDataFormatted[index]
+                          .companyProfilePhoto
+                      }
+                      name={
+                        filteredCertifiedCompaniesDataFormatted[index]
+                          .companyName
+                      }
+                      expirationDate={
+                        filteredCertifiedCompaniesDataFormatted[index]
+                          .certificationExpirationDate
+                      }
+                    />
+                  </Link>
                 </div>
               ))}
           </div>

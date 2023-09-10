@@ -2,6 +2,7 @@
   "Common": {
     "expiration_date": "Expiration",
     "no_certified_companies": "No certified companies",
+    "see_more": "See more",
     "sidebar": {
       "navigation": {
         "home": "Home",
@@ -13,6 +14,16 @@
         "language-version": "Versione italiana"
       },
       "partner": "Partner"
+    },
+    "header_titles": {
+      "certified_companies": "Certified companies",
+      "certified_company": "Certified company"
+    },
+    "screen_readers_labels": {
+      "close": "Close",
+      "go_back": "Go back",
+      "open_menu": "Open menu",
+      "close_menu": "Close menu"
     }
   },
   "Home": {
@@ -49,6 +60,44 @@
           "least_recent_expiration_date": "Least recent expiration date"
         }
       }
+    }
+  },
+  "CertifiedCompany": {
+    "show_certification": "Show certification",
+    "certification_date": "Certification date",
+    "tabs": {
+      "the_company": "The company",
+      "certificate_data": "Certificate data"
+    },
+    "sections": {
+      "the_company": {
+        "registered_products": "Registered products",
+        "company_description": "Company description",
+        "certification_process": "The Certification Process"
+      },
+      "certificate_data": {
+        "company_name": "Company name",
+        "operational_headquarters_and_factory": "Operational Headquarters and Factory",
+        "phone_number": "Phone",
+        "website": "Website",
+        "ateco_code": "ATECO code",
+        "chamber_of_commerce_registration": "Chamber of Commerce Registration",
+        "registered_office": "Registered Office",
+        "other_operational_locations": "Other Operational Locations",
+        "email": "Email",
+        "social_media": "Social Media",
+        "vat_number": "VAT Number",
+        "activities_description": "Activities Description"
+      }
+    },
+    "certification": {
+      "slogan": ["100% MADE IN ITALY", "CERTIFICATE"],
+      "company_name": "Company Name",
+      "company_address": "Company Address",
+      "vat_number": "VAT Number",
+      "certification_valid_until": "Certification Valid Until",
+      "certified_by": "Certified By",
+      "president_federitaly": "President FEDERITALY"
     }
   }
 }

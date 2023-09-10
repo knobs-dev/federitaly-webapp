@@ -1,5 +1,7 @@
 import { jsonrepair } from "jsonrepair";
 
+import { getCompanyCertificationProcessFromJsonString } from "@utils";
+
 import env from "@env";
 
 import type { Certification } from "./types";
@@ -21,5 +23,10 @@ export const getCertificationData = async (companyId: string) => {
     jsonrepair(certificationDataJsonString),
   ) as Certification;
 
-  return certificationData;
+  return {
+    ...certificationData,
+    certificationProcess: getCompanyCertificationProcessFromJsonString(
+      certificationDataJsonString,
+    ),
+  };
 };

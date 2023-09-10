@@ -21,3 +21,14 @@ export {
   DropdownMenuRadioGroup,
 } from "./Dropdown";
 export { default as Checkbox } from "./Checkbox";
+export {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+} from "./Dialog";
+export { Tabs, TabsList, TabsTrigger, TabsContent } from "./Tabs";
+export { default as Certification } from "./Certification";

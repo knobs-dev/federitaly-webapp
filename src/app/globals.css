@@ -15,4 +15,14 @@
   .button {
     @apply rounded-xl from-[#2563EB] to-[#3A4D78] bg-gradient-to-b px-6 py-2.5 text-sm font-bold text-white;
   }
+
+  .overlay-dropdown {
+    background: linear-gradient(
+      180deg,
+      rgba(22, 23, 46, 0) 0%,
+      rgba(19, 20, 45, 0.67) 18.23%,
+      rgba(18, 19, 35, 0.86) 40.1%,
+      #0f101b 70.31%
+    );
+  }
 }

@@ -112,8 +112,6 @@ type Template = {
 
 type CertificationProcessContent = {
   en: string;
-  "FEDERITALY 100% Made In Italy": string;
-  "FEDERITALY 100% Made in Italy": string;
   it: string;
 };
 
@@ -122,44 +120,44 @@ type CertificationProcess = {
   content: CertificationProcessContent;
 };
 
-type AtecoCode = {
+export type LanguageContentObject = {
   language: string;
   content: SubTitleClass;
 };
 
 type Data = {
-  "Certification Platform"?: AtecoCode;
-  "Major contributor to the Internet Computer blockchain"?: AtecoCode;
-  "Certified Product"?: AtecoCode;
-  "Company Name": AtecoCode;
-  "Registered Office"?: AtecoCode;
-  "Operational HQ & Factory"?: AtecoCode;
-  "Other Operating Officers"?: AtecoCode;
-  "Phone Numbers"?: AtecoCode;
-  Email?: AtecoCode;
-  Website?: AtecoCode;
-  "Social Media"?: AtecoCode;
-  "Pre-Analysis Date with Pass"?: AtecoCode;
-  "Pre-Analysis Approval Date / "?: AtecoCode;
-  "Certification Access Request Date"?: AtecoCode;
-  "Company Audit Date"?: AtecoCode;
-  Auditors?: AtecoCode;
-  "Certification Issuance Date": AtecoCode;
-  "Certification Expiration Date": AtecoCode;
-  "Publication of Certificate on Blockchain"?: AtecoCode;
-  "ATECO Code"?: AtecoCode;
-  "VAT Number"?: AtecoCode;
-  "Fiscal Code"?: AtecoCode;
-  "Chamber of Commerce Registration"?: AtecoCode;
-  "Description of Activities Carried out by the Company"?: AtecoCode;
-  "Registration Date"?: AtecoCode;
-  "Product Packaging"?: AtecoCode;
-  "About Italy is Unique"?: AtecoCode;
-  "Certification Process"?: CertificationProcess;
+  "Certification Platform"?: LanguageContentObject;
+  "Major contributor to the Internet Computer blockchain"?: LanguageContentObject;
+  "Certified Product"?: LanguageContentObject;
+  "Company Name": LanguageContentObject;
+  "Registered Office": LanguageContentObject;
+  "Operational HQ & Factory": LanguageContentObject;
+  "Other Operating Officers": LanguageContentObject;
+  "Phone Numbers": LanguageContentObject;
+  Email: LanguageContentObject;
+  Website: LanguageContentObject;
+  "Social Media": LanguageContentObject;
+  "Pre-Analysis Date with Pass"?: LanguageContentObject;
+  "Pre-Analysis Approval Date / "?: LanguageContentObject;
+  "Certification Access Request Date"?: LanguageContentObject;
+  "Company Audit Date"?: LanguageContentObject;
+  Auditors?: LanguageContentObject;
+  "Certification Issuance Date": LanguageContentObject;
+  "Certification Expiration Date": LanguageContentObject;
+  "Publication of Certificate on Blockchain"?: LanguageContentObject;
+  "ATECO Code": LanguageContentObject;
+  "VAT Number": LanguageContentObject;
+  "Fiscal Code"?: LanguageContentObject;
+  "Chamber of Commerce Registration": LanguageContentObject;
+  "Description of Activities Carried out by the Company": LanguageContentObject;
+  "Registration Date"?: LanguageContentObject;
+  "Product Packaging"?: LanguageContentObject;
+  "About Italy is Unique": LanguageContentObject;
+  "Certification Process": CertificationProcess;
   "files-mainImage": Files[];
-  "files-media"?: Files[];
+  "files-media": Files[];
   "files-heroImage"?: string;
-  "files-video"?: Files[];
+  "files-video": Files[];
   formTemplate?: FormTemplate[];
   languages?: Language[];
   template?: Template[];
@@ -184,4 +182,5 @@ export type Certification = {
   preview_asset: string;
   __system: System;
   owner: string;
+  certificationProcess: { en: string; it: string };
 };

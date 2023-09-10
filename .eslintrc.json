@@ -79,6 +79,12 @@
         "assert": "both",
         "depth": 3
       }
-    ]
+    ],
+    "camelcase": "warn",
+    "jsx-a11y/media-has-caption": "warn",
+    "no-plusplus": "off",
+    "no-useless-escape": "warn",
+    "guard-for-in": "off",
+    "no-restricted-syntax": "off"
   }
 }

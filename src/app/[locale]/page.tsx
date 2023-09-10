@@ -30,7 +30,7 @@ const HomeContent: FC<HomeContentProps> = ({
     <>
       <section className="relative min-h-[22rem] flex-1">
         <div className="absolute left-0 top-0 h-full w-[calc(100%+2rem)] -translate-x-4">
-          <Slider paginationClassName="px-4">
+          <Slider withPagination paginationClassName="px-4">
             <div className="px-4 py-2">
               <h2 className="text-xl font-semibold">{t("slides.0.title")}</h2>
               <div className="mt-2 flex">
@@ -106,16 +106,22 @@ const HomeContent: FC<HomeContentProps> = ({
           {certifiedCompaniesDataFormatted.length > 0 &&
             certifiedCompaniesDataFormatted.map(
               ({
+                id,
                 companyProfilePhoto,
                 companyName,
                 certificationExpirationDate,
               }) => (
-                <Card
-                  key={companyName}
-                  profilePhoto={companyProfilePhoto}
-                  name={companyName}
-                  expirationDate={certificationExpirationDate}
-                />
+                <Link
+                  key={id}
+                  href={`/certified-company/${id}`}
+                  className="block"
+                >
+                  <Card
+                    profilePhoto={companyProfilePhoto}
+                    name={companyName}
+                    expirationDate={certificationExpirationDate}
+                  />
+                </Link>
               ),
             )}
           {certifiedCompaniesDataFormatted.length === 0 && (
