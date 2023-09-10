@@ -32,3 +32,9 @@ export {
 } from "./Dialog";
 export { Tabs, TabsList, TabsTrigger, TabsContent } from "./Tabs";
 export { default as Certification } from "./Certification";
+export {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "./Accordion";

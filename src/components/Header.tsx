@@ -41,6 +41,7 @@ const Header = () => {
       clientT.value?.Common.header_titles.certified_company,
     "/privacy-policy": clientT.value?.Common.header_titles.privacy_policy,
     "/the-certification": clientT.value?.Common.header_titles.the_certification,
+    "/faq": clientT.value?.Common.header_titles.faq,
   };
 
   const getPageTitle = () => {

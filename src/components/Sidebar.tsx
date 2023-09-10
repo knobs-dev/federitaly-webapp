@@ -78,7 +78,7 @@ const Sidebar = () => {
               </Link>
             </li>
             <li>
-              <Link href="/" className="flex items-center space-x-6">
+              <Link href="/faq" className="flex items-center space-x-6">
                 <IconFaq className="h-5 w-5 stroke-white" />
                 <span>{clientT.value?.Common.sidebar.navigation.faq}</span>
               </Link>

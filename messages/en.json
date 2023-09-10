@@ -19,7 +19,8 @@
       "certified_companies": "Certified companies",
       "certified_company": "Certified company",
       "privacy_policy": "Privacy Policy",
-      "the_certification": "The Certification"
+      "the_certification": "The Certification",
+      "faq": "FAQ"
     },
     "screen_readers_labels": {
       "close": "Close",
@@ -140,5 +141,120 @@
         "FederItaly believes that companies that invest in the quality of their products and adapt to new technologies to enhance their customers and consumers are the true protagonists of the Italian economy."
       ]
     }
+  },
+  "Faq": {
+    "title": "Do you need help? search for your answers among our topics",
+    "topics": {
+      "generic": "Generic",
+      "the_certification": "The Certification",
+      "blockchain": "Blockchain",
+      "advantages": "Advantages"
+    },
+    "questions": [
+      {
+        "title": "Who is FEDERITALY?",
+        "body": "FederItaly is a non-profit federation that represents and protects businesses, associations, consortia, foundations, cooperatives and professionals in every sector. The main objective is the protection of \"Made in Italy\" and the fight against 'Italian Sounding, ensuring that \"100% Made in Italy\" products comply with Law 166/09 art. 16. FederItaly has created a network of Foreign Delegations in 20 countries to support Italian companies in the global market. The federation represents everyone, including micro-entrepreneurs, and promotes dialogue with institutions and organizations for the common good of Italian companies."
+      },
+      {
+        "title": "In which sectors does FEDERITALY operate?",
+        "body": "FederItaly is committed to enhancing Italian innovation and craftsmanship, supporting entrepreneurs in all sectors, from fashion to technology, from agriculture to industry and from trade to craftsmanship. It represents a wide range of businesses and professionals who contribute to \"Made in Italy\", a unique and precious heritage for the Italian economy."
+      },
+      {
+        "title": "Objectives of the “FEDERITALY 100% Made In Italy” initiative?",
+        "body": "FederItaly is dedicated to promoting and protecting Italian entrepreneurial initiative and \"Made in Italy\". It focuses on two main objectives: restoring consumer confidence in Italian products marked as \"Made in Italy\" and \"100% Made in Italy\" and enhance companies that invest in quality and innovation. The federation is also committed to spreading green culture and sustainability in every Made in Italy production process."
+      },
+      {
+        "title": "Difference between “Made in Italy” and “100% Made in Italy”?",
+        "body": "\"Made in Italy\" is not just a label, it is a real lifestyle. It indicates products that have an Italian origin, but this expression is often abused, used for products that in in reality they have only undergone assembly in Italy, with components coming from abroad. The \"100% Made in Italy\" guarantees that all the components of a product have been manufactured in Italy, following the country's high quality standards, and the entire production process, from design to final production, took place in Italy. By purchasing products bearing the \"FederItaly 100% Made in Italy\" brand you finally have the certainty of purchasing authentic, quality products, in line with the traditions and excellence of Made in Italy."
+      },
+      {
+        "title": "What is blockchain?",
+        "body": "Blockchain is a secure, distributed digital ledger that uses cryptography to store and validate information. It is made up of a chain of blocks, each of which contains a set of transactions or data. Once a block is added to the chain, the information it contains becomes virtually impossible to modify or delete. So, it is as if every piece of information is written with an indelible pen in a large notebook that everyone can see, but no one can change. This feature makes the blockchain a ideal technology to guarantee the security, transparency and integrity of recorded data."
+      },
+      {
+        "title": "How does blockchain help restore consumer confidence?",
+        "body": "Blockchain provides a secure and transparent method to trace and verify the origin of raw materials and production steps. Because the data recorded in the blockchain is immutable and easily accessible, consumers can verify the authenticity and quality of the products they purchase. Furthermore, blockchain discourages counterfeiting and fraud, as manufacturers must comply with quality and sustainability standards, thus increasing consumer trust in products and brands."
+      },
+      {
+        "title": "Who is the DFINITY Foundation and the Internet Computer Protocol Blockchain?",
+        "body": "The DFINITY Foundation is a non-profit organization headquartered in Zurich, Switzerland, with satellite offices in Palo Alto, San Francisco, and Tokyo. It conducts research and development in the field of blockchain technologies. DFINITY Foundation has developed the Internet Computer Protocol (ICP), an innovative and revolutionary blockchain technology that aims to change the way we use the Internet. ICP allows you to create decentralized applications and services, without the use of traditional cloud and web hosting services Instead, it leverages a network of independent nodes that function like a shared computer, distributing processing power across multiple devices. In this way, the ICP protocol can ensure greater security and transparency, preserving the privacy of user data and offering new generation experience. This Blockchain was designed and created with a single objective: to put people at the center of its functions. It is a technology created to be at the service of individuals, to satisfy their needs and to improve their daily lives . Internet Computer Protocol is an ideal solution to increase high quality production, improve environmental sustainability and ensure transparency and safety from producer to final consumer."
+      },
+      {
+        "title": "Who is the ORIGYN Foundation?",
+        "body": "The ORIGYN Foundation is one of FederItaly's technology partners dedicated to protecting the authenticity of Made in Italy products. Based in Neuchâtel, Switzerland, ORIGYN is a non-profit organization that develops technology-based solutions blockchain.Thanks to their innovative technology, ORIGYN provides a protocol to create powerful digital certificates that validate the provenance of products, guaranteeing their quality in an immutable and unquestionable way.ORIGYN's digital certification technology is built on the Internet Computer Protocol (ICP) developed by the DFINITY Foundation, which makes it resistant to manipulation and scalable.Thanks to the partnership with ORIGYN, FederItaly can provide Italian manufacturers with tools to protect their intellectual property and guarantee the safety and quality of their products.The use of digital certificates by ORIGYN protects products from counterfeiting, ensuring that Made in Italy maintains its reputation for excellence and quality. This helps to promote and defend Italian cultural heritage, protecting the authenticity of Made in Italy products."
+      },
+      {
+        "title": "What is the Brand?",
+        "body": "The \"Federitaly 100% Made in Italy\" brand is a rigorous certification compliant with article 16 of Law 166/09, of the Brand Disciplinary and with all Community regulations. The Brand is meant to be a guarantee of quality and originality of the 100% Italian product, recognized and appreciated all over the world.To avoid fraud and restore consumer confidence, the Certificate of assignment of the brand and the main phases of the certification process are deposited on a Blockchain platform and verifiable via a QR Queues on the product. Often, when we buy products labeled as \"Italian\" and pay a higher price than those that are not, we would like to verify this information. But generally we cannot do this, because there is no one who can guarantee it for us . Thanks to blockchain technology and the certification process devised by FederItaly in partnership with the DFINITY and ORIGYN Foundations, this problem is finally resolved. With the process introduced by FederItaly, we have a further step that makes the information even more truthful: a process validation and verification, in which companies must undergo a complete inspection of their production process, ensuring that all materials and processes originate from the Italian territory."
+      },
+      {
+        "title": "Difference between the Mark and other currently existing \"verified on blockchain technology\" terms?",
+        "body": "To date, when the wording \"verified on blockchain technology\" is put on a product, the result is often that nothing happens or you are redirected to the company website, but in reality nothing information relating to the data on the blockchain is provided. Instead, with the \"FederItaly 100% Made in Italy\" brand, once the certificate has been uploaded to the blockchain, a QR Code associated with it is generated which will then be applied on the certified products. The consumer will have thus the possibility of checking all the information on the manufacturer and the product purchased, by checking the information on a decentralized website."
+      },
+      {
+        "title": "What are the requirements to obtain certification?",
+        "body": "Products 100% Made in Italy in compliance with the following conditions: manufactured entirely in Italy; made with Italian semi-finished products; made with quality and first choice natural materials also of foreign origin if not available on the national market (gold, diamonds, precious stones, platinum, rare spices, etc.); made with drawings and projects exclusively owned by the Italian production company; made by adopting procedures considered typical traditional production. - Company with registered office on Italian territory and in possession of authorizations law for the production and/or marketing of products. - Company compliant with safety legislation (DVR and legal certificates). - Be associated with Federitaly (completely free process)"
+      },
+      {
+        "title": "How does certification happen?",
+        "body": "The Certification process includes a pre-analysis phase in which the basic requirements are verified to be able to complete the application. This phase does not imply any cost for the company and does not generate any commitment. After having received the outcome of the pre-analysis it is possible to fill in the application. After completing the application the document analysis phase begins which highlights the total compliance with the required requirements. Following the positive outcome of the document verification phase, a an audit in the company by a professional certified and authorized by FederItaly for the physical verification of the production process. At the end of the entire process, the Certificate and the file containing the Brand Logo with the QR will be released by the Internal Technical Commission of FederItaly Personalized code. The Brand and the QR Code must be printed (by the company) on the labels of each product subject to certification. The Certificate and the salient phases of the certification will be visible on the ICP - Internet Computer Protocol - blockchain platform and accessible via scanning the QR Code."
+      },
+      {
+        "title": "What is the difference between Certification of Origin and Traceability using Blockchain Technology?",
+        "body": "FederItaly stands out from other interesting existing initiatives thanks to its focus on the certification of the origin of Italian products, ensuring consumers a higher level of safety and transparency compared to the simple traceability of the production chain. The brand represents a guarantee of authenticity and quality for Italian products, allowing producers to emerge in an increasingly competitive market. FederItaly's certification of origin places emphasis on the authenticity and provenance of the products, compared to the traceability of the production chain, which focuses mainly on the individual components, materials and product path, without necessarily guaranteeing the 100% Italian origin of the final product.Consumers benefit from the certification of origin offered by FederItaly, as the certified products must meet specific quality criteria and standards. For producers, the \"FederItaly 100% Made In Italy\" certification represents added value, allowing them to differentiate themselves from competitors and establish themselves as producers of authentic, high-quality products. The traceability of the production chain, although important, may not offer the same prestige and differentiation in the market."
+      },
+      {
+        "title": "What are the limits of Blockchain when it comes to traceability of the production chain?",
+        "body": "Blockchain technology plays a crucial role in the traceability of the production chain, allowing the various actors to record and share information in a secure and immutable way, therefore the various actors involved have access to the Blockchain without anyone verifying the information from entered into them. Like any technology, blockchain also has limits and risks. The main of these is the problem of Off-Chain, i.e. the information that must be inserted into the blockchain. In this sense, the certification process created by FederItaly represents an example of good practice, because it provides for a verification of the information upstream, guaranteeing its truthfulness and authenticity. The \"FederItaly 100% Made In Italy\" brand offers a higher level of security and transparency for consumers, guaranteeing that the products purchased are truly Italian."
+      },
+      {
+        "title": "How is innovation created?",
+        "body": "1. The manufacturer wants its product to be certified \"FederItaly 100% Made in Italy\". 2. FederItaly subjects the manufacturer to a rigorous certification process, which includes a complete audit, before releasing the Certificate 3. The information in the certificate is then securely stored in a smart contract on the ICP blockchain 4. A QR code is generated from the certificate and delivered to the manufacturer 5. The manufacturer is now authorized to use the QR code and can print it on all certified products or marketing materials. 6. By scanning the QR code, consumers are redirected to the decentralized website, where they can view all the details of the certificate. 7. The website interacts with the Canister (or Smart Contract) and retrieves information for the consumer."
+      },
+      {
+        "title": "Will I have to change the way I work and hire new staff?",
+        "body": "The FEDERITALY project was designed not to require changes in the organization of the production processes of individual companies. The adoption of blockchain to certify the origin of products aims to support the company in achieving its business and in promoting its quality, without affecting established procedures or requiring the hiring of new personnel."
+      },
+      {
+        "title": "Will I have to buy new computer equipment?",
+        "body": "The project has been structured to be as simple as possible. No IT equipment is necessary, FEDERITALY will take care of creating the certificate via the platform to upload the information to the Blockchain. The company will have the possibility to receive the certificate both in NFT format and as a PDF shared via certified email. FEDERITALY supports the company during the process of opening the wallet to receive the NFT, providing guides and explanatory videos (a process that takes no more than 2 minutes)."
+      },
+      {
+        "title": "What are the costs to get certified?",
+        "body": "The expenses relating to the completion of the procedural process for verifying the requirements (documentary verification + company audit) is €1,850.00 + VAT. The Certificate is valid for 1 (one) year from the date of issue. deadline, it will be necessary to repeat the certification process and pay the cost as for the first year. There are no additional costs for depositing the certificate on the blockchain."
+      },
+      {
+        "title": "What are the Benefits of the Certificate?",
+        "body": "The certificate offers consumers a reliable and simple way to verify the authenticity of Made in Italy products, thanks to the use of blockchain technology which guarantees the unalterability of the information. For companies, the brand represents a symbol of pride and quality, demonstrating the commitment to creating high quality products using Italian raw materials and manufacturing processes and adapting to innovations and new technologies."
+      },
+      {
+        "title": "What are the Technical Advantages of the Certificate?",
+        "body": "The blockchain architecture used in the project offers numerous advantages and represents a completely new and cutting-edge approach. Information is stored in a decentralized way, eliminating the need for a central authority to manage it and ensuring immutability of data. Furthermore, the use of a decentralized website distributed over a network of nodes (computers belonging to the network) makes the system more secure and reliable than traditional websites hosted on centralized servers. These are thus able to provide a higher level of security and privacy, since the data is not subject to the risks of traditional websites. This is what really makes the difference and makes the initiative unique compared to all the others already existing and traditional verification methods."
+      },
+      {
+        "title": "What additional benefits does the Certificate give?",
+        "body": "The certificate is not only a validation of authenticity, but also offers access to an interactive and engaging experience through the Experience Page, a sort of digital showroom where companies can exhibit their work finest through a rich web of multimedia content: Videos that showcase the intricate art of their craftsmanship, images that capture the essence of their products and processes, PDFs that detail their sustainability initiatives, and brochures that showcase their latest collections: everything is accessible with a single scan. This page allows consumers to be brought closer to the company's history and craftsmanship, creating significant connections with customers. The Certificate offers an unprecedented opportunity for businesses, namely exploiting the power of storytelling a story to create both unforgettable and fascinating experiences."
+      },
+      {
+        "title": "Will I have to take training courses?",
+        "body": "It is not necessary to follow training courses, as FederItaly staff will assist the company in every phase of the certification, providing support and clarifications."
+      },
+      {
+        "title": "Can I participate if I don't export?",
+        "body": "Yes, all companies that meet the listed requirements can participate in the project, regardless of whether they export their products or not."
+      },
+      {
+        "title": "Can multiple companies from the same supply chain participate?",
+        "body": "Yes, each company can join the initiative if it complies with the requirements, even if they belong to the same production chain."
+      },
+      {
+        "title": "Am I exposed to the risks of cryptocurrency speculation?",
+        "body": "No, you do not run any risk of speculation linked to cryptocurrencies, since the transaction costs for depositing the certificate on the blockchain are included in the cost of the initiative. Furthermore, Internet Computer Protocol technology was chosen precisely because it does not requires the use of wallet or cryptocurrency to view the certificate, unlike other blockchains."
+      },
+      {
+        "title": "Can a social enterprise participate?",
+        "body": "Initiatives with a social background can participate in the project, as long as they comply with the requirements established by law 166/09 art.16 and the FederItaly regulations."
+      }
+    ]
   }
 }
