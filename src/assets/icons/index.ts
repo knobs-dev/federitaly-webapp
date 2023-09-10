@@ -14,3 +14,6 @@ export { default as IconFacebook } from "./facebook.svg";
 export { default as IconInstagram } from "./instagram.svg";
 export { default as IconLinkedin } from "./linkedin.svg";
 export { default as IconYoutube } from "./youtube.svg";
+export { default as IconLocation } from "./location.svg";
+export { default as IconPhone } from "./phone.svg";
+export { default as IconEmail } from "./email.svg";

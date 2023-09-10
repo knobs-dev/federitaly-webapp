@@ -36,6 +36,7 @@ specifiers:
   eslint-plugin-react-hooks: ^4.6.0
   framer-motion: ^10.16.2
   fuse.js: ^6.6.2
+  houseform: ^1.11.1
   husky: ^8.0.3
   jsonrepair: ^3.2.0
   lodash.debounce: ^4.0.8
@@ -47,6 +48,7 @@ specifiers:
   prettier: ^3.0.3
   react: 18.2.0
   react-dom: 18.2.0
+  react-toastify: ^9.1.3
   swiper: ^10.2.0
   tailwind-merge: ^1.14.0
   typescript: 5.2.2
@@ -67,6 +69,7 @@ dependencies:
   clsx: 2.0.0
   framer-motion: 10.16.2_biqbaboplfbrettd7655fr4n2y
   fuse.js: 6.6.2
+  houseform: 1.11.1_react@18.2.0+zod@3.22.2
   jsonrepair: 3.2.0
   lodash.debounce: 4.0.8
   negotiator: 0.6.3
@@ -75,6 +78,7 @@ dependencies:
   preact: 10.17.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-toastify: 9.1.3_biqbaboplfbrettd7655fr4n2y
   swiper: 10.2.0
   tailwind-merge: 1.14.0
   zod: 3.22.2
@@ -3355,6 +3359,11 @@ packages:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
     dev: false
 
+  /clsx/1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+    dev: false
+
   /clsx/2.0.0:
     resolution: {integrity: sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==}
     engines: {node: '>=6'}
@@ -4479,6 +4488,16 @@ packages:
       function-bind: 1.1.1
     dev: true
 
+  /houseform/1.11.1_react@18.2.0+zod@3.22.2:
+    resolution: {integrity: sha512-PiiiHEapwMgamfroePYTRNO2loPqkGS6VH+ZJx4aBw9uJf4/a9qn10tpuhdpl1RtS9O1m7cp7T+D72bbpaVyiw==}
+    peerDependencies:
+      react: '>=16.8.0'
+      zod: '>=3.9.0'
+    dependencies:
+      react: 18.2.0
+      zod: 3.22.2
+    dev: false
+
   /human-signals/2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
@@ -5421,6 +5440,17 @@ packages:
       invariant: 2.2.4
       react: 18.2.0
       tslib: 2.6.2
+    dev: false
+
+  /react-toastify/9.1.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-fPfb8ghtn/XMxw3LkxQBk3IyagNpF/LIKjOBflbexr2AWxAH1MJgvnESwEwBn9liLFXgTKWgBSdZpw9m4OTHTg==}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      clsx: 1.2.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react/18.2.0:

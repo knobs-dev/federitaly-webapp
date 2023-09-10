@@ -20,7 +20,8 @@
       "certified_company": "Certified company",
       "privacy_policy": "Privacy Policy",
       "the_certification": "The Certification",
-      "faq": "FAQ"
+      "faq": "FAQ",
+      "contacts": "Contacts"
     },
     "screen_readers_labels": {
       "close": "Close",
@@ -256,5 +257,25 @@
         "body": "Initiatives with a social background can participate in the project, as long as they comply with the requirements established by law 166/09 art.16 and the FederItaly regulations."
       }
     ]
+  },
+  "Contacts": {
+    "form": {
+      "title": "Request more information now to certify your company",
+      "fields_labels": {
+        "name": "Name",
+        "phone_number": "Phone Number",
+        "email": "Email",
+        "company_name": "Company Name",
+        "website": "Website",
+        "message": "Message"
+      },
+      "validation_errors": {
+        "email": "Please enter a valid email address",
+        "min_length": "Please enter at least 1 characters"
+      },
+      "action": "Send the Message",
+      "success_message": "Your request has been sent successfully",
+      "error_message": "An error occurred while sending the request, please try again later"
+    }
   }
 }

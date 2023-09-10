@@ -1,11 +1,14 @@
 "use client";
 
 import { type FC, type PropsWithChildren } from "react";
+import { ToastContainer } from "react-toastify";
 
 import { clientLocale, clientT } from "@store/i18n";
 import { supportedLocales } from "@constants";
 
 import type { Translations } from "@types";
+
+import "react-toastify/dist/ReactToastify.css";
 
 type ProvidersProps = {
   locale: string;
@@ -20,7 +23,12 @@ const Providers: FC<PropsWithChildren<ProvidersProps>> = ({
   clientLocale.value = locale as (typeof supportedLocales)[number];
   clientT.value = messages as Translations;
 
-  return children;
+  return (
+    <>
+      {children}
+      <ToastContainer />
+    </>
+  );
 };
 
 export default Providers;

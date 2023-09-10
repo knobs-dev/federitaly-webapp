@@ -20,7 +20,8 @@
       "certified_company": "Azienda Certificata",
       "privacy_policy": "Privacy Policy",
       "the_certification": "La Certificazione",
-      "faq": "FAQ"
+      "faq": "FAQ",
+      "contacts": "Contatti"
     },
     "screen_readers_labels": {
       "close": "Chiudi",
@@ -256,5 +257,25 @@
         "body": "Le iniziative con uno sfondo sociale possono partecipare al progetto, purché rispettino i requisiti previsti dalla legge 166/09 art.16 e il disciplinare di FederItaly."
       }
     ]
+  },
+  "Contacts": {
+    "form": {
+      "title": "Richiedi subito maggiori informazioni per certificare la tua azienda",
+      "fields_labels": {
+        "name": "Nome",
+        "phone_number": "Telefono",
+        "email": "Email",
+        "company_name": "Nome Azienda",
+        "website": "Sito Web",
+        "message": "Messaggio"
+      },
+      "validation_errors": {
+        "email": "Inserisci un indirizzo email valido",
+        "min_length": "Inserisci almeno 1 carattere"
+      },
+      "action": "Invia il Messaggio",
+      "success_message": "La richiesta è stata inviato con successo",
+      "error_message": "Si è verificato un errore durante l'invio della richiesta, riprova più tardi"
+    }
   }
 }
