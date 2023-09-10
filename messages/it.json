@@ -18,7 +18,8 @@
     "header_titles": {
       "certified_companies": "Aziende Certificate",
       "certified_company": "Azienda Certificata",
-      "privacy_policy": "Privacy Policy"
+      "privacy_policy": "Privacy Policy",
+      "the_certification": "La Certificazione"
     },
     "screen_readers_labels": {
       "close": "Chiudi",
@@ -109,5 +110,35 @@
       "Tipologia dei dati raccolti",
       "Federitaly è in possesso di alcuni Suoi dati personali. Sono definiti “dati personali” quei dati che possono identificarLa o che sono collegabili a Lei (“Dati”). Federitaly ha raccolto i Dati nel contesto del rapporto professionale instaurato nonché quelli da Lei spontaneamente forniti, per esempio in occasione di comunicazioni via e-mail o altri canali, o in occasione di sottoscrizione di newsletter, alert, o altro materiale informativo. I Dati raccolti comprendono nome, indirizzo postale, indirizzo mail, numero di telefono, indirizzo postale ed indirizzo mail privato"
     ]
+  },
+  "TheCertification": {
+    "title": "Fieri delle nostre radici: entra nel mondo dei produttori certificati 100% Made in Italy e celebra con noi l'autenticità, la passione e il talento italiani.",
+    "description": "Per garantire la qualità e l'autenticità dei prodotti, l'assegnazione del marchio \"FederItaly 100% Made In Italy\" segue un rigoroso processo di controllo che include un doppio livello di analisi: documentale e audit fisico in azienda.",
+    "list": [
+      {
+        "title": "1.Valutazione Preliminare dell'Azienda",
+        "body": "In questa fase, l'Ufficio Tecnico di FederItaly valuta le operazioni e i processi dell'azienda, fornendo consigli per eventuali correzioni o modifiche necessarie. L'azienda dovrebbe considerare queste raccomandazioni prima di procedere alla fase successiva."
+      },
+      {
+        "title": "2.Analisi Documentale",
+        "body": "FederItaly esamina tutti i documenti rilevanti dell'azienda e i materiali utilizzati per realizzare il prodotto. Vengono suggerite eventuali integrazioni. Una volta completata l'analisi documentale, l'azienda è pronta per l'audit."
+      },
+      {
+        "title": "3.Audit",
+        "body": "L'audit è condotto da un validatore autorizzato da FederItaly, che effettua uno studio approfondito dell'azienda. Questo include un'analisi visiva del processo produttivo, l'acquisizione di documentazione fotografica e una revisione dei dati. Le informazioni dell'audit vengono quindi inviate alla Commissione Tecnica per ulteriori revisioni."
+      },
+      {
+        "title": "4.Certificato \"FederItaly 100% Made in Italy\"",
+        "body": "Dopo aver superato l'audit, l'azienda riceve il certificato. Questo dimostra l'impegno dell'azienda verso la qualità e l'autenticità dei suoi prodotti."
+      }
+    ],
+    "distinctive_traits": "FederItaly si distingue dalle altre iniziative concentrando la sua attenzione sulla certificazione dell'origine dei prodotti piuttosto che sulla semplice tracciabilità della filiera produttiva. Questo approccio consente la verifica delle informazioni fornite dai produttori ai consumatori. Di conseguenza, il marchio \"FederItaly 100% Made In Italy\" garantisce un livello superiore di sicurezza e trasparenza, assicurando che i consumatori possano acquistare con fiducia prodotti italiani autentici.",
+    "blockchain_section": {
+      "title": "La Blockchain al servizio del ‘Made in Italy’",
+      "body": [
+        "L'uso della tecnologia blockchain per verificare l'origine e la qualità dei prodotti è, quindi, un passo importante per ridare fiducia ai consumatori e garantire che le informazioni siano affidabili e veritiere.",
+        "FederItaly crede che le aziende che investono nella qualità dei loro prodotti e si adattano alle nuove tecnologie per valorizzare i loro clienti e consumatori siano i veri protagonisti dell'economia italiana."
+      ]
+    }
   }
 }

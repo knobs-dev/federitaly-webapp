@@ -18,7 +18,8 @@
     "header_titles": {
       "certified_companies": "Certified companies",
       "certified_company": "Certified company",
-      "privacy_policy": "Privacy Policy"
+      "privacy_policy": "Privacy Policy",
+      "the_certification": "The Certification"
     },
     "screen_readers_labels": {
       "close": "Close",
@@ -109,5 +110,35 @@
       "Type of data collected",
       "Federitaly is in possession of some of your personal data. “Personal data” is defined as data that can identify you or that can be linked to you (“Data”). Federitaly has collected the Data in the context of the professional relationship established as well as those spontaneously provided by you, for example during communications via e-mail or other channels, or when subscribing to newsletters, alerts, or other information material. The Data collected includes name, postal address, email address, telephone number, postal address and private email address"
     ]
+  },
+  "TheCertification": {
+    "title": "Proud of our roots: enter the world of 100% Made in Italy certified producers and celebrate Italian authenticity, passion and talent with us.",
+    "description": "To guarantee the quality and authenticity of the products, the assignment of the \"FederItaly 100% Made In Italy\" brand follows a rigorous control process that includes a double level of analysis: documentary and physical audit in the company.",
+    "list": [
+      {
+        "title": "1. Preliminary Evaluation of the Company",
+        "body": "In this phase, FederItaly's Technical Office evaluates the company's operations and processes, providing advice for any necessary corrections or changes. The company should consider these recommendations before proceeding to the next step."
+      },
+      {
+        "title": "2.Document Analysis",
+        "body": "FederItaly examines all relevant company documents and materials used to make the product. Any additions are suggested. Once the document analysis is completed, the company is ready for the audit."
+      },
+      {
+        "title": "3.Audit",
+        "body": "The audit is conducted by a validator authorized by FederItaly, who carries out an in-depth study of the company. This includes a visual analysis of the production process, the acquisition of photographic documentation and a review of the data. The audit information is then sent to the Technical Commission for further review."
+      },
+      {
+        "title": "4.\"FederItaly 100% Made in Italy\" certificate",
+        "body": "After passing the audit, the company receives the certificate. This demonstrates the company's commitment to the quality and authenticity of its products."
+      }
+    ],
+    "distinctive_traits": "FederItaly stands out from other initiatives by focusing its attention on the certification of the origin of the products rather than on the simple traceability of the production chain. This approach allows the verification of the information provided by producers to consumers. As a result, the \"FederItaly 100% Made In Italy\" brand guarantees a superior level of security and transparency, ensuring that consumers can purchase authentic Italian products with confidence.",
+    "blockchain_section": {
+      "title": "Blockchain at the service of 'Made in Italy'",
+      "body": [
+        "The use of blockchain technology to verify the origin and quality of products is, therefore, an important step in restoring consumer confidence and ensuring that information is reliable and truthful.",
+        "FederItaly believes that companies that invest in the quality of their products and adapt to new technologies to enhance their customers and consumers are the true protagonists of the Italian economy."
+      ]
+    }
   }
 }

@@ -48,7 +48,10 @@ const Sidebar = () => {
               </Link>
             </li>
             <li>
-              <Link href="/" className="flex items-center space-x-6">
+              <Link
+                href="/the-certification"
+                className="flex items-center space-x-6"
+              >
                 <IconCertifications className="h-5 w-5 stroke-white" />
                 <span>
                   {
