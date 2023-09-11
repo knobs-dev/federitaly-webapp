@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { usePrevious } from "@/hooks";
 import { AnimatePresence } from "framer-motion";
 import { usePathname, useRouter } from "next-intl/client";
 
 import { clientT } from "@store/i18n";
+import { usePrevious } from "@hooks";
 
 import { IconArrowRight, IconClose, IconMenu } from "@icons";
 

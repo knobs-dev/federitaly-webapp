@@ -6,9 +6,10 @@ import {
   type ElementRef,
   type HTMLAttributes,
 } from "react";
-import { clientT } from "@/store/i18n";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { twMerge } from "tailwind-merge";
+
+import { clientT } from "@store/i18n";
 
 import { IconClose } from "@icons";
 

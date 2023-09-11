@@ -3,8 +3,9 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { Header } from "@/components";
 import { useLocale, useMessages } from "next-intl";
+
+import { Header } from "@components";
 
 import type { Translations } from "@types";
 
