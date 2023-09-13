@@ -7,6 +7,7 @@ import env from "@env";
 import type { Certification } from "./types";
 
 export const getCertifiedCompanies = async () => {
+  console.log("env.API_ENDPOINT", env.API_ENDPOINT);
   const certifiedCompanies = (await (
     await fetch(`${env.API_ENDPOINT}/collection`)
   ).json()) as string[];

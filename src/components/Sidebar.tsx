@@ -1,9 +1,9 @@
-"use client";
-
 import Image from "next/image";
+import { useTranslations } from "@hooks/useTranslations";
+// import { useRouter } from "next/router";
 import { motion } from "framer-motion";
-import { usePathname, useRouter } from "next-intl/client";
-import Link from "next-intl/link";
+
+import Link from "@components/RetainQueryLink";
 
 import { clientLocale, clientT } from "@store/i18n";
 
@@ -19,8 +19,10 @@ import {
 } from "@icons";
 
 const Sidebar = () => {
-  const pathname = usePathname();
-  const router = useRouter();
+  // const router = useRouter();
+  // const pathname = router.pathname;
+
+  const t = useTranslations("Common");
 
   return (
     <motion.aside
@@ -44,7 +46,7 @@ const Sidebar = () => {
             <li>
               <Link href="/" className="flex items-center space-x-6">
                 <IconHome className="h-5 w-5 stroke-white" />
-                <span>{clientT.value?.Common.sidebar.navigation.home}</span>
+                <span>{t("sidebar.navigation.home")}</span>
               </Link>
             </li>
             <li>
@@ -53,13 +55,7 @@ const Sidebar = () => {
                 className="flex items-center space-x-6"
               >
                 <IconCertifications className="h-5 w-5 stroke-white" />
-                <span>
-                  {
-                    clientT.value?.Common.sidebar.navigation[
-                      "certification-process"
-                    ]
-                  }
-                </span>
+                <span>{t("sidebar.navigation.certification-process")}</span>
               </Link>
             </li>
             <li>
@@ -68,25 +64,19 @@ const Sidebar = () => {
                 className="flex items-center space-x-6"
               >
                 <IconSearch className="h-5 w-5 stroke-white" />
-                <span>
-                  {
-                    clientT.value?.Common.sidebar.navigation[
-                      "certified-companies"
-                    ]
-                  }
-                </span>
+                <span>{t("sidebar.navigation.certified-companies")}</span>
               </Link>
             </li>
             <li>
               <Link href="/faq" className="flex items-center space-x-6">
                 <IconFaq className="h-5 w-5 stroke-white" />
-                <span>{clientT.value?.Common.sidebar.navigation.faq}</span>
+                <span>{t("sidebar.navigation.faq")}</span>
               </Link>
             </li>
             <li>
               <Link href="/contacts" className="flex items-center space-x-6">
                 <IconContacts className="h-5 w-5 fill-white" />
-                <span>{clientT.value?.Common.sidebar.navigation.contacts}</span>
+                <span>{t("sidebar.navigation.contacts")}</span>
               </Link>
             </li>
             <li>
@@ -95,20 +85,14 @@ const Sidebar = () => {
                 className="flex items-center space-x-6"
               >
                 <IconPrivacyPolicy className="h-5 w-5 fill-white" />
-                <span>
-                  {clientT.value?.Common.sidebar.navigation["privacy-policy"]}
-                </span>
+                <span>{t("sidebar.navigation.privacy-policy")}</span>
               </Link>
             </li>
             <li className="pt-8">
               <button
                 type="button"
                 className="flex items-center space-x-6"
-                onClick={() =>
-                  router.replace(pathname, {
-                    locale: clientLocale.value === "en" ? "it" : "en",
-                  })
-                }
+                onClick={() => console.log("change locale")}
               >
                 {clientLocale.value === "en" && (
                   <IconItalyFlag className="h-5 w-5" />
@@ -116,9 +100,7 @@ const Sidebar = () => {
                 {clientLocale.value === "it" && (
                   <IconUKFlag className="h-5 w-5" />
                 )}
-                <span>
-                  {clientT.value?.Common.sidebar.navigation["language-version"]}
-                </span>
+                <span>{t("sidebar.navigation.language-version")}</span>
               </button>
             </li>
           </ul>

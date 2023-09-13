@@ -1,9 +1,9 @@
-import type { FC } from "react";
+import { useEffect, useState, type FC } from "react";
 import Image from "next/image";
-import { useLocale, useTranslations } from "next-intl";
-import Link from "next-intl/link";
+import { useLocale, useTranslations } from "@hooks/useTranslations";
 
 import { Card, Slider } from "@components";
+import Link from "@components/RetainQueryLink";
 
 import {
   getCertificationData,
@@ -14,17 +14,36 @@ import { formatCertifiedCompaniesData } from "@utils";
 
 import { IconArrowRight } from "@icons";
 
-type HomeContentProps = {
-  certifiedCompaniesDataFormatted: ReturnType<
-    typeof formatCertifiedCompaniesData
-  >;
-};
+async function fetchData(locale: string) {
+  const certifiedCompanies = await getCertifiedCompanies();
+  const certifiedCompaniesData = await Promise.all(
+    certifiedCompanies.map((company) => getCertificationData(company)),
+  );
+  const certifiedCompaniesDataFormatted = formatCertifiedCompaniesData(
+    certifiedCompaniesData,
+    locale as (typeof supportedLocales)[number],
+  );
 
-const HomeContent: FC<HomeContentProps> = ({
-  certifiedCompaniesDataFormatted,
-}) => {
+  return certifiedCompaniesDataFormatted;
+}
+
+type HomeContentProps = {};
+
+const HomeContent: FC<HomeContentProps> = () => {
+  const locale = useLocale();
   const t = useTranslations("Home");
   const commonT = useTranslations("Common");
+
+  const [certifiedCompaniesDataFormatted, setCertifiedCompaniesDataFormatted] =
+    useState<ReturnType<typeof formatCertifiedCompaniesData>>([]);
+
+  useEffect(() => {
+    fetchData(locale)
+      .then((data) => {
+        setCertifiedCompaniesDataFormatted(data);
+      })
+      .catch((err) => console.error("fetchErr", err));
+  }, [locale]);
 
   return (
     <>
@@ -135,23 +154,4 @@ const HomeContent: FC<HomeContentProps> = ({
   );
 };
 
-const Home = async () => {
-  const locale = useLocale();
-
-  const certifiedCompanies = await getCertifiedCompanies();
-  const certifiedCompaniesData = await Promise.all(
-    certifiedCompanies.map((company) => getCertificationData(company)),
-  );
-  const certifiedCompaniesDataFormatted = formatCertifiedCompaniesData(
-    certifiedCompaniesData,
-    locale as (typeof supportedLocales)[number],
-  );
-
-  return (
-    <HomeContent
-      certifiedCompaniesDataFormatted={certifiedCompaniesDataFormatted}
-    />
-  );
-};
-
-export default Home;
+export default HomeContent;

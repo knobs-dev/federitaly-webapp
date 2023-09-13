@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@hooks/useTranslations";
 
 const TheCertification = () => {
   const t = useTranslations("TheCertification");
@@ -33,9 +33,7 @@ const TheCertification = () => {
           <p className="text-base font-normal">{t("list.3.body")}</p>
         </div>
       </section>
-      <p className="pt-10 font-normal font-semibold">
-        {t("distinctive_traits")}
-      </p>
+      <p className="pt-10 font-normal">{t("distinctive_traits")}</p>
       <section className="space-y-6">
         <h3 className="text-base font-bold">{t("blockchain_section.title")}</h3>
         <p className="text-base font-normal">

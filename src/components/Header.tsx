@@ -1,9 +1,7 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
-import { usePathname, useRouter } from "next-intl/client";
 
 import { clientT } from "@store/i18n";
 import { usePrevious } from "@hooks";
@@ -17,7 +15,7 @@ const Header = () => {
 
   const router = useRouter();
 
-  const pathname = usePathname();
+  const pathname = router.pathname;
   const prevPathname = usePrevious(pathname);
 
   const isPathnameHome = pathname === "/";

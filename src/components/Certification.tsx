@@ -43,7 +43,6 @@ const Certification: FC<CertificationProps> = ({
   x="30" y="200" width="170" height="430"
 >
 <div
-  xmlns="http://www.w3.org/1999/xhtml"
   className="w-full h-full flex flex-col pt-4 space-y-3"        
 >
   <span>

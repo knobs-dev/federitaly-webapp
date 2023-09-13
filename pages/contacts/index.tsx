@@ -33,7 +33,7 @@ const Contacts = () => (
         <hr className="translate-y-2 border-1 border-[#D1D3D499]" />
       </div>
     </header>
-    <ContactsContent />
+    {/* <ContactsContent /> */}
   </>
 );
 

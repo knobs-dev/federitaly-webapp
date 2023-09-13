@@ -1,11 +1,10 @@
-import nextIntl from "next-intl/plugin";
-
 import env from "./src/env.mjs";
 
 const [protocol, hostname] = env.API_ENDPOINT.split("://");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
   experimental: {
     typedRoutes: true,
   },
@@ -38,6 +37,7 @@ const nextConfig = {
     return config;
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol,
@@ -47,6 +47,4 @@ const nextConfig = {
   },
 };
 
-const withNextIntl = nextIntl("./i18n.ts");
-
-export default withNextIntl(nextConfig);
+export default nextConfig;

@@ -1,4 +1,4 @@
-export type Translations = typeof import("../../messages/en.json");
+export type Translations = (typeof import("../locales/en.json"))["translation"];
 
 export type SortByCertifiedCompanies =
   | "most-recent"
