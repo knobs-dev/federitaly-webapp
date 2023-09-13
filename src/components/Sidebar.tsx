@@ -37,10 +37,10 @@ const Sidebar = () => {
         x: "100%",
         transition: { duration: 0.3 },
       }}
-      className="fixed right-0 top-0 h-full w-full flex flex-col text-white"
+      className="fixed right-0 top-0 h-full w-full flex flex-col text-white z-40"
     >
       <div className="absolute z-1 h-full w-full from-[#060654] to-black bg-gradient-to-b" />
-      <main className="z-2 flex-1 px-10 pt-24 text-lg">
+      <main className="z-50 flex-1 px-10 pt-24 text-lg">
         <nav>
           <ul className="space-y-6">
             <li>

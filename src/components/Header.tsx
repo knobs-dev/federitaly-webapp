@@ -56,7 +56,7 @@ const Header = () => {
   return (
     <>
       <AnimatePresence>{isSidebarOpen && <Sidebar />}</AnimatePresence>
-      <header className="fixed left-0 top-0 z-2 h-16 w-full flex items-center justify-between px-4">
+      <header className="fixed left-0 top-0 z-2 h-16 w-full flex items-center justify-between px-4 z-50">
         {isPathnameHome && (
           <Image
             src="/assets/images/logo-white.png"
