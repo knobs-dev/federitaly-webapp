@@ -141,8 +141,12 @@ const CertifiedCompaniesContentClient: FC<
           <video
             controls
             className="mt-4 aspect-video w-full rounded-3xl bg-black"
+            preload="metadata"
           >
-            <source src={companyVideoPresentation} type="video/mp4" />
+            <source
+              src={`${companyVideoPresentation}#t=0.5`}
+              type="video/mp4"
+            />
           </video>
           <h2 className="mt-6 text-base font-bold">
             {t("sections.the_company.certification_process")}
