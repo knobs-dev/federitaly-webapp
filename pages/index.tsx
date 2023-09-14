@@ -67,7 +67,7 @@ const HomeContent: FC<HomeContentProps> = () => {
                   {t("slides.0.body")}
                 </p>
               </div>
-              <Link href="/" className="button mt-8 inline-block">
+              <Link href="/contacts" className="button mt-8 inline-block">
                 {t("slides.0.action")}
               </Link>
             </div>
@@ -85,7 +85,10 @@ const HomeContent: FC<HomeContentProps> = () => {
                   className="absolute bottom-0 right-0 translate-y-2/4"
                 />
               </div>
-              <Link href="/" className="button mt-8 inline-block">
+              <Link
+                href="/the-certification"
+                className="button mt-8 inline-block"
+              >
                 {t("slides.1.action")}
               </Link>
             </div>
