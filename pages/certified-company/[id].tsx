@@ -61,6 +61,8 @@ const CertifiedCompaniesContentClient: FC<
     linkedin: <IconLinkedin className={socialIconsClass} />,
   };
 
+  const [showCert, setShowCert] = useState(false);
+
   const t = useTranslations("CertifiedCompany");
   const commonT = useTranslations("Common");
 
@@ -346,28 +348,30 @@ const CertifiedCompaniesContentClient: FC<
           </div>
         </TabsContent>
       </Tabs>
-      <Dialog>
-        <DialogTrigger asChild>
-          <div className="fixed bottom-0 left-0 h-16 w-full flex items-center justify-center">
-            <div className="from-0 pointer-events-none fixed bottom-0 h-[10.75rem] w-screen rounded-t-[2rem] from-[#16172E00] to-[#0F101B] to-67% bg-gradient-to-b z-10" />
-            <button
-              type="button"
-              className="z-2 h-[2.8125rem] w-[calc(100vw-2rem)] rounded-xl from-[#2563EB] to-[#3A4D78] bg-gradient-to-b px-6 text-lg font-bold text-white z-20"
-            >
-              {t("show_certification")}
-            </button>
+
+      <div className="fixed bottom-0 left-0 h-16 w-full flex items-center justify-center">
+        <div className="from-0 pointer-events-none fixed bottom-0 h-[10.75rem] w-screen rounded-t-[2rem] from-[#16172E00] to-[#0F101B] to-67% bg-gradient-to-b z-10" />
+        <button
+          type="button"
+          className="z-2 h-[2.8125rem] w-[calc(100vw-2rem)] rounded-xl from-[#2563EB] to-[#3A4D78] bg-gradient-to-b px-6 text-lg font-bold text-white z-20"
+          onClick={() => setShowCert(true)}
+        >
+          {t("show_certification")}
+        </button>
+      </div>
+      {showCert && (
+        <div className="fixed w-full h-screen left-[50%] top-[50%]  translate-x-[-50%] translate-y-[-50%] bg-black flex items-center justify-center z-[60]">
+          <div className="w-[80%]">
+            <Certification
+              onClose={() => setShowCert(false)}
+              companyName={companyName}
+              companyAddress={companyRegisteredOffice}
+              vatNumber={companyVatNumber}
+              expirationDate={certificationExpirationDate}
+            />
           </div>
-        </DialogTrigger>
-        <DialogContent className="h-4/5 rounded-3xl">
-          <Certification
-            className="w-full"
-            companyName={companyName}
-            companyAddress={companyRegisteredOffice}
-            vatNumber={companyVatNumber}
-            expirationDate={certificationExpirationDate}
-          />
-        </DialogContent>
-      </Dialog>
+        </div>
+      )}
     </section>
   );
 };
