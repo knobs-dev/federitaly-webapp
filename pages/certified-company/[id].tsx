@@ -77,7 +77,7 @@ const CertifiedCompaniesContentClient: FC<
         </TabsList>
         <TabsContent
           value="company"
-          className="flex-1 overflow-x-hidden overflow-y-auto px-4 py-8 pb-32"
+          className="flex-1 overflow-x-hidden overflow-y-auto px-4 py-8 pb-48"
         >
           <h2 className="text-base font-bold">
             {t("sections.the_company.registered_products")}
@@ -139,10 +139,11 @@ const CertifiedCompaniesContentClient: FC<
             )}
           </p>
           <video
-            src={companyVideoPresentation}
             controls
-            className="mt-4 aspect-video w-full rounded-3xl"
-          />
+            className="mt-4 aspect-video w-full rounded-3xl bg-black"
+          >
+            <source src={companyVideoPresentation} type="video/mp4" />
+          </video>
           <h2 className="mt-6 text-base font-bold">
             {t("sections.the_company.certification_process")}
           </h2>
@@ -154,7 +155,7 @@ const CertifiedCompaniesContentClient: FC<
               <Dialog>
                 <DialogTrigger asChild>
                   <span className="ml-2 text-[#A2BBFD]">
-                    ...{t("see_more")}
+                    ...{commonT("see_more")}
                   </span>
                 </DialogTrigger>
                 <DialogContent className="h-4/5 rounded-md bg-[#212259] text-white">
@@ -206,154 +207,148 @@ const CertifiedCompaniesContentClient: FC<
         </TabsContent>
         <TabsContent
           value="certificate"
-          className="flex-1 overflow-x-hidden overflow-y-auto px-4 py-8 pb-32"
+          className="flex-1 overflow-x-hidden overflow-y-auto px-4 pt-8 pb-48"
         >
-          <div className="flex">
-            <div className="w-1/2 flex flex-col break-words pr-2 space-y-5">
-              <span>
-                <h2 className="text-sm font-normal text-[#BAB5B5]">
-                  {t("sections.certificate_data.company_name")}
-                </h2>
-                <p className="text-sm font-normal text-white">{companyName}</p>
-              </span>
-              <span>
-                <h2 className="text-sm font-normal text-[#BAB5B5]">
-                  {t(
-                    "sections.certificate_data.operational_headquarters_and_factory",
-                  )}
-                </h2>
-                <p className="text-sm font-normal text-white">
-                  {companyOperationalHeadquarters}
-                </p>
-              </span>
-              <span>
-                <h2 className="text-sm font-normal text-[#BAB5B5]">
-                  {t("sections.certificate_data.phone_number")}
-                </h2>
-                <p className="text-sm font-normal text-white">
-                  {companyPhoneNumber}
-                </p>
-              </span>
-              <span>
-                <h2 className="text-sm font-normal text-[#BAB5B5]">
-                  {t("sections.certificate_data.website")}
-                </h2>
-                <a href={companyWebsite} target="_blank" rel="noreferrer">
-                  <p className="text-sm font-normal text-white">
-                    {companyWebsite}
-                  </p>
-                </a>
-              </span>
-              <span>
-                <h2 className="text-sm font-normal text-[#BAB5B5]">
-                  {t("sections.certificate_data.ateco_code")}
-                </h2>
-                <p className="text-sm font-normal text-white">
-                  {companyAtecoCode}
-                </p>
-              </span>
-              <span>
-                <h2 className="text-sm font-normal text-[#BAB5B5]">
-                  {t(
-                    "sections.certificate_data.chamber_of_commerce_registration",
-                  )}
-                </h2>
-                <p className="text-sm font-normal text-white">
-                  {companyChamberOfCommerceRegistration}
-                </p>
-              </span>
-            </div>
-            <div className="relative w-1/2 flex flex-col break-words pl-2 text-right space-y-5">
-              <span>
-                <h2 className="text-sm font-normal text-[#BAB5B5]">
-                  {t("sections.certificate_data.registered_office")}
-                </h2>
-                <p className="text-sm font-normal text-white">
-                  {companyRegisteredOffice}
-                </p>
-              </span>
-              <span>
-                <h2 className="text-sm font-normal text-[#BAB5B5]">
-                  {t("sections.certificate_data.other_operational_locations")}
-                </h2>
-                <p className="text-sm font-normal text-white">
-                  {companyOtherOperationalLocations}
-                </p>
-              </span>
-              <span>
-                <h2 className="text-sm font-normal text-[#BAB5B5]">
-                  {t("sections.certificate_data.email")}
-                </h2>
-                <p className="text-sm font-normal text-white">{companyEmail}</p>
-              </span>
-              <span>
-                <h2 className="text-sm font-normal text-[#BAB5B5]">
-                  {t("sections.certificate_data.social_media")}
-                </h2>
-                {Object.keys(companySocials).length > 0 ? (
-                  <div className="mt-0.5 w-full flex flex-wrap justify-end gap-3.5">
-                    {Object.keys(companySocials).map((social) => (
-                      <a
-                        key={social}
-                        href={
-                          companySocials[social as keyof typeof socialsIcons]
-                        }
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {socialsIcons[social as keyof typeof socialsIcons]}
-                      </a>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="text-sm font-normal text-white">NA</p>
+          <div className="w-full flex flex-col break-words pr-2 space-y-5">
+            <span>
+              <h2 className="text-sm font-normal text-[#BAB5B5]">
+                {t("sections.certificate_data.company_name")}
+              </h2>
+              <p className="text-sm font-normal text-white">{companyName}</p>
+            </span>
+            <span>
+              <h2 className="text-sm font-normal text-[#BAB5B5]">
+                {t(
+                  "sections.certificate_data.operational_headquarters_and_factory",
                 )}
-              </span>
-              <span>
-                <h2 className="text-sm font-normal text-[#BAB5B5]">
-                  {t("sections.certificate_data.vat_number")}
-                </h2>
+              </h2>
+              <p className="text-sm font-normal text-white">
+                {companyOperationalHeadquarters}
+              </p>
+            </span>
+            <span>
+              <h2 className="text-sm font-normal text-[#BAB5B5]">
+                {t("sections.certificate_data.phone_number")}
+              </h2>
+              <p className="text-sm font-normal text-white">
+                {companyPhoneNumber}
+              </p>
+            </span>
+            <span>
+              <h2 className="text-sm font-normal text-[#BAB5B5]">
+                {t("sections.certificate_data.website")}
+              </h2>
+              <a href={companyWebsite} target="_blank" rel="noreferrer">
                 <p className="text-sm font-normal text-white">
-                  {companyVatNumber}
+                  {companyWebsite}
                 </p>
-              </span>
-              <span>
-                <h2 className="text-sm font-normal text-[#BAB5B5]">
-                  {t("sections.certificate_data.activities_description")}
-                </h2>
-                <p className="text-sm font-normal text-white">
-                  {companyActivitiesDescription.length > 200
-                    ? companyActivitiesDescription.slice(0, 200)
-                    : companyActivitiesDescription}
-                  {companyActivitiesDescription.length > 200 && (
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <span className="ml-2 text-[#A2BBFD]">
-                          ...{commonT("see_more")}
-                        </span>
-                      </DialogTrigger>
-                      <DialogContent className="h-4/5 rounded-md bg-[#212259] text-white">
-                        <div className="h-full w-full overflow-y-scroll p-4">
-                          <p className="text-base font-medium">
-                            {companyActivitiesDescription}
-                          </p>
-                        </div>
-                      </DialogContent>
-                    </Dialog>
-                  )}
-                </p>
-              </span>
-            </div>
+              </a>
+            </span>
+            <span>
+              <h2 className="text-sm font-normal text-[#BAB5B5]">
+                {t("sections.certificate_data.ateco_code")}
+              </h2>
+              <p className="text-sm font-normal text-white">
+                {companyAtecoCode}
+              </p>
+            </span>
+            <span>
+              <h2 className="text-sm font-normal text-[#BAB5B5]">
+                {t(
+                  "sections.certificate_data.chamber_of_commerce_registration",
+                )}
+              </h2>
+              <p className="text-sm font-normal text-white">
+                {companyChamberOfCommerceRegistration}
+              </p>
+            </span>
+            <span>
+              <h2 className="text-sm font-normal text-[#BAB5B5]">
+                {t("sections.certificate_data.registered_office")}
+              </h2>
+              <p className="text-sm font-normal text-white">
+                {companyRegisteredOffice}
+              </p>
+            </span>
+            <span>
+              <h2 className="text-sm font-normal text-[#BAB5B5]">
+                {t("sections.certificate_data.other_operational_locations")}
+              </h2>
+              <p className="text-sm font-normal text-white">
+                {companyOtherOperationalLocations}
+              </p>
+            </span>
+            <span>
+              <h2 className="text-sm font-normal text-[#BAB5B5]">
+                {t("sections.certificate_data.email")}
+              </h2>
+              <p className="text-sm font-normal text-white">{companyEmail}</p>
+            </span>
+            <span>
+              <h2 className="text-sm font-normal text-[#BAB5B5]">
+                {t("sections.certificate_data.social_media")}
+              </h2>
+              {Object.keys(companySocials).length > 0 ? (
+                <div className="mt-0.5 w-full flex flex-wrap justify-end gap-3.5">
+                  {Object.keys(companySocials).map((social) => (
+                    <a
+                      key={social}
+                      href={companySocials[social as keyof typeof socialsIcons]}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {socialsIcons[social as keyof typeof socialsIcons]}
+                    </a>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-sm font-normal text-white">NA</p>
+              )}
+            </span>
+            <span>
+              <h2 className="text-sm font-normal text-[#BAB5B5]">
+                {t("sections.certificate_data.vat_number")}
+              </h2>
+              <p className="text-sm font-normal text-white">
+                {companyVatNumber}
+              </p>
+            </span>
+            <span>
+              <h2 className="text-sm font-normal text-[#BAB5B5]">
+                {t("sections.certificate_data.activities_description")}
+              </h2>
+              <p className="text-sm font-normal text-white">
+                {companyActivitiesDescription.length > 200
+                  ? companyActivitiesDescription.slice(0, 200)
+                  : companyActivitiesDescription}
+                {companyActivitiesDescription.length > 200 && (
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <span className="ml-2 text-[#A2BBFD]">
+                        ...{commonT("see_more")}
+                      </span>
+                    </DialogTrigger>
+                    <DialogContent className="h-4/5 rounded-md bg-[#212259] text-white">
+                      <div className="h-full w-full overflow-y-scroll p-4">
+                        <p className="text-base font-medium">
+                          {companyActivitiesDescription}
+                        </p>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                )}
+              </p>
+            </span>
           </div>
         </TabsContent>
       </Tabs>
       <Dialog>
         <DialogTrigger asChild>
           <div className="fixed bottom-0 left-0 h-16 w-full flex items-center justify-center">
-            <div className="from-0 pointer-events-none fixed bottom-0 h-[10.75rem] w-screen rounded-t-[2rem] from-[#16172E00] to-[#0F101B] to-67% bg-gradient-to-b" />
+            <div className="from-0 pointer-events-none fixed bottom-0 h-[10.75rem] w-screen rounded-t-[2rem] from-[#16172E00] to-[#0F101B] to-67% bg-gradient-to-b z-10" />
             <button
               type="button"
-              className="z-2 h-[2.8125rem] w-[calc(100vw-2rem)] rounded-xl from-[#2563EB] to-[#3A4D78] bg-gradient-to-b px-6 text-lg font-bold text-white"
+              className="z-2 h-[2.8125rem] w-[calc(100vw-2rem)] rounded-xl from-[#2563EB] to-[#3A4D78] bg-gradient-to-b px-6 text-lg font-bold text-white z-20"
             >
               {t("show_certification")}
             </button>
