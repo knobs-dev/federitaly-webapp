@@ -27,7 +27,7 @@ if [[ $ENV == "local" ]]; then
 
     # # Start local replica
     # dfx start --clean --background
-bash ./scripts/cleanup.sh $ENV;
+bash ./cleanup.sh $ENV;
 
 pnpm build
 dfx deploy --network "$ENV"
