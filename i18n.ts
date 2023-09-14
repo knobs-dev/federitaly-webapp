@@ -14,9 +14,11 @@ const resources = {
 export const getLanguage = () => {
   if (typeof window !== "undefined") {
     const currentLang = localStorage.getItem("i18nextLng");
-    return !currentLang ? "en" : currentLang;
+    if (!currentLang)
+      localStorage.setItem("i18nextLng", 'it');
+    return !currentLang ? "it" : currentLang;
   } else {
-    return "en";
+    return "it";
   }
 };
 
@@ -27,6 +29,11 @@ i18n
     lng: getLanguage(),
     fallbackLng: "it",
     debug: true,
+
+    detection: {
+      order: ['localStorage'],
+      caches: ['localStorage'],
+    },
 
     load: "languageOnly",
 

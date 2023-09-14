@@ -5,7 +5,12 @@ import { motion } from "framer-motion";
 
 import Link from "@components/RetainQueryLink";
 
-import { clientLocale, clientT } from "@store/i18n";
+import {
+  clientLocale,
+  clientT,
+  getCurrentLanguage,
+  setCurrentLanguage,
+} from "@store/i18n";
 
 import {
   IconCertifications,
@@ -92,12 +97,16 @@ const Sidebar = () => {
               <button
                 type="button"
                 className="flex items-center space-x-6"
-                onClick={() => console.log("change locale")}
+                onClick={() =>
+                  getCurrentLanguage() === "en"
+                    ? setCurrentLanguage("it")
+                    : setCurrentLanguage("en")
+                }
               >
-                {clientLocale.value === "en" && (
+                {getCurrentLanguage() === "en" && (
                   <IconItalyFlag className="h-5 w-5" />
                 )}
-                {clientLocale.value === "it" && (
+                {getCurrentLanguage() === "it" && (
                   <IconUKFlag className="h-5 w-5" />
                 )}
                 <span>{t("sidebar.navigation.language-version")}</span>
