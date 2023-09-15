@@ -14,6 +14,12 @@ import {
   TabsList,
   TabsTrigger,
 } from "@components";
+import {
+  IconFacebook,
+  IconInstagram,
+  IconLinkedin,
+  IconYoutube,
+} from "@components/icons";
 
 import {
   getCertificationData,
@@ -21,8 +27,6 @@ import {
 } from "@api/certifications";
 import { supportedLocales } from "@constants";
 import { formatCertifiedCompanyData } from "@utils";
-
-import { IconFacebook, IconInstagram, IconLinkedin, IconYoutube } from "@icons";
 
 type CertifiedCompaniesContentClientProps = {
   certifiedCompanyDataFormatted: ReturnType<typeof formatCertifiedCompanyData>;

@@ -13,6 +13,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@components";
+import { IconArrowRight, IconSearch } from "@components/icons";
 import Link from "@components/RetainQueryLink";
 
 import { clientT } from "@store/i18n";
@@ -28,8 +29,6 @@ import {
 } from "@utils";
 
 import type { SortByCertifiedCompanies } from "@types";
-
-import { IconArrowRight, IconSearch } from "@icons";
 
 const fetchCompanies = async (locale: string) => {
   const certifiedCompanies = await getCertifiedCompanies();

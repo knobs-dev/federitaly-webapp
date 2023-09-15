@@ -4,7 +4,7 @@ import * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { twMerge } from "tailwind-merge";
 
-import { IconArrowRight } from "@icons";
+import { IconArrowRight } from "@components/icons";
 
 const Accordion = AccordionPrimitive.Root;
 

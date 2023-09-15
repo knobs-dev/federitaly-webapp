@@ -3,15 +3,6 @@ import { useTranslations } from "@hooks/useTranslations";
 // import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 
-import Link from "@components/RetainQueryLink";
-
-import {
-  clientLocale,
-  clientT,
-  getCurrentLanguage,
-  setCurrentLanguage,
-} from "@store/i18n";
-
 import {
   IconCertifications,
   IconContacts,
@@ -21,7 +12,15 @@ import {
   IconPrivacyPolicy,
   IconSearch,
   IconUKFlag,
-} from "@icons";
+} from "@components/icons";
+import Link from "@components/RetainQueryLink";
+
+import {
+  clientLocale,
+  clientT,
+  getCurrentLanguage,
+  setCurrentLanguage,
+} from "@store/i18n";
 
 const Sidebar = () => {
   // const router = useRouter();

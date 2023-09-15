@@ -1,9 +1,9 @@
 import type { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { clientT } from "@store/i18n";
+import { IconClose } from "@components/icons";
 
-import { IconClose } from "@icons";
+import { clientT } from "@store/i18n";
 
 type CertificationProps = {
   className?: string;

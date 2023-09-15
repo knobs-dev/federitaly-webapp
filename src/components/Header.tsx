@@ -3,10 +3,10 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 
+import { IconArrowRight, IconClose, IconMenu } from "@components/icons";
+
 import { clientT } from "@store/i18n";
 import { usePrevious } from "@hooks";
-
-import { IconArrowRight, IconClose, IconMenu } from "@icons";
 
 import Sidebar from "./Sidebar";
 

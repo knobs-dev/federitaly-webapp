@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useLocale, useTranslations } from "@hooks/useTranslations";
 
 import { Card, Slider } from "@components";
+import { IconArrowRight } from "@components/icons";
 import Link from "@components/RetainQueryLink";
 
 import {
@@ -11,8 +12,6 @@ import {
 } from "@api/certifications";
 import { supportedLocales } from "@constants";
 import { formatCertifiedCompaniesData } from "@utils";
-
-import { IconArrowRight } from "@icons";
 
 async function fetchData(locale: string) {
   const certifiedCompanies = await getCertifiedCompanies();

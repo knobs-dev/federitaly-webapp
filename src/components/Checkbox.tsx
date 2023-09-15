@@ -8,7 +8,7 @@ import {
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { twMerge } from "tailwind-merge";
 
-import { IconCheck } from "@icons";
+import { IconCheck } from "@components/icons";
 
 const Checkbox = forwardRef<
   ElementRef<typeof CheckboxPrimitive.Root>,

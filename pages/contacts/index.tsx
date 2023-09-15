@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { IconEmail, IconLocation, IconPhone } from "@icons";
+import { IconEmail, IconLocation, IconPhone } from "@components/icons";
 
 import ContactsContent from "./client";
 
