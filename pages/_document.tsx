@@ -1,8 +1,6 @@
 import { Head, Html, Main, NextScript } from "next/document";
 import Image from "next/image";
 
-import { Header } from "@components";
-
 import Providers from "../src/providers";
 
 export default function Document() {

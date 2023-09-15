@@ -1,19 +1,11 @@
 import { useEffect, useRef, useState, type FC } from "react";
-import { createPortal } from "react-dom";
 import { useLocale } from "@hooks/useTranslations";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import Fuse from "fuse.js";
 import debounce from "lodash.debounce";
 
-import {
-  Card,
-  Checkbox,
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@components";
-import { IconArrowRight, IconSearch } from "@components/icons";
+import { Card } from "@components";
+import { IconSearch } from "@components/icons";
 import Link from "@components/RetainQueryLink";
 
 import { clientT } from "@store/i18n";
