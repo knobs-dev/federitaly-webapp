@@ -115,7 +115,7 @@ const Sidebar = () => {
         </nav>
         <div className="z-2 py-5 absolute bottom-0 left-5 right-5">
           <h2 className="px-2 text-xs font-bold uppercase">
-            {clientT.value?.Common.sidebar.partner}
+            {t("sidebar.partner")}
           </h2>
           <hr className="mt-1 border-[#D1D3D499]" />
           <ul className="mt-5 flex items-center justify-between px-2">
