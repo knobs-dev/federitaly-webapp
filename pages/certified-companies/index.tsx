@@ -3,40 +3,18 @@ import { useLocale } from "@hooks/useTranslations";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import Fuse from "fuse.js";
 import debounce from "lodash.debounce";
+import { useQuery } from "react-query";
+import { fetchCompanies } from "utils/api";
 
 import { Card } from "@components";
 import { IconSearch } from "@components/icons";
 import Link from "@components/RetainQueryLink";
 
 import { clientT } from "@store/i18n";
-import {
-  getCertificationData,
-  getCertifiedCompanies,
-} from "@api/certifications";
 import { usePrevious } from "@hooks";
-import { supportedLocales } from "@constants";
-import {
-  filterCertifiedCompaniesFormattedBy,
-  formatCertifiedCompaniesData,
-} from "@utils";
+import { filterCertifiedCompaniesFormattedBy } from "@utils";
 
 import type { SortByCertifiedCompanies } from "@types";
-
-const fetchCompanies = async (locale: string) => {
-  const certifiedCompanies = await getCertifiedCompanies();
-  const certifiedCompaniesData = await Promise.all(
-    certifiedCompanies.map((company) => getCertificationData(company)),
-  );
-  const certifiedCompaniesDataFormatted = filterCertifiedCompaniesFormattedBy(
-    "most-recent",
-    formatCertifiedCompaniesData(
-      certifiedCompaniesData,
-      locale as (typeof supportedLocales)[number],
-    ),
-  );
-
-  return certifiedCompaniesDataFormatted;
-};
 
 type CertifiedCompaniesContentProps = {};
 
@@ -44,8 +22,10 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = () => {
   const locale = useLocale();
   const virtualizedListRef = useRef(null);
 
-  const [certifiedCompaniesDataFormatted, setCertifiedCompaniesDataFormatted] =
-    useState<ReturnType<typeof formatCertifiedCompaniesData>>([]);
+  const { data: certifiedCompaniesDataFormatted } = useQuery(
+    ["certifiedCompanies", locale],
+    fetchCompanies,
+  );
 
   const [
     filteredCertifiedCompaniesDataFormatted,
@@ -53,13 +33,8 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = () => {
   ] = useState(certifiedCompaniesDataFormatted);
 
   useEffect(() => {
-    fetchCompanies(locale)
-      .then((data) => {
-        setCertifiedCompaniesDataFormatted(data);
-        setFilteredCertifiedCompaniesDataFormatted(data);
-      })
-      .catch((err) => console.log("fetchErr", err));
-  }, [locale]);
+    setFilteredCertifiedCompaniesDataFormatted(certifiedCompaniesDataFormatted);
+  }, [certifiedCompaniesDataFormatted]);
 
   const [search, setSearch] = useState("");
   const prevSearch = usePrevious(search);
@@ -68,7 +43,9 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = () => {
   const prevSortBy = usePrevious(sortBy);
 
   const rowVirtualizer = useVirtualizer({
-    count: filteredCertifiedCompaniesDataFormatted.length,
+    count: filteredCertifiedCompaniesDataFormatted
+      ? filteredCertifiedCompaniesDataFormatted.length
+      : 0,
     getScrollElement: () => virtualizedListRef.current,
     estimateSize: () => 70,
   });
@@ -89,12 +66,16 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = () => {
       };
 
       const fuse = new Fuse(
-        filteredCertifiedCompaniesDataFormatted,
+        filteredCertifiedCompaniesDataFormatted
+          ? filteredCertifiedCompaniesDataFormatted
+          : [],
         fuseOptions,
       );
 
       if (
         search === "" &&
+        filteredCertifiedCompaniesDataFormatted &&
+        certifiedCompaniesDataFormatted &&
         filteredCertifiedCompaniesDataFormatted.length !==
           certifiedCompaniesDataFormatted.length
       ) {
@@ -116,7 +97,7 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = () => {
   useEffect(() => {
     if (prevSortBy !== undefined && prevSortBy !== sortBy) {
       setFilteredCertifiedCompaniesDataFormatted((prev) =>
-        filterCertifiedCompaniesFormattedBy(sortBy, [...prev]),
+        filterCertifiedCompaniesFormattedBy(sortBy, [...(prev || [])]),
       );
     }
   }, [sortBy]);
@@ -210,53 +191,55 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = () => {
         </div>
       </header>
       <section className="mt-4 flex-1 overflow-y-auto" ref={virtualizedListRef}>
-        {filteredCertifiedCompaniesDataFormatted.length > 0 && (
-          <div
-            className="relative w-full"
-            style={{
-              height: `${rowVirtualizer.getTotalSize()}px`,
-            }}
-          >
-            {rowVirtualizer
-              .getVirtualItems()
-              .map(({ key, size, start, index }) => {
-                return (
-                  <div
-                    key={key}
-                    className="absolute left-0 top-0 w-full"
-                    style={{
-                      height: `${size}px`,
-                      transform: `translateY(${start}px)`,
-                    }}
-                  >
-                    <Link
-                      href={`/certified-company/${filteredCertifiedCompaniesDataFormatted[index].id}`}
+        {filteredCertifiedCompaniesDataFormatted &&
+          filteredCertifiedCompaniesDataFormatted.length > 0 && (
+            <div
+              className="relative w-full"
+              style={{
+                height: `${rowVirtualizer.getTotalSize()}px`,
+              }}
+            >
+              {rowVirtualizer
+                .getVirtualItems()
+                .map(({ key, size, start, index }) => {
+                  return (
+                    <div
+                      key={key}
+                      className="absolute left-0 top-0 w-full"
+                      style={{
+                        height: `${size}px`,
+                        transform: `translateY(${start}px)`,
+                      }}
                     >
-                      <Card
-                        profilePhoto={
-                          filteredCertifiedCompaniesDataFormatted[index]
-                            .companyProfilePhoto
-                        }
-                        name={
-                          filteredCertifiedCompaniesDataFormatted[index]
-                            .companyName
-                        }
-                        expirationDate={
-                          filteredCertifiedCompaniesDataFormatted[index]
-                            .certificationExpirationDate
-                        }
-                      />
-                    </Link>
-                  </div>
-                );
-              })}
-          </div>
-        )}
-        {filteredCertifiedCompaniesDataFormatted.length === 0 && (
-          <p className="h-full w-full flex items-center justify-center py-16 text-center text-sm">
-            {clientT.value?.Common.no_certified_companies}
-          </p>
-        )}
+                      <Link
+                        href={`/certified-company/${filteredCertifiedCompaniesDataFormatted[index].id}`}
+                      >
+                        <Card
+                          profilePhoto={
+                            filteredCertifiedCompaniesDataFormatted[index]
+                              .companyProfilePhoto
+                          }
+                          name={
+                            filteredCertifiedCompaniesDataFormatted[index]
+                              .companyName
+                          }
+                          expirationDate={
+                            filteredCertifiedCompaniesDataFormatted[index]
+                              .certificationExpirationDate
+                          }
+                        />
+                      </Link>
+                    </div>
+                  );
+                })}
+            </div>
+          )}
+        {filteredCertifiedCompaniesDataFormatted &&
+          filteredCertifiedCompaniesDataFormatted.length === 0 && (
+            <p className="h-full w-full flex items-center justify-center py-16 text-center text-sm">
+              {clientT.value?.Common.no_certified_companies}
+            </p>
+          )}
       </section>
     </>
   );

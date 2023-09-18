@@ -1,30 +1,12 @@
-import { useEffect, useState, type FC } from "react";
+import { type FC } from "react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "@hooks/useTranslations";
+import { useQuery } from "react-query";
+import { fetchCompanies } from "utils/api";
 
 import { Card, Slider } from "@components";
 import { IconArrowRight } from "@components/icons";
 import Link from "@components/RetainQueryLink";
-
-import {
-  getCertificationData,
-  getCertifiedCompanies,
-} from "@api/certifications";
-import { supportedLocales } from "@constants";
-import { formatCertifiedCompaniesData } from "@utils";
-
-async function fetchData(locale: string) {
-  const certifiedCompanies = await getCertifiedCompanies();
-  const certifiedCompaniesData = await Promise.all(
-    certifiedCompanies.map((company) => getCertificationData(company)),
-  );
-  const certifiedCompaniesDataFormatted = formatCertifiedCompaniesData(
-    certifiedCompaniesData,
-    locale as (typeof supportedLocales)[number],
-  );
-
-  return certifiedCompaniesDataFormatted;
-}
 
 type HomeContentProps = {};
 
@@ -33,16 +15,10 @@ const HomeContent: FC<HomeContentProps> = () => {
   const t = useTranslations("Home");
   const commonT = useTranslations("Common");
 
-  const [certifiedCompaniesDataFormatted, setCertifiedCompaniesDataFormatted] =
-    useState<ReturnType<typeof formatCertifiedCompaniesData>>([]);
-
-  useEffect(() => {
-    fetchData(locale)
-      .then((data) => {
-        setCertifiedCompaniesDataFormatted(data);
-      })
-      .catch((err) => console.error("fetchErr", err));
-  }, [locale]);
+  const { data: certifiedCompaniesDataFormatted } = useQuery(
+    ["certifiedCompanies", locale],
+    fetchCompanies,
+  );
 
   return (
     <>
@@ -124,7 +100,8 @@ const HomeContent: FC<HomeContentProps> = () => {
           </Link>
         </header>
         <div className="mt-2 space-y-1.5">
-          {certifiedCompaniesDataFormatted.length > 0 &&
+          {certifiedCompaniesDataFormatted &&
+            certifiedCompaniesDataFormatted.length > 0 &&
             certifiedCompaniesDataFormatted.map(
               ({
                 id,
@@ -145,11 +122,12 @@ const HomeContent: FC<HomeContentProps> = () => {
                 </Link>
               ),
             )}
-          {certifiedCompaniesDataFormatted.length === 0 && (
-            <p className="py-16 text-center text-sm">
-              {commonT("no_certified_companies")}
-            </p>
-          )}
+          {certifiedCompaniesDataFormatted &&
+            certifiedCompaniesDataFormatted.length === 0 && (
+              <p className="py-16 text-center text-sm">
+                {commonT("no_certified_companies")}
+              </p>
+            )}
         </div>
       </section>
     </>
