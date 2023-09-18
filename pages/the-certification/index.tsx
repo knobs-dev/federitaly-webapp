@@ -11,7 +11,7 @@ const TheCertification = () => {
         height={137}
         src="/assets/images/the-certification-hero-image.png"
         alt=""
-        className="h-[8.5625rem] w-full object-cover"
+        className="w-full object-cover"
       />
       <h2 className="text-[1.375rem] font-bold">{t("title")}</h2>
       <p className="text-[1.0625rem] font-medium">{t("description")}</p>

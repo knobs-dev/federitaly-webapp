@@ -3,6 +3,7 @@ import { useLocale } from "@hooks/useTranslations";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import Fuse from "fuse.js";
 import debounce from "lodash.debounce";
+import { useTranslation } from "react-i18next";
 import { useQuery } from "react-query";
 import { fetchCompanies } from "utils/api";
 
@@ -41,6 +42,8 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = () => {
 
   const [sortBy, setSortBy] = useState<SortByCertifiedCompanies>("most-recent");
   const prevSortBy = usePrevious(sortBy);
+
+  const { t } = useTranslation();
 
   const rowVirtualizer = useVirtualizer({
     count: filteredCertifiedCompaniesDataFormatted
@@ -108,9 +111,7 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = () => {
         <div className="relative w-full">
           <input
             className="h-11 w-full border-1 border-[#EAEBEC4A] rounded-lg bg-[#403E62CC] pl-10 text-[0.9375rem] font-medium placeholder:text-[#F2F3F399]"
-            placeholder={
-              clientT.value?.CertifiedCompanies.filters.search_company
-            }
+            placeholder={t("CertifiedCompanies.filters.search_company")}
             onChange={handleSearch}
           />
           <IconSearch className="absolute top-1/2 ml-3 h-[1.1875rem] w-[1.1875rem] stroke-2 stroke-[#D5D8DC] -translate-y-1/2" />

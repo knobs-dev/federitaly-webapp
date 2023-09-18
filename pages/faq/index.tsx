@@ -133,7 +133,7 @@ const Faq = () => {
   };
 
   return (
-    <div className="absolute left-0 top-0 min-h-full w-screen flex flex-col overflow-hidden">
+    <div className="absolute left-0 top-4 min-h-full w-screen flex flex-col overflow-hidden">
       <header className="absolute left-0 top-0 h-[5.375rem] w-full">
         <h2 className="{text-[0.9375rem] px-4 font-semibold">{t("title")}</h2>
         <Slider freeMode className="mt-2 w-full">

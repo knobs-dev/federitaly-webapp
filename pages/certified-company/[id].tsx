@@ -418,7 +418,7 @@ const CertifiedCompany: FC<CertifiedCompanyContentProps> = () => {
   }, [locale, id]);
 
   return (
-    <div className="absolute left-0 top-0 h-full w-screen flex flex-1 flex-col">
+    <div className="absolute left-0 top-4 h-full w-screen flex flex-1 flex-col">
       {certifiedCompanyDataFormatted && (
         <>
           <header className="flex items-center px-4">
