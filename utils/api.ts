@@ -1,6 +1,6 @@
 import { getCertificationData, getCertifiedCompanies } from "@api/certifications";
 import { supportedLocales } from "@constants";
-import { formatCertifiedCompaniesData } from "@utils";
+import { formatCertifiedCompaniesData, formatCertifiedCompanyData } from "@utils";
 
 
 export const fetchCompanies = async ({ queryKey }: any) => {
@@ -15,4 +15,22 @@ export const fetchCompanies = async ({ queryKey }: any) => {
   );
 
   return certifiedCompaniesDataFormatted;
+}
+
+export const fetchCertifiedCompany = async ({ queryKey }: any) => {
+  const [, id, locale] = queryKey;
+  const certifiedCompanies = await getCertifiedCompanies();
+
+  if (!certifiedCompanies.includes(id)) {
+    return;
+  }
+
+  const certifiedCompanyData = await getCertificationData(id);
+
+  const certifiedCompanyDataFormatted = formatCertifiedCompanyData(
+    certifiedCompanyData,
+    locale as (typeof supportedLocales)[number],
+  );
+
+  return certifiedCompanyDataFormatted;
 }

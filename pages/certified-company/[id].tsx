@@ -2,6 +2,8 @@ import { useEffect, useState, type FC } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useLocale, useTranslations } from "@hooks/useTranslations";
+import { useQuery } from "react-query";
+import { fetchCertifiedCompany } from "utils/api";
 
 import {
   Certification,
@@ -380,23 +382,6 @@ const CertifiedCompaniesContentClient: FC<
   );
 };
 
-async function fetchCertifiedCompany(id: string, locale: string) {
-  const certifiedCompanies = await getCertifiedCompanies();
-
-  if (!certifiedCompanies.includes(id)) {
-    return;
-  }
-
-  const certifiedCompanyData = await getCertificationData(id);
-
-  const certifiedCompanyDataFormatted = formatCertifiedCompanyData(
-    certifiedCompanyData,
-    locale as (typeof supportedLocales)[number],
-  );
-
-  return certifiedCompanyDataFormatted;
-}
-
 type CertifiedCompanyContentProps = {};
 
 const CertifiedCompany: FC<CertifiedCompanyContentProps> = () => {
@@ -406,16 +391,10 @@ const CertifiedCompany: FC<CertifiedCompanyContentProps> = () => {
   const t = useTranslations("CertifiedCompany");
   const locale = useLocale();
 
-  const [certifiedCompanyDataFormatted, setCertifiedCompanyDataFormatted] =
-    useState<ReturnType<typeof formatCertifiedCompanyData>>();
-
-  useEffect(() => {
-    fetchCertifiedCompany(id, locale)
-      .then((data) => {
-        setCertifiedCompanyDataFormatted(data);
-      })
-      .catch((err) => console.error("fetchErr", err));
-  }, [locale, id]);
+  const { data: certifiedCompanyDataFormatted } = useQuery(
+    ["certifiedCompany", id, locale],
+    fetchCertifiedCompany,
+  );
 
   return (
     <div className="absolute left-0 top-4 h-full w-screen flex flex-1 flex-col">
