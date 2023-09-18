@@ -69,9 +69,7 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = () => {
       };
 
       const fuse = new Fuse(
-        filteredCertifiedCompaniesDataFormatted
-          ? filteredCertifiedCompaniesDataFormatted
-          : [],
+        filteredCertifiedCompaniesDataFormatted || [],
         fuseOptions,
       );
 
