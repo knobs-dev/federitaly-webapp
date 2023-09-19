@@ -1,0 +1,287 @@
+{
+  "translation": {
+    "Common": {
+      "expiration_date": "Scadenza",
+      "no_certified_companies": "Nessuna azienda certificata",
+      "see_more": "Vedi altro",
+      "sidebar": {
+        "navigation": {
+          "home": "Home",
+          "certification-process": "La Certificazione",
+          "certified-companies": "Aziende Certificate",
+          "faq": "FAQ",
+          "contacts": "Contatti",
+          "privacy-policy": "Privacy Policy",
+          "language-version": "English Version"
+        },
+        "partner": "Partner"
+      },
+      "header_titles": {
+        "certified_companies": "Aziende Certificate",
+        "certified_company": "Azienda Certificata",
+        "privacy_policy": "Privacy Policy",
+        "the_certification": "La Certificazione",
+        "faq": "FAQ",
+        "contacts": "Contatti"
+      },
+      "screen_readers_labels": {
+        "close": "Chiudi",
+        "go_back": "Torna indietro",
+        "open_menu": "Apri menu",
+        "close_menu": "Chiudi menu"
+      }
+    },
+    "Home": {
+      "slides": [
+        {
+          "title": "100% Made in Italy",
+          "body": "La nostra mission è tutelare e promuovere le eccellenze italiane in tutto il mondo. Il Marchio 100% Made in Italy identifica solo il meglio della produzione totalmente italiana. Una  barriera al fenomeno  dell'italian sounding.",
+          "action": "Contattaci"
+        },
+        {
+          "title": "Un Marchio di origine e qualità per le eccellenze Italiane",
+          "body": "• Origine di qualità \n • Fiducia per il consumatore \n • Proteggi il tuo marchio \n • Autenticità del prodotto \n • Sicurezza \n • Dati su blockchain",
+          "action": "Scopri di più"
+        },
+        {
+          "title": "La Blockchain al servizio del vero \"Made in Italy\"",
+          "body": "L'uso della tecnologia blockchain è un passo importante per ridare fiducia ai consumatori e garantire che le informazioni siano affidabili e veritiere. FederItaly crede che  le aziende che  investono nella  qualità dei loro  prodotti siano i veri  protagonisti  dell'economia italiana."
+        }
+      ],
+      "certifications_section": {
+        "title": "Ultime Certificazioni",
+        "show_all": "Vedi tutte"
+      }
+    },
+    "CertifiedCompanies": {
+      "filters": {
+        "search_company": "Cerca azienda",
+        "sort_by": {
+          "placeholder": "Ordina per",
+          "options": {
+            "most_recent": "Certificazioni più recenti",
+            "least_recent": "Certificazioni meno recenti",
+            "most_recent_expiration_date": "Data scadenza più recente",
+            "least_recent_expiration_date": "Data scadenza meno recente"
+          }
+        }
+      }
+    },
+    "CertifiedCompany": {
+      "show_certification": "Visualizza certificato",
+      "certification_date": "Data certificazione",
+      "tabs": {
+        "the_company": "L'azienda",
+        "certificate_data": "Dati Certificato"
+      },
+      "sections": {
+        "the_company": {
+          "registered_products": "Prodotti registrati",
+          "company_description": "Descrizione dell'Azienda",
+          "certification_process": "Il Processo di Certificazione"
+        },
+        "certificate_data": {
+          "certificate": "100% CERTIFICATO MADE IN ITALY",
+          "company_name": "Nome Azienda",
+          "operational_headquarters_and_factory": "Sede Operativa e Stabilimento",
+          "phone_number": "Telefono",
+          "website": "Sito Web",
+          "ateco_code": "Codice ATECO",
+          "chamber_of_commerce_registration": "Iscrizione Camera di Commercio",
+          "registered_office": "Sede Legale",
+          "other_operational_locations": "Altre Sedi Operative",
+          "email": "Email",
+          "social_media": "Social Media",
+          "vat_number": "Partita IVA",
+          "activities_description": "Descrizione Attività"
+        }
+      },
+      "certification": {
+        "slogan": [
+          "100% MADE IN ITALY",
+          "CERTIFICATO"
+        ],
+        "company_name": "Nome Azienda",
+        "company_address": "Indirizzo Azienda",
+        "vat_number": "Partita IVA",
+        "certification_valid_until": "Certificazione Valida Fino Al",
+        "certified_by": "Certificato Da",
+        "president_federitaly": "Presidente FEDERITALY"
+      }
+    },
+    "PrivacyPolicy": {
+      "content": [
+        "Federitaly con il Regolamento Europeo in materia di Protezione dei Dati Personali 2016/679 (“GDPR”) desidera fornirle maggiori dettagli sul trattamento dei Suoi Dati Personali.",
+        "Titolare del trattamento dei dati: FEDERITALY – C.so della Repubblica, 205 – 03043 CASSINO (FR) – C.F. 90046140605",
+        "In quanto titolare dei Suoi dati personali, Federitaly è responsabile di come tali dati vengono raccolti e utilizzati. Nel rispetto della Sua privacy, Federitaly si impegna a proteggere tutti i dati personali raccolti e a trattarli in conformità con le norme giuridiche vigenti in materia di tutela della privacy.",
+        "Tipologia dei dati raccolti",
+        "Federitaly è in possesso di alcuni Suoi dati personali. Sono definiti “dati personali” quei dati che possono identificarLa o che sono collegabili a Lei (“Dati”). Federitaly ha raccolto i Dati nel contesto del rapporto professionale instaurato nonché quelli da Lei spontaneamente forniti, per esempio in occasione di comunicazioni via e-mail o altri canali, o in occasione di sottoscrizione di newsletter, alert, o altro materiale informativo. I Dati raccolti comprendono nome, indirizzo postale, indirizzo mail, numero di telefono, indirizzo postale ed indirizzo mail privato"
+      ]
+    },
+    "TheCertification": {
+      "title": "Fieri delle nostre radici: entra nel mondo dei produttori certificati 100% Made in Italy e celebra con noi l'autenticità, la passione e il talento italiani.",
+      "description": "Per garantire la qualità e l'autenticità dei prodotti, l'assegnazione del marchio \"FederItaly 100% Made In Italy\" segue un rigoroso processo di controllo che include un doppio livello di analisi: documentale e audit fisico in azienda.",
+      "list": [
+        {
+          "title": "1.Valutazione Preliminare dell'Azienda",
+          "body": "In questa fase, l'Ufficio Tecnico di FederItaly valuta le operazioni e i processi dell'azienda, fornendo consigli per eventuali correzioni o modifiche necessarie. L'azienda dovrebbe considerare queste raccomandazioni prima di procedere alla fase successiva."
+        },
+        {
+          "title": "2.Analisi Documentale",
+          "body": "FederItaly esamina tutti i documenti rilevanti dell'azienda e i materiali utilizzati per realizzare il prodotto. Vengono suggerite eventuali integrazioni. Una volta completata l'analisi documentale, l'azienda è pronta per l'audit."
+        },
+        {
+          "title": "3.Audit",
+          "body": "L'audit è condotto da un validatore autorizzato da FederItaly, che effettua uno studio approfondito dell'azienda. Questo include un'analisi visiva del processo produttivo, l'acquisizione di documentazione fotografica e una revisione dei dati. Le informazioni dell'audit vengono quindi inviate alla Commissione Tecnica per ulteriori revisioni."
+        },
+        {
+          "title": "4.Certificato \"FederItaly 100% Made in Italy\"",
+          "body": "Dopo aver superato l'audit, l'azienda riceve il certificato. Questo dimostra l'impegno dell'azienda verso la qualità e l'autenticità dei suoi prodotti."
+        }
+      ],
+      "distinctive_traits": "FederItaly si distingue dalle altre iniziative concentrando la sua attenzione sulla certificazione dell'origine dei prodotti piuttosto che sulla semplice tracciabilità della filiera produttiva. Questo approccio consente la verifica delle informazioni fornite dai produttori ai consumatori. Di conseguenza, il marchio \"FederItaly 100% Made In Italy\" garantisce un livello superiore di sicurezza e trasparenza, assicurando che i consumatori possano acquistare con fiducia prodotti italiani autentici.",
+      "blockchain_section": {
+        "title": "La Blockchain al servizio del ‘Made in Italy’",
+        "body": [
+          "L'uso della tecnologia blockchain per verificare l'origine e la qualità dei prodotti è, quindi, un passo importante per ridare fiducia ai consumatori e garantire che le informazioni siano affidabili e veritiere.",
+          "FederItaly crede che le aziende che investono nella qualità dei loro prodotti e si adattano alle nuove tecnologie per valorizzare i loro clienti e consumatori siano i veri protagonisti dell'economia italiana."
+        ]
+      }
+    },
+    "Faq": {
+      "title": "Hai bisogno d’aiuto? cerca le tue risposte tra i nostri argomenti",
+      "topics": {
+        "generic": "Generici",
+        "the_certification": "La Certificazione",
+        "blockchain": "Blockchain",
+        "advantages": "Vantaggi"
+      },
+      "questions": [
+        {
+          "title": "Chi è FEDERITALY?",
+          "body": "FederItaly è una federazione no-profit che rappresenta e tutela imprese, associazioni, consorzi, fondazioni, cooperative e professionisti di ogni settore. L'obiettivo principale è la tutela del \"Made in Italy\" e il contrasto dell'Italian Sounding, assicurando che i prodotti \"100% Made in Italy\" rispettino la Legge 166/09 art. 16. FederItaly ha creato una rete di Delegazioni Estere in 20 nazioni per supportare le aziende italiane nel mercato globale. La federazione rappresenta tutti, inclusi micro-imprenditori, e promuove il dialogo con istituzioni e organizzazioni per il bene comune delle aziende italiane."
+        },
+        {
+          "title": "In quali settori opera FEDERITALY?",
+          "body": "FederItaly si impegna nella valorizzazione dell'innovazione e dell'artigianalità italiane, supportando imprenditori in tutti i settori, dalla moda alla tecnologia, dall'agricoltura all'industria e dal commercio all'artigianato. Rappresenta una vasta gamma di imprese e professionisti che contribuiscono al \"Made in Italy\", un patrimonio unico e prezioso per l'economia italiana."
+        },
+        {
+          "title": "Obiettivi dell'iniziativa “FEDERITALY 100% Made In Italy”?",
+          "body": "FederItaly si dedica a promuovere e tutelare l'iniziativa imprenditoriale italiana e il \"Made in Italy\". Si concentra su due obiettivi principali: ridare fiducia ai consumatori nei prodotti italiani contrassegnati come \"Made in Italy\" e \"100% Made in Italy\" e valorizzare le imprese che investono nella qualità e nell'innovazione. La federazione si impegna anche nella diffusione della cultura green e della sostenibilità in ogni processo di produzione del Made in Italy."
+        },
+        {
+          "title": "Differenza tra “Made in Italy” e “100% Made in Italy”?",
+          "body": "Il \"Made in Italy\" non è solo un'etichetta, è un vero e proprio stile di vita. Indica prodotti che hanno un'origine italiana, ma spesso questa espressione viene abusata, utilizzata per prodotti che in realtà hanno solo subito un assemblaggio in Italia, con componenti provenienti dall'estero. Il \"100% Made in Italy\" garantisce che tutti i componenti di un prodotto siano stati fabbricati in Italia, seguendo gli elevati standard di qualità del paese, e l'intero processo produttivo, dalla progettazione alla realizzazione finale, è avvenuto in Italia. Acquistando prodotti che portano il marchio \"FederItaly 100% Made in Italy\" si ha finalmente la certezza di acquistare prodotti autentici e di qualità, in linea con le tradizioni e l'eccellenza del Made in Italy."
+        },
+        {
+          "title": "Cos’è la blockchain?",
+          "body": "La blockchain è un registro digitale distribuito e sicuro che utilizza la crittografia per memorizzare e convalidare le informazioni. È costituita da una catena di blocchi, ognuno dei quali contiene un insieme di transazioni o dati. Una volta che un blocco viene aggiunto alla catena, le informazioni in esso contenute diventano praticamente impossibili da modificare o eliminare. Quindi, è come se ogni informazione fosse scritta con una penna indelebile su un grande quaderno che tutti possono vedere, ma nessuno può cambiare. Questa caratteristica rende la blockchain una tecnologia ideale per garantire la sicurezza, la trasparenza e l'integrità dei dati registrati."
+        },
+        {
+          "title": "In che modo la blockchain aiuta a ridare fiducia ai consumatori?",
+          "body": "La blockchain fornisce un metodo sicuro e trasparente per tracciare e verificare l'origine delle materie prime e dei passaggi di produzione. Poiché i dati registrati nella blockchain sono immutabili e facilmente accessibili, i consumatori possono verificare l'autenticità e la qualità dei prodotti che acquistano. Inoltre, la blockchain scoraggia la contraffazione e le frodi, poiché i produttori devono rispettare gli standard di qualità e sostenibilità, aumentando così la fiducia dei consumatori nei prodotti e nei marchi."
+        },
+        {
+          "title": "Chi è la DFINITY Foundation e la Blockchain di Internet Computer Protocol?",
+          "body": "La DFINITY Foundation è un'organizzazione no-profit con sede principale a Zurigo, in Svizzera, e sedi satellite a Palo Alto, San Francisco e Tokyo. Si occupa di ricerca e sviluppo nel campo delle tecnologie blockchain. La DFINITY Foundation ha sviluppato Internet Computer Protocol (ICP), una tecnologia blockchain innovativa e rivoluzionaria che mira a cambiare il modo in cui utilizziamo Internet. L'ICP permette di creare applicazioni e servizi decentralizzati, senza l'uso di servizi di cloud e web hosting tradizionali. Invece, sfrutta una rete di nodi indipendenti che funzionano come un computer condiviso, distribuendo la potenza di elaborazione su più dispositivi. In questo modo, il protocollo ICP può garantire maggiore sicurezza e trasparenza, preservando la privacy dei dati degli utenti e offrendo un'esperienza di nuova generazione. Questa Blockchain è stata pensata e creata con un solo obiettivo: mettere al centro delle sue funzionalità le persone. È una tecnologia che nasce per essere al servizio degli individui, per soddisfare i loro bisogni e per migliorare la loro vita quotidiana. Internet Computer Protocol è una soluzione ideale per aumentare la produzione di alta qualità, migliorare la sostenibilità ambientale e garantire la trasparenza e la sicurezza dal produttore al consumatore finale."
+        },
+        {
+          "title": "Chi è la ORIGYN Foundation?",
+          "body": "La ORIGYN Foundation è uno dei partner tecnologici di FederItaly che si dedica alla protezione dell'autenticità dei prodotti Made in Italy. Con sede a Neuchâtel, Svizzera, ORIGYN è un'organizzazione no-profit che sviluppa soluzioni basate su tecnologia blockchain. Grazie alla loro tecnologia innovativa, ORIGYN fornisce un protocollo per creare potenti certificati digitali che convalidano la provenienza dei prodotti, garantendone la qualità in modo immutabile e indiscutibile. La tecnologia di certificazione digitale di ORIGYN è costruita su Internet Computer Protocol (ICP) sviluppata dalla DFINITY Foundation, il che la rende resistente alle manipolazioni e scalabile. Grazie alla partnership con ORIGYN, FederItaly può fornire ai produttori italiani strumenti per proteggere la loro proprietà intellettuale e garantire la sicurezza e la qualità dei loro prodotti. L'uso dei certificati digitali di ORIGYN protegge i prodotti dalla contraffazione, garantendo che il Made in Italy mantenga la sua reputazione di eccellenza e qualità. Ciò contribuisce a promuovere e difendere il patrimonio culturale italiano, proteggendo l'autenticità dei prodotti Made in Italy."
+        },
+        {
+          "title": "Cosa è il Marchio?",
+          "body": "Il Marchio \"Federitaly 100% Made in Italy\" è una certificazione rigorosa conforme all'art. 16 Legge 166/09, del Disciplinare del Marchio e di tutta la regolamentazione Comunitaria. Il Marchio vuole essere garanzia di qualità e originalità del prodotto 100% italiano, riconosciuto ed apprezzato in tutto il mondo. Per evitare frodi e ridare fiducia ai consumatori il Certificato di assegnazione del marchio e le fasi salienti dell’iter certificativo sono depositati su di una piattaforma Blockchain e verificabili tramite un QR Code sul prodotto. Spesso, quando acquistiamo prodotti etichettati come \"Italiani\" e paghiamo un prezzo maggiore rispetto a quelli che non lo sono, vorremmo verificare questa informazione. Ma generalmente non possiamo farlo, perché non c'è nessuno che ce lo garantisce. Grazie alla tecnologia blockchain e al processo di certificazione ideato da FederItaly in Partnership con le Fondazioni DFINITY e ORIGYN, questo problema viene finalmente risolto. Con il processo introdotto da FederItaly, abbiamo un ulteriore step che rende l'informazione ancora più veritiera: un processo di validazione e verifica, in cui le aziende devono sottoporsi a un'ispezione completa del loro processo produttivo, assicurando che tutti i materiali e i processi siano originari del territorio italiano."
+        },
+        {
+          "title": "Differenza tra il Marchio e altre diciture \"verificato su tecnologia blockchain\" attualmente esistenti?",
+          "body": "Ad oggi, quando su un prodotto viene messa la dicitura \"verificato su tecnologia blockchain\", spesso e volentieri il risultato è che non succede niente o si viene reindirizzati al sito web dell'azienda, ma in realtà nessuna informazione relativamente ai dati su blockchain viene fornita. Invece, con il marchio “FederItaly 100% Made in Italy”, una volta caricato il certificato sulla blockchain, viene generato un QR Code associato ad esso che verrà poi applicato sui prodotti certificati. Il consumatore avrà così la possibilità di controllare tutte le informazioni sul produttore e sul prodotto acquistato, andando a verificare l’informazione su di un sito web decentralizzato."
+        },
+        {
+          "title": "Quali sono i requisiti per ottenere la certificazione?",
+          "body": "Prodotti 100% Made in Italy nel rispetto delle seguenti condizioni: fabbricati interamente in Italia; realizzati con semilavorati italiani; realizzati con materiali naturali di qualità e di prima scelta anche di provenienza estera se non reperibili sul mercato nazionale (oro, diamanti, pietre preziose, platino, spezie rare ecc.); realizzati con disegni e progetti di proprietà esclusiva dell’azienda di produzione italiana; realizzati adottando procedimenti considerati produzioni tipiche tradizionali. - Azienda con sede legale sul territorio italiano e in possesso delle autorizzazioni di legge per la produzione e/o la commercializzazione dei prodotti. - Azienda conforme alla normativa sulla sicurezza (DVR e attestati di legge). - Essere associati a Federitaly (processo completamente gratuito)"
+        },
+        {
+          "title": "Come avviene la certificazione?",
+          "body": "L’iter di Certificazione prevede una fase di pre-analisi in cui si verificano i requisiti di base per poter accedere alla compilazione della domanda. Questa fase non implica nessun costo per l’azienda e non genera nessun impegno. Dopo aver ricevuto l’esito della pre-analisi è possibile compilare la domanda. Dopo la compilazione della domanda parte la fase di analisi documentale che metta in evidenza la totale rispondenza ai requisiti richiesti. A seguito dell’esito positivo della fase di verifica documentale verrà effettuato un Audit in azienda da parte di un professionista certificato e autorizzato da FederItaly per la verifica fisica del processo produttivo. Al termine dell’intero processo verrà rilasciato dalla Commissione Tecnica Interna di FederItaly, il Certificato e il file contenente il Logo del Marchio con il QR Code personalizzato. Il Marchio e il QR Code dovranno essere stampati (a cura dell’azienda) sulle etichette di ogni prodotto oggetto di certificazione. Il Certificato e le fasi salienti della certificazione saranno visibili sulla piattaforma blockchain ICP - Internet Computer Protocol - e raggiungibile tramite la scansione del QR Code."
+        },
+        {
+          "title": "Che differenza c’è tra Certificazione dell’Origine e Tracciabilità usando Tecnologia Blockchain?",
+          "body": "FederItaly si contraddistingue da altre interessanti iniziative esistenti grazie al suo focus sulla certificazione dell'origine dei prodotti italiani, assicurando ai consumatori un livello superiore di sicurezza e trasparenza rispetto alla semplice tracciabilità della filiera produttiva. Il marchio rappresenta una garanzia di autenticità e qualità per i prodotti italiani, consentendo ai produttori di emergere in un mercato sempre più competitivo. La certificazione dell'origine di FederItaly pone l'accento sull'autenticità e la provenienza dei prodotti, rispetto alla tracciabilità della filiera produttiva, che si concentra principalmente sui singoli componenti, materiali e percorso del prodotto, senza garantire necessariamente l'origine 100% italiana del prodotto finale. I consumatori beneficiano della certificazione dell'origine offerta da FederItaly, in quanto i prodotti certificati devono soddisfare criteri e standard di qualità specifici. Per i produttori, la certificazione \"FederItaly 100% Made In Italy\" rappresenta un valore aggiunto, permettendo loro di differenziarsi dai concorrenti e di affermarsi come produttori di prodotti autentici e di alta qualità. La tracciabilità della filiera produttiva, sebbene importante, potrebbe non offrire lo stesso prestigio e differenziazione nel mercato."
+        },
+        {
+          "title": "Quali sono i limiti della Blockchain quando si parla di tracciabilità della filiera produttiva?",
+          "body": "La tecnologia blockchain gioca un ruolo cruciale nella tracciabilità della filiera produttiva, consentendo ai vari attori di registrare e condividere informazioni in modo sicuro e immutabile, quindi i vari attori coinvolti hanno accesso alla Blockchain senza che nessuno verifichi l'informazione da loro immessa. Come ogni tecnologia, la blockchain ha anche dei limiti e dei rischi. Il principale di questi è il problema dell'Off-Chain, ovvero delle informazioni che devono essere inserite nella blockchain. In questo senso, il processo di certificazione ideato da FederItaly rappresenta un esempio di buona pratica, perché prevede una verifica dell'informazione a monte, garantendo la sua veridicità e autenticità. Il marchio \"FederItaly 100% Made In Italy\" offre un livello superiore di sicurezza e trasparenza per i consumatori, garantendo che i prodotti acquistati siano veramente italiani."
+        },
+        {
+          "title": "Come viene creata l’innovazione?",
+          "body": "1. Il produttore vuole che il suo prodotto sia certificato \"FederItaly 100% Made in Italy\". 2. FederItaly sottopone il produttore a un rigoroso processo di certificazione, che include un audit completo, prima di rilasciare il Certificato. 3. Le informazioni contenute nel certificato vengono quindi archiviate in modo sicuro in uno smart contract sulla blockchain ICP. 4. Viene generato un codice QR dal certificato e viene consegnato al produttore. 5. Il produttore è ora autorizzato a utilizzare il codice QR e può stamparlo su tutti i prodotti certificati o sul materiale di marketing. 6. Scansionando il codice QR, i consumatori vengono reindirizzati al sito web decentralizzato, dove possono visualizzare tutti i dettagli del certificato. 7. Il sito web interagisce con il Canister (o Smart Contract o Contratto Intelligente) e recupera le informazioni per il consumatore."
+        },
+        {
+          "title": "Dovrò cambiare il mio modo di lavorare e assumere nuovo personale?",
+          "body": "Il progetto FEDERITALY è stato pensato per non richiedere cambiamenti nell'organizzazione dei processi produttivi delle singole aziende. L'adozione della blockchain per certificare l'origine dei prodotti mira a sostenere l'azienda nel raggiungimento degli obiettivi di business e nella promozione della sua qualità, senza incidere sulle procedure consolidate o richiedere l'assunzione di nuovo personale."
+        },
+        {
+          "title": "Dovrò comprare nuove attrezzature informatiche?",
+          "body": "Il progetto è stato strutturato per essere il più semplice possibile. Non è necessaria alcuna attrezzatura informatica, FEDERITALY si prenderà cura di creare il certificato tramite la piattaforma per caricare le informazioni sulla Blockchain. L’azienda avrà la possibilità di ricevere il certificato sia in formato NFT che come PDF condiviso tramite PEC. FEDERITALY supporta l'azienda durante il processo di apertura del wallet per ricevere l’NFT, fornendo guide e video esplicativi (processo che richiede non più di 2 minuti)."
+        },
+        {
+          "title": "Quali sono i costi per certificarsi?",
+          "body": "Le spese relative all’espletamento dell’iter procedurale di verifica dei requisiti (verifica documentale + audit aziendale) è di €1.850,00 + iva. Il Certificato ha validità 1 (uno) anno dalla data dal rilascio. Alla scadenza, sarà necessario ripetere il processo di certificazione e pagare il costo come per il primo anno. Non sono previsti costi aggiuntivi per il deposito del certificato sulla blockchain."
+        },
+        {
+          "title": "Quali sono i Benefici del Certificato?",
+          "body": "Il certificato offre ai consumatori un modo affidabile e semplice per verificare l'autenticità dei prodotti Made in Italy, grazie all'utilizzo della tecnologia blockchain che garantisce l'inalterabilità delle informazioni. Per le aziende, il marchio rappresenta un simbolo di orgoglio e qualità, testimoniando l'impegno nel realizzare prodotti di alta qualità utilizzando materie prime e processi di lavorazione italiani e adattandosi alle innovazioni e alle nuove tecnologie."
+        },
+        {
+          "title": "Quali sono i Vantaggi Tecnici del Certificato?",
+          "body": "L'architettura blockchain utilizzata nel progetto offre numerosi vantaggi e rappresenta un approccio completamente nuovo e all'avanguardia. Le informazioni sono memorizzate in modo decentralizzato, eliminando la necessità di un'autorità centrale per gestirle e la garanzia dell’immutabilità dei dati. Inoltre, l'uso di un sito web decentralizzato distribuito su una rete di nodi (computer appartenenti alla rete) rende il sistema più sicuro e affidabile rispetto ai siti web tradizionali ospitati su server centralizzati. Questi sono così in grado di fornire un maggiore livello di sicurezza e di privacy, poiché i dati non sono soggetti ai rischi dei siti web tradizionali. Questo è ciò che fa veramente la differenza e rende l’iniziativa unica rispetto a tutte le altre già esistenti e ai metodi tradizionali di verifica."
+        },
+        {
+          "title": "Che ulteriori Vantaggi dà il Certificato?",
+          "body": "Il certificato non è solo una validazione dell'autenticità, ma offre anche l’accesso ad un'esperienza interattiva e coinvolgente attraverso la Pagina Experience, una sorta di sala d'esposizione digitale dove le aziende possono esibire i loro lavori più pregiati attraverso una ricca trama di contenuti multimediali. Video che mostrano l'intricata arte del loro artigianato, immagini che catturano l'essenza dei loro prodotti e processi, PDF che dettagliano le loro iniziative di sostenibilità e brochure che presentano le loro ultime collezioni: tutto è accessibile con una singola scansione. Questa pagina permette di avvicinare i consumatori alla storia e all'artigianalità dell'azienda, creando legami significativi con la clientela. Il Certificato offre un'opportunità senza precedenti per le imprese, ossia sfruttare il potere del raccontare una storia per creare esperienze sia indimenticabili che affascinanti."
+        },
+        {
+          "title": "Dovrò fare corsi di formazione?",
+          "body": "Non è necessario seguire corsi di formazione, poiché il personale di FederItaly assisterà l'azienda in ogni fase della certificazione, fornendo supporto e chiarimenti."
+        },
+        {
+          "title": "Posso partecipare se non esporto?",
+          "body": "Sì, tutte le aziende che rispettano i requisiti elencati possono partecipare al progetto, indipendentemente dal fatto che esportino o meno i loro prodotti."
+        },
+        {
+          "title": "Possono partecipare più aziende della stessa filiera?",
+          "body": "Sì, ciascuna azienda può aderire all'iniziativa se rispetta i requisiti previsti, anche se appartengono alla stessa filiera produttiva."
+        },
+        {
+          "title": "Sono esposto ai rischi di speculazione delle criptovalute?",
+          "body": "No, non corri alcun rischio di speculazione legato alle criptovalute, poiché i costi delle transazioni per depositare il certificato sulla blockchain sono inclusi nel costo dell'iniziativa. Inoltre, la tecnologia di Internet Computer Protocol è stata scelta proprio perché non richiede l'utilizzo di wallet o criptovalute per visualizzare il certificato, a differenza di altre blockchain."
+        },
+        {
+          "title": "Può partecipare un’impresa sociale?",
+          "body": "Le iniziative con uno sfondo sociale possono partecipare al progetto, purché rispettino i requisiti previsti dalla legge 166/09 art.16 e il disciplinare di FederItaly."
+        }
+      ]
+    },
+    "Contacts": {
+      "form": {
+        "title": "Richiedi subito maggiori informazioni per certificare la tua azienda",
+        "fields_labels": {
+          "name": "Nome",
+          "phone_number": "Telefono",
+          "email": "Email",
+          "company_name": "Nome Azienda",
+          "website": "Sito Web",
+          "message": "Messaggio"
+        },
+        "validation_errors": {
+          "email": "Inserisci un indirizzo email valido",
+          "min_length": "Inserisci almeno 1 carattere"
+        },
+        "action": "Invia il Messaggio",
+        "success_message": "La richiesta è stata inviato con successo",
+        "error_message": "Si è verificato un errore durante l'invio della richiesta, riprova più tardi"
+      }
+    }
+  }
+}

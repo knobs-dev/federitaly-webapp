@@ -1,30 +1,24 @@
-import type { FC } from "react";
+import { type FC } from "react";
 import Image from "next/image";
-import { useLocale, useTranslations } from "next-intl";
-import Link from "next-intl/link";
+import { useLocale, useTranslations } from "@hooks/useTranslations";
+import { useQuery } from "react-query";
+import { fetchCompanies } from "utils/api";
 
 import { Card, Slider } from "@components";
+import { IconArrowRight } from "@components/icons";
+import Link from "@components/RetainQueryLink";
 
-import {
-  getCertificationData,
-  getCertifiedCompanies,
-} from "@api/certifications";
-import { supportedLocales } from "@constants";
-import { formatCertifiedCompaniesData } from "@utils";
+type HomeContentProps = {};
 
-import { IconArrowRight } from "@icons";
-
-type HomeContentProps = {
-  certifiedCompaniesDataFormatted: ReturnType<
-    typeof formatCertifiedCompaniesData
-  >;
-};
-
-const HomeContent: FC<HomeContentProps> = ({
-  certifiedCompaniesDataFormatted,
-}) => {
+const HomeContent: FC<HomeContentProps> = () => {
+  const locale = useLocale();
   const t = useTranslations("Home");
   const commonT = useTranslations("Common");
+
+  const { data: certifiedCompaniesDataFormatted } = useQuery(
+    ["certifiedCompanies", locale],
+    fetchCompanies,
+  );
 
   return (
     <>
@@ -48,7 +42,7 @@ const HomeContent: FC<HomeContentProps> = ({
                   {t("slides.0.body")}
                 </p>
               </div>
-              <Link href="/" className="button mt-8 inline-block">
+              <Link href="/contacts" className="button mt-8 inline-block">
                 {t("slides.0.action")}
               </Link>
             </div>
@@ -66,7 +60,10 @@ const HomeContent: FC<HomeContentProps> = ({
                   className="absolute bottom-0 right-0 translate-y-2/4"
                 />
               </div>
-              <Link href="/" className="button mt-8 inline-block">
+              <Link
+                href="/the-certification"
+                className="button mt-8 inline-block"
+              >
                 {t("slides.1.action")}
               </Link>
             </div>
@@ -103,7 +100,8 @@ const HomeContent: FC<HomeContentProps> = ({
           </Link>
         </header>
         <div className="mt-2 space-y-1.5">
-          {certifiedCompaniesDataFormatted.length > 0 &&
+          {certifiedCompaniesDataFormatted &&
+            certifiedCompaniesDataFormatted.length > 0 &&
             certifiedCompaniesDataFormatted.map(
               ({
                 id,
@@ -124,34 +122,16 @@ const HomeContent: FC<HomeContentProps> = ({
                 </Link>
               ),
             )}
-          {certifiedCompaniesDataFormatted.length === 0 && (
-            <p className="py-16 text-center text-sm">
-              {commonT("no_certified_companies")}
-            </p>
-          )}
+          {certifiedCompaniesDataFormatted &&
+            certifiedCompaniesDataFormatted.length === 0 && (
+              <p className="py-16 text-center text-sm">
+                {commonT("no_certified_companies")}
+              </p>
+            )}
         </div>
       </section>
     </>
   );
 };
 
-const Home = async () => {
-  const locale = useLocale();
-
-  const certifiedCompanies = await getCertifiedCompanies();
-  const certifiedCompaniesData = await Promise.all(
-    certifiedCompanies.map((company) => getCertificationData(company)),
-  );
-  const certifiedCompaniesDataFormatted = formatCertifiedCompaniesData(
-    certifiedCompaniesData,
-    locale as (typeof supportedLocales)[number],
-  );
-
-  return (
-    <HomeContent
-      certifiedCompaniesDataFormatted={certifiedCompaniesDataFormatted}
-    />
-  );
-};
-
-export default Home;
+export default HomeContent;

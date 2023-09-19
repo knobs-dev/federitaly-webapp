@@ -9,9 +9,9 @@ import {
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { twMerge } from "tailwind-merge";
 
-import { clientT } from "@store/i18n";
+import { IconClose } from "@components/icons";
 
-import { IconClose } from "@icons";
+import { clientT } from "@store/i18n";
 
 const Dialog = DialogPrimitive.Root;
 

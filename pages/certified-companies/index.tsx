@@ -1,11 +1,12 @@
-"use client";
-
 import { useEffect, useRef, useState, type FC } from "react";
 import { createPortal } from "react-dom";
+import { useLocale } from "@hooks/useTranslations";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import Fuse from "fuse.js";
 import debounce from "lodash.debounce";
-import Link from "next-intl/link";
+import { useTranslation } from "react-i18next";
+import { useQuery } from "react-query";
+import { fetchCompanies } from "utils/api";
 
 import {
   Card,
@@ -15,33 +16,34 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@components";
+import { IconArrowRight, IconSearch } from "@components/icons";
+import Link from "@components/RetainQueryLink";
 
 import { clientT } from "@store/i18n";
 import { usePrevious } from "@hooks";
-import {
-  filterCertifiedCompaniesFormattedBy,
-  formatCertifiedCompaniesData,
-} from "@utils";
+import { filterCertifiedCompaniesFormattedBy } from "@utils";
 
 import type { SortByCertifiedCompanies } from "@types";
 
-import { IconArrowRight, IconSearch } from "@icons";
+type CertifiedCompaniesContentProps = {};
 
-type CertifiedCompaniesContentProps = {
-  certifiedCompaniesDataFormatted: ReturnType<
-    typeof formatCertifiedCompaniesData
-  >;
-};
-
-const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = ({
-  certifiedCompaniesDataFormatted,
-}) => {
+const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = () => {
+  const locale = useLocale();
   const virtualizedListRef = useRef(null);
+
+  const { data: certifiedCompaniesDataFormatted } = useQuery(
+    ["certifiedCompanies", locale],
+    fetchCompanies,
+  );
 
   const [
     filteredCertifiedCompaniesDataFormatted,
     setFilteredCertifiedCompaniesDataFormatted,
   ] = useState(certifiedCompaniesDataFormatted);
+
+  useEffect(() => {
+    setFilteredCertifiedCompaniesDataFormatted(certifiedCompaniesDataFormatted);
+  }, [certifiedCompaniesDataFormatted]);
 
   const [search, setSearch] = useState("");
   const prevSearch = usePrevious(search);
@@ -49,8 +51,12 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = ({
   const [sortBy, setSortBy] = useState<SortByCertifiedCompanies>("most-recent");
   const prevSortBy = usePrevious(sortBy);
 
+  const { t } = useTranslation();
+
   const rowVirtualizer = useVirtualizer({
-    count: filteredCertifiedCompaniesDataFormatted.length,
+    count: filteredCertifiedCompaniesDataFormatted
+      ? filteredCertifiedCompaniesDataFormatted.length
+      : 0,
     getScrollElement: () => virtualizedListRef.current,
     estimateSize: () => 70,
   });
@@ -71,12 +77,14 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = ({
       };
 
       const fuse = new Fuse(
-        filteredCertifiedCompaniesDataFormatted,
+        filteredCertifiedCompaniesDataFormatted || [],
         fuseOptions,
       );
 
       if (
         search === "" &&
+        filteredCertifiedCompaniesDataFormatted &&
+        certifiedCompaniesDataFormatted &&
         filteredCertifiedCompaniesDataFormatted.length !==
           certifiedCompaniesDataFormatted.length
       ) {
@@ -93,12 +101,12 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = ({
         ),
       );
     }
-  }, [search]);
+  }, [search, certifiedCompaniesDataFormatted]);
 
   useEffect(() => {
     if (prevSortBy !== undefined && prevSortBy !== sortBy) {
       setFilteredCertifiedCompaniesDataFormatted((prev) =>
-        filterCertifiedCompaniesFormattedBy(sortBy, [...prev]),
+        filterCertifiedCompaniesFormattedBy(sortBy, [...(prev || [])]),
       );
     }
   }, [sortBy]);
@@ -109,17 +117,15 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = ({
         <div className="relative w-full">
           <input
             className="h-11 w-full border-1 border-[#EAEBEC4A] rounded-lg bg-[#403E62CC] pl-10 text-[0.9375rem] font-medium placeholder:text-[#F2F3F399]"
-            placeholder={
-              clientT.value?.CertifiedCompanies.filters.search_company
-            }
+            placeholder={t("CertifiedCompanies.filters.search_company")}
             onChange={handleSearch}
           />
           <IconSearch className="absolute top-1/2 ml-3 h-[1.1875rem] w-[1.1875rem] stroke-2 stroke-[#D5D8DC] -translate-y-1/2" />
         </div>
         <div className="mt-3 w-full">
-          <DropdownMenu>
+          {/* <DropdownMenu>
             <DropdownMenuTrigger className="h-12 w-full flex items-center justify-between rounded-lg bg-[#A7A7B866] px-4 text-sm font-medium">
-              {clientT.value?.CertifiedCompanies.filters.sort_by.placeholder}
+              {t("CertifiedCompanies.filters.sort_by.placeholder")}
               <IconArrowRight className="h-4 w-4 rotate-90 fill-white" />
             </DropdownMenuTrigger>
             <DropdownMenuContent className="mt-2 w-[calc(100vw-2rem)] border-0 bg-[#55567a] p-4 text-white space-y-3">
@@ -136,10 +142,7 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = ({
                   className="mr-2"
                   checked={sortBy === "most-recent"}
                 />
-                {
-                  clientT.value?.CertifiedCompanies.filters.sort_by.options
-                    .most_recent
-                }
+                {t("CertifiedCompanies.filters.sort_by.options.most_recent")}
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="flex items-center text-sm font-normal"
@@ -150,10 +153,7 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = ({
                   className="mr-2"
                   checked={sortBy === "least-recent"}
                 />
-                {
-                  clientT.value?.CertifiedCompanies.filters.sort_by.options
-                    .least_recent
-                }
+                {t("CertifiedCompanies.filters.sort_by.options.least_recent")}
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="flex items-center text-sm font-normal"
@@ -166,10 +166,9 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = ({
                   className="mr-2"
                   checked={sortBy === "most-recent-expiration-date"}
                 />
-                {
-                  clientT.value?.CertifiedCompanies.filters.sort_by.options
-                    .most_recent_expiration_date
-                }
+                {t(
+                  "CertifiedCompanies.filters.sort_by.options.most_recent_expiration_date",
+                )}
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="flex items-center text-sm font-normal"
@@ -182,61 +181,64 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = ({
                   className="mr-2"
                   checked={sortBy === "least-recent-expiration-date"}
                 />
-                {
-                  clientT.value?.CertifiedCompanies.filters.sort_by.options
-                    .least_recent_expiration_date
-                }
+                {t(
+                  "CertifiedCompanies.filters.sort_by.options.least_recent_expiration_date",
+                )}
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
         </div>
       </header>
       <section className="mt-4 flex-1 overflow-y-auto" ref={virtualizedListRef}>
-        {filteredCertifiedCompaniesDataFormatted.length > 0 && (
-          <div
-            className="relative w-full"
-            style={{
-              height: `${rowVirtualizer.getTotalSize()}px`,
-            }}
-          >
-            {rowVirtualizer
-              .getVirtualItems()
-              .map(({ key, size, start, index }) => (
-                <div
-                  key={key}
-                  className="absolute left-0 top-0 w-full"
-                  style={{
-                    height: `${size}px`,
-                    transform: `translateY(${start}px)`,
-                  }}
-                >
-                  <Link
-                    href={`/certified-company/${filteredCertifiedCompaniesDataFormatted[index].id}`}
-                  >
-                    <Card
-                      profilePhoto={
-                        filteredCertifiedCompaniesDataFormatted[index]
-                          .companyProfilePhoto
-                      }
-                      name={
-                        filteredCertifiedCompaniesDataFormatted[index]
-                          .companyName
-                      }
-                      expirationDate={
-                        filteredCertifiedCompaniesDataFormatted[index]
-                          .certificationExpirationDate
-                      }
-                    />
-                  </Link>
-                </div>
-              ))}
-          </div>
-        )}
-        {filteredCertifiedCompaniesDataFormatted.length === 0 && (
-          <p className="h-full w-full flex items-center justify-center py-16 text-center text-sm">
-            {clientT.value?.Common.no_certified_companies}
-          </p>
-        )}
+        {filteredCertifiedCompaniesDataFormatted &&
+          filteredCertifiedCompaniesDataFormatted.length > 0 && (
+            <div
+              className="relative w-full"
+              style={{
+                height: `${rowVirtualizer.getTotalSize()}px`,
+              }}
+            >
+              {rowVirtualizer
+                .getVirtualItems()
+                .map(({ key, size, start, index }) => {
+                  return (
+                    <div
+                      key={key}
+                      className="absolute left-0 top-0 w-full"
+                      style={{
+                        height: `${size}px`,
+                        transform: `translateY(${start}px)`,
+                      }}
+                    >
+                      <Link
+                        href={`/certified-company/${filteredCertifiedCompaniesDataFormatted[index].id}`}
+                      >
+                        <Card
+                          profilePhoto={
+                            filteredCertifiedCompaniesDataFormatted[index]
+                              .companyProfilePhoto
+                          }
+                          name={
+                            filteredCertifiedCompaniesDataFormatted[index]
+                              .companyName
+                          }
+                          expirationDate={
+                            filteredCertifiedCompaniesDataFormatted[index]
+                              .certificationExpirationDate
+                          }
+                        />
+                      </Link>
+                    </div>
+                  );
+                })}
+            </div>
+          )}
+        {filteredCertifiedCompaniesDataFormatted &&
+          filteredCertifiedCompaniesDataFormatted.length === 0 && (
+            <p className="h-full w-full flex items-center justify-center py-16 text-center text-sm">
+              {clientT.value?.Common.no_certified_companies}
+            </p>
+          )}
       </section>
     </>
   );

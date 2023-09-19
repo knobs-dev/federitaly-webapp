@@ -1,14 +1,13 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
-import { usePathname, useRouter } from "next-intl/client";
+import { useTranslation } from "react-i18next";
+
+import { IconArrowRight, IconClose, IconMenu } from "@components/icons";
 
 import { clientT } from "@store/i18n";
 import { usePrevious } from "@hooks";
-
-import { IconArrowRight, IconClose, IconMenu } from "@icons";
 
 import Sidebar from "./Sidebar";
 
@@ -17,8 +16,10 @@ const Header = () => {
 
   const router = useRouter();
 
-  const pathname = usePathname();
+  const pathname = router.pathname;
   const prevPathname = usePrevious(pathname);
+
+  const { t } = useTranslation();
 
   const isPathnameHome = pathname === "/";
 
@@ -35,14 +36,12 @@ const Header = () => {
   }, [pathname]);
 
   const pageTitles = {
-    "/certified-companies":
-      clientT.value?.Common.header_titles.certified_companies,
-    "/certified-company/[id]":
-      clientT.value?.Common.header_titles.certified_company,
-    "/privacy-policy": clientT.value?.Common.header_titles.privacy_policy,
-    "/the-certification": clientT.value?.Common.header_titles.the_certification,
-    "/faq": clientT.value?.Common.header_titles.faq,
-    "/contacts": clientT.value?.Common.header_titles.contacts,
+    "/certified-companies": t("Common.header_titles.certified_companies"),
+    "/certified-company/[id]": t("Common.header_titles.certified_company"),
+    "/privacy-policy": t("Common.header_titles.privacy_policy"),
+    "/the-certification": t("Common.header_titles.the_certification"),
+    "/faq": t("Common.header_titles.faq"),
+    "/contacts": t("Common.header_titles.contacts"),
   };
 
   const getPageTitle = () => {
@@ -58,7 +57,7 @@ const Header = () => {
   return (
     <>
       <AnimatePresence>{isSidebarOpen && <Sidebar />}</AnimatePresence>
-      <header className="fixed left-0 top-0 z-2 h-16 w-full flex items-center justify-between px-4">
+      <header className="fixed left-0 top-0 z-2 h-16 w-full flex items-center justify-between px-4 z-50">
         {isPathnameHome && (
           <Image
             src="/assets/images/logo-white.png"
@@ -71,9 +70,9 @@ const Header = () => {
           <button
             type="button"
             onClick={() => router.back()}
-            className="h-[2.625rem] w-[2.625rem] flex items-center justify-center border-1 border-[#FFFFFF1A] rounded-full"
+            className="h-[2.625rem] w-[2.625rem] flex items-center justify-center border-[1px] border-[#FFFFFF1A] rounded-full"
           >
-            <IconArrowRight className="w-3 rotate-180 fill-white" />
+            <IconArrowRight className="w-3 h-5 rotate-180 fill-white" />
             <span className="sr-only">
               {clientT.value?.Common.screen_readers_labels.go_back}
             </span>
