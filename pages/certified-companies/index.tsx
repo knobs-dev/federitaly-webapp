@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type FC } from "react";
+import { createPortal } from "react-dom";
 import { useLocale } from "@hooks/useTranslations";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import Fuse from "fuse.js";
@@ -7,8 +8,15 @@ import { useTranslation } from "react-i18next";
 import { useQuery } from "react-query";
 import { fetchCompanies } from "utils/api";
 
-import { Card } from "@components";
-import { IconSearch } from "@components/icons";
+import {
+  Card,
+  Checkbox,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@components";
+import { IconArrowRight, IconSearch } from "@components/icons";
 import Link from "@components/RetainQueryLink";
 
 import { clientT } from "@store/i18n";
@@ -115,9 +123,9 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = () => {
           <IconSearch className="absolute top-1/2 ml-3 h-[1.1875rem] w-[1.1875rem] stroke-2 stroke-[#D5D8DC] -translate-y-1/2" />
         </div>
         <div className="mt-3 w-full">
-          {/* <DropdownMenu>
+          <DropdownMenu>
             <DropdownMenuTrigger className="h-12 w-full flex items-center justify-between rounded-lg bg-[#A7A7B866] px-4 text-sm font-medium">
-              {clientT.value?.CertifiedCompanies.filters.sort_by.placeholder}
+              {t("CertifiedCompanies.filters.sort_by.placeholder")}
               <IconArrowRight className="h-4 w-4 rotate-90 fill-white" />
             </DropdownMenuTrigger>
             <DropdownMenuContent className="mt-2 w-[calc(100vw-2rem)] border-0 bg-[#55567a] p-4 text-white space-y-3">
@@ -134,10 +142,7 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = () => {
                   className="mr-2"
                   checked={sortBy === "most-recent"}
                 />
-                {
-                  clientT.value?.CertifiedCompanies.filters.sort_by.options
-                    .most_recent
-                }
+                {t("CertifiedCompanies.filters.sort_by.options.most_recent")}
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="flex items-center text-sm font-normal"
@@ -148,10 +153,7 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = () => {
                   className="mr-2"
                   checked={sortBy === "least-recent"}
                 />
-                {
-                  clientT.value?.CertifiedCompanies.filters.sort_by.options
-                    .least_recent
-                }
+                {t("CertifiedCompanies.filters.sort_by.options.least_recent")}
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="flex items-center text-sm font-normal"
@@ -164,10 +166,9 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = () => {
                   className="mr-2"
                   checked={sortBy === "most-recent-expiration-date"}
                 />
-                {
-                  clientT.value?.CertifiedCompanies.filters.sort_by.options
-                    .most_recent_expiration_date
-                }
+                {t(
+                  "CertifiedCompanies.filters.sort_by.options.most_recent_expiration_date",
+                )}
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="flex items-center text-sm font-normal"
@@ -180,13 +181,12 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = () => {
                   className="mr-2"
                   checked={sortBy === "least-recent-expiration-date"}
                 />
-                {
-                  clientT.value?.CertifiedCompanies.filters.sort_by.options
-                    .least_recent_expiration_date
-                }
+                {t(
+                  "CertifiedCompanies.filters.sort_by.options.least_recent_expiration_date",
+                )}
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu> */}
+          </DropdownMenu>
         </div>
       </header>
       <section className="mt-4 flex-1 overflow-y-auto" ref={virtualizedListRef}>
