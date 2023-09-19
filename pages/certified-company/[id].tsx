@@ -365,7 +365,7 @@ const CertifiedCompaniesContentClient: FC<
           {t("show_certification")}
         </button>
       </div>
-      {true && (
+      {showCert && (
         <div className="fixed w-full h-screen left-[50%] top-[50%]  translate-x-[-50%] translate-y-[-50%] bg-black flex items-center justify-center z-[60]">
           <div className="w-[80%]">
             <Certification
