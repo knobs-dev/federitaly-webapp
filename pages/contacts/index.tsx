@@ -2,6 +2,8 @@ import Image from "next/image";
 
 import { IconEmail, IconLocation, IconPhone } from "@components/icons";
 
+import ContactsContent from "./client";
+
 const Contacts = () => (
   <>
     <header>
@@ -31,7 +33,7 @@ const Contacts = () => (
         <hr className="translate-y-2 border-1 border-[#D1D3D499]" />
       </div>
     </header>
-    {/* <ContactsContent /> */}
+    <ContactsContent />
   </>
 );
 

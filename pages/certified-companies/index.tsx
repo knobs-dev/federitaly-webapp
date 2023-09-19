@@ -123,7 +123,7 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = () => {
           <IconSearch className="absolute top-1/2 ml-3 h-[1.1875rem] w-[1.1875rem] stroke-2 stroke-[#D5D8DC] -translate-y-1/2" />
         </div>
         <div className="mt-3 w-full">
-          <DropdownMenu>
+          {/* <DropdownMenu>
             <DropdownMenuTrigger className="h-12 w-full flex items-center justify-between rounded-lg bg-[#A7A7B866] px-4 text-sm font-medium">
               {t("CertifiedCompanies.filters.sort_by.placeholder")}
               <IconArrowRight className="h-4 w-4 rotate-90 fill-white" />
@@ -186,7 +186,7 @@ const CertifiedCompaniesContent: FC<CertifiedCompaniesContentProps> = () => {
                 )}
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
         </div>
       </header>
       <section className="mt-4 flex-1 overflow-y-auto" ref={virtualizedListRef}>

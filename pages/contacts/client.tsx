@@ -7,7 +7,7 @@ const ContactsContent = () => {
   const t = useTranslations("Contacts");
 
   return (
-    <section className="relative w-full flex flex-1 flex-col pt-5">
+    <section className="relative w-full flex flex-1 flex-col pt-5 h-full">
       <header className="h-12">
         <h2 className="text-[0.9375rem] font-semibold">{t("form.title")}</h2>
       </header>
@@ -37,7 +37,7 @@ const ContactsContent = () => {
               e.preventDefault();
               submit();
             }}
-            className="absolute left-0 top-[calc(3rem+1.25rem)] h-[calc(100%-3rem-1.25rem)] w-full flex flex-1 flex-col overflow-y-scroll pb-16 pt-2 space-y-2"
+            className="absolute left-0 top-[calc(3rem+1.25rem)] min-h-fit w-full flex flex-1 flex-col overflow-y-scroll pb-16 pt-2 space-y-2"
           >
             <Field
               name="name"
@@ -59,7 +59,7 @@ const ContactsContent = () => {
                       value={value}
                       onBlur={onBlur}
                       onChange={(e) => setValue(e.target.value)}
-                      className="bg-transparent text-sm font-semibold text-[#FBFBFB]"
+                      className="bg-transparent text-sm font-semibold text-[#FBFBFB] outline-none"
                     />
                   </div>
                   {errors.map((error) => (
@@ -90,7 +90,7 @@ const ContactsContent = () => {
                       value={value}
                       onBlur={onBlur}
                       onChange={(e) => setValue(e.target.value)}
-                      className="bg-transparent text-sm font-semibold text-[#FBFBFB]"
+                      className="bg-transparent text-sm font-semibold text-[#FBFBFB] outline-none"
                     />
                   </div>
                   {errors.map((error) => (
@@ -121,7 +121,7 @@ const ContactsContent = () => {
                       value={value}
                       onBlur={onBlur}
                       onChange={(e) => setValue(e.target.value)}
-                      className="bg-transparent text-sm font-semibold text-[#FBFBFB]"
+                      className="bg-transparent text-sm font-semibold text-[#FBFBFB] outline-none"
                     />
                   </div>
                   {errors.map((error) => (
@@ -152,7 +152,7 @@ const ContactsContent = () => {
                       value={value}
                       onBlur={onBlur}
                       onChange={(e) => setValue(e.target.value)}
-                      className="bg-transparent text-sm font-semibold text-[#FBFBFB]"
+                      className="bg-transparent text-sm font-semibold text-[#FBFBFB] outline-none"
                     />
                   </div>
                   {errors.map((error) => (
@@ -183,7 +183,7 @@ const ContactsContent = () => {
                       value={value}
                       onBlur={onBlur}
                       onChange={(e) => setValue(e.target.value)}
-                      className="bg-transparent text-sm font-semibold text-[#FBFBFB]"
+                      className="bg-transparent text-sm font-semibold text-[#FBFBFB] outline-none"
                     />
                   </div>
                   {errors.map((error) => (
@@ -214,7 +214,7 @@ const ContactsContent = () => {
                       value={value}
                       onBlur={onBlur}
                       onChange={(e) => setValue(e.target.value)}
-                      className="h-24 resize-none bg-transparent text-sm font-semibold text-[#FBFBFB]"
+                      className="h-24 resize-none bg-transparent text-sm font-semibold text-[#FBFBFB] outline-none"
                     />
                   </div>
                   {errors.map((error) => (
