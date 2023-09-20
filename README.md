@@ -21,11 +21,11 @@
 
 <p align="center">
   <a href="#development">Development</a> •
-  <a href="#deploy">Deploy on ICP</a> •
+  <a href="#deploy-on-icp">Deploy on ICP</a> •
   <a href="#license">License</a>
 </p>
 
-<!-- ![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif) -->
+![screenshot](./docs/images/screenshot.png)
 
 ## Development
 
