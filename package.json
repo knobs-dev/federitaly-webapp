@@ -8,7 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "clean": "git clean -xdf .next node_modules",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "icp:cleanup": "sh ./cleanup.sh",
+    "icp:deploy": "sh ./deploy.sh",
+    "dfx:start": "dfx start --clean --background",
+    "dfx:stop": "dfx stop"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.4.0",
