@@ -24,7 +24,7 @@ export default function Document() {
             />
           </div>
           <Providers>
-            <main className="absolute left-0 top-16 lg:top-0 h-[calc(100%-4rem)] lg:h-full w-full flex flex-1 flex-col overflow-y-auto py-4 lg:py-0 text-white -z-1 lg:text-black lg:bg-white">
+            <main className="absolute left-0 top-16 lg:top-0 h-[calc(100%-4rem)] lg:h-full w-full flex flex-1 flex-col overflow-y-auto p-4 lg:p-0 text-white -z-1 lg:text-black lg:bg-white">
               <Main />
               <NextScript />
             </main>
