@@ -2,6 +2,8 @@
   "translation": {
     "Common": {
       "expiration_date": "Scadenza",
+      "expiration_desktop": "DATA SCADENZA",
+      "release_desktop": "DATA CERTIFICATO",
       "no_certified_companies": "Nessuna azienda certificata",
       "see_more": "Vedi altro",
       "sidebar": {
@@ -36,6 +38,7 @@
         {
           "title": "100% Made in Italy",
           "body": "La nostra mission è tutelare e promuovere le eccellenze italiane in tutto il mondo. Il Marchio 100% Made in Italy identifica solo il meglio della produzione totalmente italiana. Una  barriera al fenomeno  dell'italian sounding.",
+          "body2": "La Federazione Italiana che tutela e promuove il \"Made in Italy\" nel mondo, ha ideato un metodo innovativo per fornire informazioni verificate e certificate riguardo all'origine dei vostri prodotti, permettendo di condividere la vera essenza dei \"prodotti italiani\". La certificazione \"FederItaly 100% Made in Italy\" si trasforma in un'esperienza coinvolgente e consapevole per il consumatore, offrendo un modo innovativo per esaltare qualità, creatività e bellezza della produzione 100% italiana.",
           "action": "Contattaci"
         },
         {
