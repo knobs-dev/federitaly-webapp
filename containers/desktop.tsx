@@ -80,12 +80,13 @@ const HomeDesktop: FC<THomeDesktop> = ({ certifiedCompaniesDataFormatted }) => {
             {t("Common.header_titles.certified_companies")}
           </div>
         </div>
-        <div className="col-span-4 flex justify-center items-center relative">
+        <div className="col-span-4 flex justify-end items-center relative">
           <Image
-            src="/assets/images/federitaly-cert.png"
+            src="/assets/images/federitaly-certified.png"
             alt="federitaly cert"
             width={320}
             height={320}
+            className="opacity-30"
           />
         </div>
       </section>

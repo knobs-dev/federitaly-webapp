@@ -15,9 +15,9 @@ const HeaderDesktop: FC<THeaderDesktop> = () => {
   return (
     <div className="container mx-auto flex justify-between items-start bg-transparent pt-4">
       <Image
-        src="/assets/images/federitaly-cert.png"
+        src="/assets/images/federitaly-certified.png"
         alt="federitaly cert logo"
-        width={174}
+        width={135}
         height={135}
       />
       <div className="flex justify-end items-center space-x-12">
