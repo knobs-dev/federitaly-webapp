@@ -267,8 +267,10 @@
       ]
     },
     "Contacts": {
+      "us": "Se sei interessato a scoprire come certificare la tua azienda chiamaci adesso: un consulente sarà a tua disposizione.",
       "form": {
         "title": "Richiedi subito maggiori informazioni per certificare la tua azienda",
+        "subtitle": "Compila il form e ti invieremo tutte le informazioni necessarie per accedere al processo di certificazione 100% MADE IN ITALY",
         "fields_labels": {
           "name": "Nome",
           "phone_number": "Telefono",
