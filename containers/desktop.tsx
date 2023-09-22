@@ -19,7 +19,7 @@ const HomeDesktop: FC<THomeDesktop> = ({ certifiedCompaniesDataFormatted }) => {
   const { t } = useTranslation();
   const router = useRouter();
   return (
-    <div className="relative">
+    <div className="relative pb-12">
       <HeaderDesktop />
       <div className="absolute top-0 left-0 h-[100%] w-[70%]">
         <Image
