@@ -57,6 +57,7 @@
       }
     },
     "CertifiedCompanies": {
+      "result": "{count} certified companies",
       "filters": {
         "search_company": "Search company",
         "sort_by": {

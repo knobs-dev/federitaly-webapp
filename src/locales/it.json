@@ -57,6 +57,7 @@
       }
     },
     "CertifiedCompanies": {
+      "result": "{{count}} aziende certificate",
       "filters": {
         "search_company": "Cerca azienda",
         "sort_by": {

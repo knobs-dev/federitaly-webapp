@@ -19,26 +19,22 @@ const HomeContent: FC<HomeContentProps> = () => {
     fetchCompanies,
   );
 
-  return (
-    <>
-      {isTablet ? (
-        <HomeMobile
-          certifiedCompaniesDataFormatted={
-            certifiedCompaniesDataFormatted as ReturnType<
-              typeof formatCertifiedCompaniesData
-            >
-          }
-        />
-      ) : (
-        <HomeDesktop
-          certifiedCompaniesDataFormatted={
-            certifiedCompaniesDataFormatted as ReturnType<
-              typeof formatCertifiedCompaniesData
-            >
-          }
-        />
-      )}
-    </>
+  return isTablet ? (
+    <HomeMobile
+      certifiedCompaniesDataFormatted={
+        certifiedCompaniesDataFormatted as ReturnType<
+          typeof formatCertifiedCompaniesData
+        >
+      }
+    />
+  ) : (
+    <HomeDesktop
+      certifiedCompaniesDataFormatted={
+        certifiedCompaniesDataFormatted as ReturnType<
+          typeof formatCertifiedCompaniesData
+        >
+      }
+    />
   );
 };
 
