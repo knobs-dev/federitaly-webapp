@@ -149,6 +149,33 @@
         "body": [
           "L'uso della tecnologia blockchain per verificare l'origine e la qualità dei prodotti è, quindi, un passo importante per ridare fiducia ai consumatori e garantire che le informazioni siano affidabili e veritiere.",
           "FederItaly crede che le aziende che investono nella qualità dei loro prodotti e si adattano alle nuove tecnologie per valorizzare i loro clienti e consumatori siano i veri protagonisti dell'economia italiana."
+        ],
+        "list": [
+          {
+            "title": "Origine di Qualità",
+            "body": "Lorem ipsuim Dolor Sit Amet consectetur Adipiscing Elit."
+          },
+          {
+            "title": "Verifica",
+            "body": "Lorem ipsuim Dolor Sit Amet consectetur Adipiscing Elit."
+          },
+          {
+            "title": "Fiducia",
+            "body": "Lorem ipsuim Dolor Sit Amet consectetur Adipiscing Elit."
+          },
+          {
+            "title": "Autenticità del Prodotto",
+            "body": "Lorem ipsuim Dolor Sit Amet consectetur Adipiscing Elit."
+          }
+        ],
+
+        "subtitle": "Il marchio \"federitaly 100% made in italy\" e' per le aziende italiane la porta di accesso al mercato globale",
+        "body2": "Il certificato non è solo una validazione dell'autenticità, ma anche una porta di accesso ad un'esperienza interattiva e coinvolgente, grazie alla Pagina Esperienza. Immagina questa scena: Un consumatore che acquista un prodotto italiano certificato, con il QR Code associato al certificato stampato sulla sua etichetta. Quando il QR code viene scansionato, il consumatore è immediatamente trasportato nel cuore della storia dell'azienda, esplorando la passione e l'artigianalità presente in ogni creazione.",
+        "bodyList": [
+          "Ecco cosa offre la Pagina Esperienza: un'opportunità per le aziende di appassionare ed ispirare il loro pubblico come mai prima d'ora.",
+          "Pensala come uno showroom digitale, dove le aziende possono esporre i loro migliori lavori attraverso un ricco mosaico di contenuti multimediali.",
+          "Video che mostrano l'arte intricata della loro maestria, immagini che catturano l'essenza del loro marchio, PDF che dettagliano le loro iniziative di sostenibilità, e brochure con le loro ultime collezioni - sono tutti accessibili con una sola scansione.",
+          "La Pagina Esperienza è più di un semplice mezzo per la condivisione dei contenuti, è un palcoscenico dove le aziende possono rivelare la loro vera essenza - dimostrando la loro autentica identità e costruendo legami significativi con i loro clienti."
         ]
       }
     },

@@ -99,8 +99,104 @@ const TheCertificationDesktop: React.FC<TTheCertificationDesktop> = () => {
               {t("TheCertification.blockchain_section.body.1")}
             </p>
           </div>
+
+          <div className="col-span-3 mt-8 h-full flex flex-col justify-center items-center">
+            <div className="bg-white p-6 rounded-[1.5rem]">
+              <Image
+                src="/assets/images/quality.png"
+                width={64}
+                height={64}
+                alt="quality"
+              />
+              <h4 className="text-[1.125rem] font-semibold text-[#0A1A36] mt-4">
+                {t("TheCertification.blockchain_section.list.0.title")}
+              </h4>
+              <p className="text-[1.125rem] font-normal mt-2 text-[#615E5E]">
+                {t("TheCertification.blockchain_section.list.0.body")}
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-[1.5rem] mt-8">
+              <Image
+                src="/assets/images/verification.png"
+                width={64}
+                height={64}
+                alt="quality"
+              />
+              <h4 className="text-[1.125rem] font-semibold text-[#0A1A36] mt-4">
+                {t("TheCertification.blockchain_section.list.2.title")}
+              </h4>
+              <p className="text-[1.125rem] font-normal mt-2 text-[#615E5E]">
+                {t("TheCertification.blockchain_section.list.2.body")}
+              </p>
+            </div>
+          </div>
+          <div className="col-span-3 h-full flex flex-col justify-center items-center">
+            <div className="bg-white p-6 rounded-[1.5rem]">
+              <Image
+                src="/assets/images/trust.png"
+                width={64}
+                height={64}
+                alt="quality"
+              />
+              <h4 className="text-[1.125rem] font-semibold text-[#0A1A36] mt-4">
+                {t("TheCertification.blockchain_section.list.1.title")}
+              </h4>
+              <p className="text-[1.125rem] font-normal mt-2 text-[#615E5E]">
+                {t("TheCertification.blockchain_section.list.1.body")}
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-[1.5rem] mt-8">
+              <Image
+                src="/assets/images/authentication.png"
+                width={64}
+                height={64}
+                alt="quality"
+              />
+              <h4 className="text-[1.125rem] font-semibold text-[#0A1A36] mt-4">
+                {t("TheCertification.blockchain_section.list.3.title")}
+              </h4>
+              <p className="text-[1.125rem] font-normal mt-2 text-[#615E5E]">
+                {t("TheCertification.blockchain_section.list.3.body")}
+              </p>
+            </div>
+          </div>
         </section>
       </div>
+
+      <section className="relative container mx-auto grid grid-cols-12 mt-20 gap-8">
+        <div className="col-span-full">
+          <h4 className="text-[#0A1A36] text-[1.5rem] font-semibold">
+            {t("TheCertification.blockchain_section.subtitle")}
+          </h4>
+          <p className="text-[#615E5E text-[1.125rem] mt-6">
+            {t("TheCertification.blockchain_section.body2")}
+          </p>
+        </div>
+
+        <div className="col-span-5 relative h-[37rem] w-[23rem] mt-16">
+          <Image src="/assets/images/iphones.png" alt="iphones" fill />
+        </div>
+
+        <div className="col-span-7 mt-16">
+          <li className="text-[#615E5E text-[1.25rem]">
+            {t("TheCertification.blockchain_section.bodyList.0")}
+          </li>
+
+          <li className="text-[#615E5E text-[1.25rem] mt-6">
+            {t("TheCertification.blockchain_section.bodyList.1")}
+          </li>
+
+          <li className="text-[#615E5E text-[1.25rem] mt-6">
+            {t("TheCertification.blockchain_section.bodyList.2")}
+          </li>
+
+          <li className="text-[#615E5E text-[1.25rem] mt-6">
+            {t("TheCertification.blockchain_section.bodyList.3")}
+          </li>
+        </div>
+      </section>
     </div>
   );
 };
