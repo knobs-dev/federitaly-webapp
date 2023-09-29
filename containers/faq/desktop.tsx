@@ -59,7 +59,7 @@ const FaqDesktop: React.FC<TFaqDesktop> = ({
           <Accordion
             type="single"
             collapsible
-            className="w-full flex flex-col space-y-2"
+            className="w-full flex flex-col space-y-5"
           >
             {topicsFaqs[selectedTopic as Topics].map(
               ({ question, answer }, index) => (
