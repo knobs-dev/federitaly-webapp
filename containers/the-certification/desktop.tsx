@@ -4,9 +4,9 @@ import { useTranslation } from "react-i18next";
 
 import HeaderDesktop from "@components/HeaderDesktop";
 
-type TTheCertificationDesktop = {};
+type TheCertificationDesktopProps = {};
 
-const TheCertificationDesktop: React.FC<TTheCertificationDesktop> = () => {
+const TheCertificationDesktop: React.FC<TheCertificationDesktopProps> = () => {
   const { t } = useTranslation();
 
   return (

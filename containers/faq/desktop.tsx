@@ -12,13 +12,13 @@ import HeaderDesktop from "@components/HeaderDesktop";
 
 type Topics = "generic" | "the_certification" | "blockchain" | "advantages";
 
-type TFaqDesktop = {
+type FaqDesktopProps = {
   selectedTopic: Topics;
   topicsFaqs: Record<Topics, { question: string; answer: string }[]>;
   handleSwitchTopic: (topic: Topics) => void;
 };
 
-const FaqDesktop: React.FC<TFaqDesktop> = ({
+const FaqDesktop: React.FC<FaqDesktopProps> = ({
   selectedTopic,
   topicsFaqs,
   handleSwitchTopic,

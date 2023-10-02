@@ -11,13 +11,13 @@ import {
 
 type Topics = "generic" | "the_certification" | "blockchain" | "advantages";
 
-type TFaqMobile = {
+type FaqMobileProps = {
   selectedTopic: Topics;
   topicsFaqs: Record<Topics, { question: string; answer: string }[]>;
   handleSwitchTopic: (topic: Topics) => void;
 };
 
-const FaqMobile: React.FC<TFaqMobile> = ({
+const FaqMobile: React.FC<FaqMobileProps> = ({
   selectedTopic,
   topicsFaqs,
   handleSwitchTopic,

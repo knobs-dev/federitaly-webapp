@@ -26,9 +26,9 @@ import { filterCertifiedCompaniesFormattedBy } from "@utils";
 
 import type { SortByCertifiedCompanies } from "@types";
 
-type TCertifiedCompaniesDesktopProps = {};
+type CertifiedCompaniesDesktopProps = {};
 
-const CertifiedCompaniesDesktop: FC<TCertifiedCompaniesDesktopProps> = () => {
+const CertifiedCompaniesDesktop: FC<CertifiedCompaniesDesktopProps> = () => {
   const locale = useLocale();
   const virtualizedListRef = useRef(null);
 

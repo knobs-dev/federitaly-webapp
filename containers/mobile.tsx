@@ -8,13 +8,15 @@ import Link from "@components/RetainQueryLink";
 
 import { formatCertifiedCompaniesData } from "@utils";
 
-type THomeMobile = {
+type HomeMobileProps = {
   certifiedCompaniesDataFormatted: ReturnType<
     typeof formatCertifiedCompaniesData
   >;
 };
 
-const HomeMobile: FC<THomeMobile> = ({ certifiedCompaniesDataFormatted }) => {
+const HomeMobile: FC<HomeMobileProps> = ({
+  certifiedCompaniesDataFormatted,
+}) => {
   const { t } = useTranslation();
 
   return (

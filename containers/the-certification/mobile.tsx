@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
-type TTheCertificationMobile = {};
+type TheCertificationMobileProps = {};
 
-const TheCertificationMobile: React.FC<TTheCertificationMobile> = () => {
+const TheCertificationMobile: React.FC<TheCertificationMobileProps> = () => {
   const { t } = useTranslation();
   return (
     <div className="flex flex-col pb-4 space-y-6">

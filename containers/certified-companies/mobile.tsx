@@ -25,9 +25,9 @@ import { filterCertifiedCompaniesFormattedBy } from "@utils";
 
 import type { SortByCertifiedCompanies } from "@types";
 
-type TCertifiedCompaniesMobileProps = {};
+type CertifiedCompaniesMobileProps = {};
 
-const CertifiedCompaniesMobile: FC<TCertifiedCompaniesMobileProps> = () => {
+const CertifiedCompaniesMobile: FC<CertifiedCompaniesMobileProps> = () => {
   const locale = useLocale();
   const virtualizedListRef = useRef(null);
 

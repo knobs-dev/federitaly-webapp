@@ -68,10 +68,10 @@ const HeaderDesktop: FC<THeaderDesktop> = ({ title }) => {
               }
             >
               {getCurrentLanguage() === "en" && (
-                <IconItalyFlag className="h-5 w-5" />
+                <IconItalyFlag className="h-7 w-9" />
               )}
               {getCurrentLanguage() === "it" && (
-                <IconUKFlag className="h-5 w-5" />
+                <IconUKFlag className="h-7 w-9" />
               )}
             </button>
           )}

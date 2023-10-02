@@ -9,13 +9,15 @@ import HeaderDesktop from "@components/HeaderDesktop";
 
 import { formatCertifiedCompaniesData } from "@utils";
 
-type THomeDesktop = {
+type HomeDesktopProps = {
   certifiedCompaniesDataFormatted: ReturnType<
     typeof formatCertifiedCompaniesData
   >;
 };
 
-const HomeDesktop: FC<THomeDesktop> = ({ certifiedCompaniesDataFormatted }) => {
+const HomeDesktop: FC<HomeDesktopProps> = ({
+  certifiedCompaniesDataFormatted,
+}) => {
   const { t } = useTranslation();
   const router = useRouter();
   return (
