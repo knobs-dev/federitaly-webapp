@@ -110,7 +110,9 @@
         "vat_number": "VAT Number",
         "certification_valid_until": "Certification Valid Until",
         "certified_by": "Certified By",
-        "president_federitaly": "President FEDERITALY"
+        "president_federitaly": "President FEDERITALY",
+        "release": "Certification Date",
+        "expiration": "Expiration Date"
       }
     },
     "PrivacyPolicy": {
