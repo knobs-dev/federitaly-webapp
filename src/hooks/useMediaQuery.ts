@@ -5,10 +5,10 @@ import { useEffect, useState } from 'react'
  */
 
 const useMediaQuery = (query: string): boolean => {
-  const getMatches = (query: string): boolean => {
+  const getMatches = (queryStr: string): boolean => {
     // Prevents SSR issues
     if (typeof window !== 'undefined') {
-      return window.matchMedia(query).matches
+      return window.matchMedia(queryStr).matches
     }
     return false
   }
