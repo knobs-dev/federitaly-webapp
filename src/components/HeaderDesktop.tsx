@@ -7,11 +7,11 @@ import { getCurrentLanguage, setCurrentLanguage } from "@store/i18n";
 
 import { IconItalyFlag, IconUKFlag } from "./icons";
 
-type THeaderDesktop = {
+type HeaderDesktopProp = {
   title?: string;
 };
 
-const HeaderDesktop: FC<THeaderDesktop> = ({ title }) => {
+const HeaderDesktop: FC<HeaderDesktopProp> = ({ title }) => {
   const { t } = useTranslation();
 
   return (
