@@ -2,6 +2,8 @@
   "translation": {
     "Common": {
       "expiration_date": "Expiration",
+      "expiration_desktop": "EXPIRATION DATE",
+      "release_desktop": "CERTIFICATE DATE",
       "no_certified_companies": "No certified companies",
       "see_more": "See more",
       "sidebar": {
@@ -36,6 +38,7 @@
         {
           "title": "100% Made in Italy",
           "body": "Our mission is to protect and promote Italian excellence all over the world. The 100% Made in Italy brand identifies only the best of totally Italian production. A barrier to the phenomenon of Italian sounding.",
+          "body2": "La Federazione Italiana che tutela e promuove il \"Made in Italy\" nel mondo, ha ideato un metodo innovativo per fornire informazioni verificate e certificate riguardo all'origine dei vostri prodotti, permettendo di condividere la vera essenza dei \"prodotti italiani\". La certificazione \"FederItaly 100% Made in Italy\" si trasforma in un'esperienza coinvolgente e consapevole per il consumatore, offrendo un modo innovativo per esaltare qualità, creatività e bellezza della produzione 100% italiana.",
           "action": "Contact us"
         },
         {
@@ -54,6 +57,7 @@
       }
     },
     "CertifiedCompanies": {
+      "result": "{count} certified companies",
       "filters": {
         "search_company": "Search company",
         "sort_by": {
@@ -115,7 +119,19 @@
         "Data controller: FEDERITALY – C.so della Repubblica, 205 – 03043 CASSINO (FR) – C.F. 90046140605",
         "As the owner of your personal data, Federitaly is responsible for how such data is collected and used. In respect of your privacy, Federitaly undertakes to protect all personal data collected and to process them in accordance with the legal regulations in force regarding the protection of privacy.",
         "Type of data collected",
-        "Federitaly is in possession of some of your personal data. “Personal data” is defined as data that can identify you or that can be linked to you (“Data”). Federitaly has collected the Data in the context of the professional relationship established as well as those spontaneously provided by you, for example during communications via e-mail or other channels, or when subscribing to newsletters, alerts, or other information material. The Data collected includes name, postal address, email address, telephone number, postal address and private email address"
+        "Federitaly is in possession of some of your personal data. “Personal data” is defined as data that can identify you or that can be linked to you (“Data”). Federitaly has collected the Data in the context of the professional relationship established as well as those spontaneously provided by you, for example during communications via e-mail or other channels, or when subscribing to newsletters, alerts, or other information material. The Data collected includes name, postal address, email address, telephone number, postal address and private email address",
+        "Utilizzo dei dati raccolti",
+        "In aggiunta all’utilizzo professionale (nel contesto dei servizi legali che prestiamo), utilizziamo i Dati raccolti anche per attività di comunicazione e informazione, in particolare per:\n– inviarLe newsletter\n– invitarLa ad eventi\n– mantenere e aggiornare il nostro database di contatti",
+        "Principi di utilizzo dei Dati",
+        "Attraverso l’utilizzo dei Dati per le finalità descritte in questa mail, Federitaly si propone di mantenere attiva la relazione professionale con Lei e di inviarLe comunicazioni su nostre attività o eventi. Qualora Lei non fosse più interessato a ricevere nostre email per le finalità sopra elencate, potrà decidere di cancellare la sottoscrizione, inviando un’email, con oggetto “unsubscribe” all’indirizzo info@federitaly.it. Se deciderà di cancellare la sottoscrizione, non potremo più inviarLe comunicazioni e inviti ad eventi. In questo caso, i Dati saranno esclusivamente utilizzati per finalità strettamente professionali. Allo stesso modo, Lei avrà l’opportunità di esercitare il Suo diritto alla cancellazione della sottoscrizione ogni qualvolta riceverà comunicazioni da parte di Federitaly.",
+        "Condivisione dei Dati raccolti",
+        "I Suoi Dati verranno utilizzati per le finalità sopra menzionate e trattati esclusivamente da personale autorizzato.\nI Suoi dati non verranno condivisi con soggetti residenti fuori dal territorio italiano.\nIn caso di prestazione di servizi per nostro conto – principalmente servizi relativi ai nostri sistemi informatici e alla gestione amministrativa – Federitaly potrebbe avere la necessità di fare accedere ai Suoi Dati nostri fornitori e subfornitori.\nDurata del trattamento dei Dati\nI Suoi Dati saranno conservati per le finalità sopra menzionate per tutta la durata del nostro rapporto professionale. Ogni qualvolta riceverà un’email da Federitaly, Lei avrà la possibilità – nel caso in cui non desideri più ricevere comunicazioni e inviti da parte nostra – di cancellare la Sua sottoscrizione, inviando un’email, con oggetto “unsubscribe” all’indirizzo info@federitaly.it.",
+        "Sicurezza e Protezione dei Dati",
+        "Federitaly adotta adeguate misure di sicurezza di tipo tecnico e organizzativo volte a mantenere l’integrità dei Suoi Dati e a proteggerli dall’accesso da parte di personale non autorizzato, tra cui l’utilizzo di connessioni private sicure.\nFederitaly rivede periodicamente tali misure e procedure al fine di garantire la sicurezza e la protezione dei nostri sistemi informatici e dei Dati da noi trattati.",
+        "Modalità di esercizio dei diritti",
+        "Saremo lieti di accogliere ogni domanda o commento che vorrà sottoporci. Lei ha diritto di essere informato sui Dati da noi trattati e di richiedere una copia degli stessi. Potrà altresì richiedere l’aggiornamento, la correzione o la cancellazione dei Suoi Dati.\nPotrà inoltre richiedere che alcuni dei Suoi Dati siano trattati solo in parte e che il loro utilizzo sia limitato.\nLe ricordiamo che la limitazione o cancellazione dei Suoi Dati potrebbe comportare da parte nostra l’impossibilità di inviarLe le comunicazioni e gli inviti precedentemente citati. In alcuni casi, Lei ha diritto di ricevere i Suoi Dati in formato a lettura ottica e chiedere il loro trasferimento a terze parti per il relativo trattamento.\nQualora non fosse soddisfatto delle modalità con le quali Federitaly tratta i Suoi Dati, potrà in qualsiasi momento esercitare i Suoi diritti dinanzi al Garante per la Protezione dei Dati Personali.",
+        "Contatti",
+        "Per maggiori informazioni sul Trattamento dei Suoi Dati Personali, La preghiamo di scrivere a info@federitaly.it."
       ]
     },
     "TheCertification": {
@@ -145,6 +161,33 @@
         "body": [
           "The use of blockchain technology to verify the origin and quality of products is, therefore, an important step in restoring consumer confidence and ensuring that information is reliable and truthful.",
           "FederItaly believes that companies that invest in the quality of their products and adapt to new technologies to enhance their customers and consumers are the true protagonists of the Italian economy."
+        ],
+        "list": [
+          {
+            "title": "Origine di Qualità",
+            "body": "Lorem ipsuim Dolor Sit Amet consectetur Adipiscing Elit."
+          },
+          {
+            "title": "Verifica",
+            "body": "Lorem ipsuim Dolor Sit Amet consectetur Adipiscing Elit."
+          },
+          {
+            "title": "Fiducia",
+            "body": "Lorem ipsuim Dolor Sit Amet consectetur Adipiscing Elit."
+          },
+          {
+            "title": "Autenticità del Prodotto",
+            "body": "Lorem ipsuim Dolor Sit Amet consectetur Adipiscing Elit."
+          }
+        ],
+
+        "subtitle": "Il marchio \"federitaly 100% made in italy\" e' per le aziende italiane la porta di accesso al mercato globale",
+        "body2": "Il certificato non è solo una validazione dell'autenticità, ma anche una porta di accesso ad un'esperienza interattiva e coinvolgente, grazie alla Pagina Esperienza. Immagina questa scena: Un consumatore che acquista un prodotto italiano certificato, con il QR Code associato al certificato stampato sulla sua etichetta. Quando il QR code viene scansionato, il consumatore è immediatamente trasportato nel cuore della storia dell'azienda, esplorando la passione e l'artigianalità presente in ogni creazione.",
+        "bodyList": [
+          "Ecco cosa offre la Pagina Esperienza: un'opportunità per le aziende di appassionare ed ispirare il loro pubblico come mai prima d'ora.",
+          "Pensala come uno showroom digitale, dove le aziende possono esporre i loro migliori lavori attraverso un ricco mosaico di contenuti multimediali.",
+          "Video che mostrano l'arte intricata della loro maestria, immagini che catturano l'essenza del loro marchio, PDF che dettagliano le loro iniziative di sostenibilità, e brochure con le loro ultime collezioni - sono tutti accessibili con una sola scansione.",
+          "La Pagina Esperienza è più di un semplice mezzo per la condivisione dei contenuti, è un palcoscenico dove le aziende possono rivelare la loro vera essenza - dimostrando la loro autentica identità e costruendo legami significativi con i loro clienti."
         ]
       }
     },
@@ -264,8 +307,10 @@
       ]
     },
     "Contacts": {
+      "us": "If you are interested to know how to certificate your company call us now: a consultant will be at your disposal.",
       "form": {
         "title": "Request more information now to certify your company",
+        "subtitle": "Compila il form e ti invieremo tutte le informazioni necessarie per accedere al processo di certificazione 100% MADE IN ITALY",
         "fields_labels": {
           "name": "Name",
           "phone_number": "Phone Number",
