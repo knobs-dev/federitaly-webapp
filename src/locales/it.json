@@ -110,7 +110,9 @@
         "vat_number": "Partita IVA",
         "certification_valid_until": "Certificazione Valida Fino Al",
         "certified_by": "Certificato Da",
-        "president_federitaly": "Presidente FEDERITALY"
+        "president_federitaly": "Presidente FEDERITALY",
+        "release": "Data Certificato",
+        "expiration": "Data Scadenza"
       }
     },
     "PrivacyPolicy": {

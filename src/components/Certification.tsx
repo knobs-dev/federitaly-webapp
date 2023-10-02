@@ -67,7 +67,7 @@ const Certification: FC<CertificationProps> = ({
         <div className="pt-16 px-4 w-full h-full relative">
           <div>
             <IconClose
-              className="h-6 w-6 fill-[#A9A6A6] absolute top-8 right-8"
+              className="h-6 w-6 fill-[#A9A6A6] absolute top-8 right-8 cursor-pointer"
               onClick={() => onClose()}
             />
           </div>
