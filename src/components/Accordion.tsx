@@ -14,7 +14,10 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Item
     ref={ref}
-    className={twMerge("bg-[#5E5E75E3] px-4 rounded-lg", className)}
+    className={twMerge(
+      "bg-[#5E5E75E3] lg:bg-[#F5F5F5] px-4 lg:px-8 lg:py-4 rounded-lg",
+      className,
+    )}
     {...props}
   />
 ));
@@ -28,14 +31,14 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={twMerge(
-        "flex flex-1 text-left items-center justify-between py-4 font-medium transition-all [&[data-state=open]>svg]:rotate-180 text-sm text-[#FBFBFB] font-semibold",
+        "flex flex-1 text-left items-center justify-between py-4 font-medium transition-all [&[data-state=open]>span]:rotate-180 text-sm text-[#FBFBFB] lg:text-[#292C31] lg:text-[1.25rem]",
         className,
       )}
       {...props}
     >
       {children}
-      <span className="pl-2">
-        <IconArrowRight className="h-3 w-3 rotate-90 fill-white" />
+      <span>
+        <IconArrowRight className="h-3 w-3 rotate-90 fill-white lg:fill-[#292C31]" />
       </span>
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
@@ -49,7 +52,7 @@ const AccordionContent = React.forwardRef<
   <AccordionPrimitive.Content
     ref={ref}
     className={twMerge(
-      "overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down text-sm text-[#FAFAFA] font-normal",
+      "overflow-hidden transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down text-sm text-[#FAFAFA] font-normal lg:text-[#737C87]",
       className,
     )}
     {...props}

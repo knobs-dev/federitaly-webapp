@@ -1,17 +1,11 @@
-import { useTranslations } from "@hooks/useTranslations";
+import useMediaQuery from "@hooks/useMediaQuery";
+import PrivacyPolicyDesktop from "containers/privacy-policy/desktop";
+import PrivacyPolicyMobile from "containers/privacy-policy/mobile";
 
 const PrivacyPolicy = () => {
-  const t = useTranslations("PrivacyPolicy");
+  const isTablet = useMediaQuery("(max-width: 1024px)");
 
-  return (
-    <div className="flex flex-col space-y-4">
-      <h2 className="text-[0.9375rem] font-bold">{t("content.0")}</h2>
-      <h2 className="text-[0.9375rem] font-bold">{t("content.1")}</h2>
-      <p className="text-[0.9375rem] font-normal">{t("content.2")}</p>
-      <h2 className="text-[0.9375rem] font-bold">{t("content.3")}</h2>
-      <p className="text-[0.9375rem] font-normal">{t("content.4")}</p>
-    </div>
-  );
+  return isTablet ? <PrivacyPolicyMobile /> : <PrivacyPolicyDesktop />;
 };
 
 export default PrivacyPolicy;
