@@ -59,7 +59,7 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
               <Image
                 src={certifiedCompanyDataFormatted.companyProfilePhoto}
                 fill
-                objectFit="cover"
+                objectFit="contain"
                 alt="company profile photo"
               />
             </div>
