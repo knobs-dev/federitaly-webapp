@@ -29,6 +29,7 @@ type CertifiedCompanyDesktopProps = {};
 
 const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
   const [showCert, setShowCert] = useState(false);
+  const [showMoreDescription, setShowMoreDescription] = useState(false);
 
   const { t } = useTranslation();
 
@@ -171,8 +172,28 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
                     "CertifiedCompany.sections.the_company.company_description",
                   )}
                 </h2>
+
                 <p className="mt-2 text-[1rem] font-medium text-[#615E5E]">
-                  {certifiedCompanyDataFormatted.companyDescription}
+                  {!showMoreDescription
+                    ? certifiedCompanyDataFormatted.companyDescription.slice(
+                        0,
+                        500,
+                      )
+                    : certifiedCompanyDataFormatted.companyDescription}
+                  <span
+                    className="ml-2 text-[#3D67D6] text-[1rem] cursor-pointer"
+                    onClick={() => setShowMoreDescription(!showMoreDescription)}
+                    role="button"
+                    tabIndex={0}
+                    aria-hidden
+                  >
+                    ...
+                    {t(
+                      showMoreDescription
+                        ? "Common.see_less"
+                        : "Common.see_more",
+                    )}
+                  </span>
                 </p>
                 <video
                   controls
