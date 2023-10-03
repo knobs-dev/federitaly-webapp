@@ -211,7 +211,7 @@ const CertifiedCompaniesMobile: FC<CertifiedCompaniesMobileProps> = () => {
                       }}
                     >
                       <Link
-                        href={`/certified-company/${filteredCertifiedCompaniesDataFormatted[index].id}`}
+                        href={`/certified-company?id=${filteredCertifiedCompaniesDataFormatted[index].id}`}
                       >
                         <Card
                           profilePhoto={

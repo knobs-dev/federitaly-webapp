@@ -180,20 +180,25 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
                         500,
                       )
                     : certifiedCompanyDataFormatted.companyDescription}
-                  <span
-                    className="ml-2 text-[#3D67D6] text-[1rem] cursor-pointer"
-                    onClick={() => setShowMoreDescription(!showMoreDescription)}
-                    role="button"
-                    tabIndex={0}
-                    aria-hidden
-                  >
-                    ...
-                    {t(
-                      showMoreDescription
-                        ? "Common.see_less"
-                        : "Common.see_more",
-                    )}
-                  </span>
+                  {certifiedCompanyDataFormatted.companyDescription.length >
+                    500 && (
+                    <span
+                      className="ml-2 text-[#3D67D6] text-[1rem] cursor-pointer"
+                      onClick={() =>
+                        setShowMoreDescription(!showMoreDescription)
+                      }
+                      role="button"
+                      tabIndex={0}
+                      aria-hidden
+                    >
+                      ...
+                      {t(
+                        showMoreDescription
+                          ? "Common.see_less"
+                          : "Common.see_more",
+                      )}
+                    </span>
+                  )}
                 </p>
                 <video
                   controls

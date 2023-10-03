@@ -108,7 +108,7 @@ const HomeDesktop: FC<HomeDesktopProps> = ({
                   }) => (
                     <Link
                       key={id}
-                      href={`/certified-company/${id}`}
+                      href={`/certified-company?id=${id}`}
                       className="block"
                     >
                       <div className="rounded-[1.25rem] bg-white p-4">
