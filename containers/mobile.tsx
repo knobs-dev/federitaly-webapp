@@ -112,7 +112,7 @@ const HomeMobile: FC<HomeMobileProps> = ({
               }) => (
                 <Link
                   key={id}
-                  href={`/certified-company/${id}`}
+                  href={`/certified-company?id=${id}`}
                   className="block"
                 >
                   <Card

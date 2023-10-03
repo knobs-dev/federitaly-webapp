@@ -197,7 +197,7 @@ const CertifiedCompaniesDesktop: FC<CertifiedCompaniesDesktopProps> = () => {
         {filteredCertifiedCompaniesDataFormatted &&
           filteredCertifiedCompaniesDataFormatted.map((company, index) => (
             <Link
-              href={`/certified-company/${company.id}`}
+              href={`/certified-company?id=${company.id}`}
               className="col-span-3"
             >
               <div
