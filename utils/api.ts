@@ -1,13 +1,24 @@
-import { getCertificationData, getCertifiedCompanies } from "@api/certifications";
+import {
+  getCertificationData,
+  getCertifiedCompanies,
+} from "@api/certifications";
 import { supportedLocales } from "@constants";
-import { formatCertifiedCompaniesData, formatCertifiedCompanyData } from "@utils";
+import {
+  formatCertifiedCompaniesData,
+  formatCertifiedCompanyData,
+} from "@utils";
 
+const blacklist: { [key: string]: boolean } = {
+  "651ac77c8f84fcdaee20663d": true,
+};
 
 export const fetchCompanies = async ({ queryKey }: any) => {
   const [, locale] = queryKey;
   const certifiedCompanies = await getCertifiedCompanies();
   const certifiedCompaniesData = await Promise.all(
-    certifiedCompanies.map((company) => getCertificationData(company)),
+    certifiedCompanies
+      .filter((company) => !blacklist[company])
+      .map((company) => getCertificationData(company)),
   );
   const certifiedCompaniesDataFormatted = formatCertifiedCompaniesData(
     certifiedCompaniesData,
@@ -15,7 +26,7 @@ export const fetchCompanies = async ({ queryKey }: any) => {
   );
 
   return certifiedCompaniesDataFormatted;
-}
+};
 
 export const fetchCertifiedCompany = async ({ queryKey }: any) => {
   const [, id, locale] = queryKey;
@@ -33,4 +44,4 @@ export const fetchCertifiedCompany = async ({ queryKey }: any) => {
   );
 
   return certifiedCompanyDataFormatted;
-}
+};
