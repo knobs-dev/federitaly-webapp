@@ -1,10 +1,11 @@
-import type { FC } from "react";
+import { useEffect, type FC } from "react";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
 import { IconClose } from "@components/icons";
 
 import { clientT } from "@store/i18n";
+
 
 type CertificationProps = {
   className?: string;
@@ -24,6 +25,7 @@ const Certification: FC<CertificationProps> = ({
   onClose,
 }) => {
   const { t } = useTranslation();
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
