@@ -69,7 +69,7 @@ const HomeDesktop: FC<HomeDesktopProps> = ({
               <button
                 type="button"
                 className="bg-white border border-[#6379C8] flex justify-center items-center relative rounded-[1rem] p-[0.8rem] text-[1.125rem] font-semibold"
-                onClick={() => router.push("/the-certification")}
+                onClick={() => window.open("https://federitaly.it/")}
               >
                 <Image
                   src="/assets/images/logo-blue.png"
