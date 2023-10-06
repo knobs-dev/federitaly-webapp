@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 
 import { Card } from "@components";
 import HeaderDesktop from "@components/HeaderDesktop";
+import { IconArrowRight } from "@components/icons";
 
 import { formatCertifiedCompaniesData } from "@utils";
 
@@ -79,9 +80,6 @@ const HomeDesktop: FC<HomeDesktopProps> = ({
                 />
               </button>
             </div>
-            <div className="mt-[3.44rem] text-[1.5rem] font-medium text-[#0A1A36]">
-              {t("Common.header_titles.certified_companies")}
-            </div>
           </div>
           <div className="col-span-4 flex justify-end items-center relative">
             <Image
@@ -92,69 +90,80 @@ const HomeDesktop: FC<HomeDesktopProps> = ({
               className="opacity-30"
             />
           </div>
+          <div className="mt-[3.44rem] w-full flex justify-between col-span-full">
+            <h3 className="text-[1.5rem] font-medium text-[#0A1A36]">
+              {t("Common.header_titles.certified_companies")}
+            </h3>
+
+            <Link
+              href="/certified-companies"
+              className="flex translate-x-2 p-2 text-xs font-medium"
+            >
+              {t("Home.certifications_section.show_all")}
+              <IconArrowRight className="ml-2 w-2 fill-black" />
+            </Link>
+          </div>
         </section>
         <section className="bg-[#F2F4F4] z-10 relative">
-          <div className="container mx-auto grid grid-cols-12 py-6">
-            <div className="col-span-full flex justify-start items-start space-x-8">
-              {certifiedCompaniesDataFormatted &&
-                certifiedCompaniesDataFormatted.length > 0 &&
-                certifiedCompaniesDataFormatted
-                  .slice(0, 4)
-                  .map(
-                    ({
-                      id,
-                      companyProfilePhoto,
-                      companyName,
-                      certificationExpirationDate,
-                      certificationReleaseDate,
-                    }) => (
-                      <Link
-                        key={id}
-                        href={`/certified-company?id=${id}`}
-                        className="block"
-                      >
-                        <div className="rounded-[1.25rem] bg-white p-4">
-                          <div className="flex justify-start items-center w-[18rem] space-x-4">
-                            <Image
-                              src={companyProfilePhoto}
-                              width={96}
-                              height={96}
-                              alt={`${companyName} logo`}
-                              className="h-[6rem] w-[6rem] shrink-0 rounded-full bg-white object-contain"
-                            />
-                            <h3 className="text-[0.8rem] font-medium text-[#656579]">
-                              {companyName}
-                            </h3>
+          <div className="container mx-auto grid grid-cols-12 py-6 gap-5">
+            {certifiedCompaniesDataFormatted &&
+              certifiedCompaniesDataFormatted.length > 0 &&
+              certifiedCompaniesDataFormatted
+                .slice(0, 4)
+                .map(
+                  ({
+                    id,
+                    companyProfilePhoto,
+                    companyName,
+                    certificationExpirationDate,
+                    certificationReleaseDate,
+                  }) => (
+                    <Link
+                      key={id}
+                      href={`/certified-company?id=${id}`}
+                      className="block col-span-3"
+                    >
+                      <div className="rounded-[1.25rem] bg-white p-4">
+                        <div className="flex justify-start items-center w-[18rem] space-x-4">
+                          <Image
+                            src={companyProfilePhoto}
+                            width={96}
+                            height={96}
+                            alt={`${companyName} logo`}
+                            className="h-[6rem] w-[6rem] shrink-0 rounded-full bg-white object-contain"
+                          />
+                          <h3 className="text-[0.8rem] font-medium text-[#656579]">
+                            {companyName}
+                          </h3>
+                        </div>
+                        <div className="flex justify-between items-center mt-4">
+                          <div>
+                            <h4 className="text-[0.625rem] text-[#454857] font-medium">
+                              {t("Common.release_desktop")}
+                            </h4>
+                            <h4 className="text-[0.75rem] text-[#9496A3] font-medium">
+                              {certificationReleaseDate}
+                            </h4>
                           </div>
-                          <div className="flex justify-between items-center mt-4">
-                            <div>
-                              <h4 className="text-[0.625rem] text-[#454857] font-medium">
-                                {t("Common.release_desktop")}
-                              </h4>
-                              <h4 className="text-[0.75rem] text-[#9496A3] font-medium">
-                                {certificationReleaseDate}
-                              </h4>
-                            </div>
-                            <div>
-                              <h4 className="text-[0.625rem] text-[#454857] font-medium">
-                                {t("Common.expiration_desktop")}
-                              </h4>
-                              <h4 className="text-[0.75rem] text-[#9496A3] font-medium">
-                                {certificationExpirationDate}
-                              </h4>
-                            </div>
+                          <div>
+                            <h4 className="text-[0.625rem] text-[#454857] font-medium">
+                              {t("Common.expiration_desktop")}
+                            </h4>
+                            <h4 className="text-[0.75rem] text-[#9496A3] font-medium">
+                              {certificationExpirationDate}
+                            </h4>
                           </div>
                         </div>
-                      </Link>
-                    ),
-                  )}
-              {certifiedCompaniesDataFormatted &&
-                certifiedCompaniesDataFormatted.length === 0 && (
-                  <p className="py-16 text-center text-sm">
-                    {t("Common.no_certified_companies")}
-                  </p>
+                      </div>
+                    </Link>
+                  ),
                 )}
-            </div>
+            {certifiedCompaniesDataFormatted &&
+              certifiedCompaniesDataFormatted.length === 0 && (
+                <p className="py-16 text-center text-sm">
+                  {t("Common.no_certified_companies")}
+                </p>
+              )}
           </div>
         </section>
       </div>
