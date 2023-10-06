@@ -99,7 +99,7 @@ const HomeDesktop: FC<HomeDesktopProps> = ({
               {certifiedCompaniesDataFormatted &&
                 certifiedCompaniesDataFormatted.length > 0 &&
                 certifiedCompaniesDataFormatted
-                  .slice(0, 3)
+                  .slice(0, 4)
                   .map(
                     ({
                       id,
