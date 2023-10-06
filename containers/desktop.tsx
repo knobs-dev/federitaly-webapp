@@ -98,54 +98,56 @@ const HomeDesktop: FC<HomeDesktopProps> = ({
             <div className="col-span-full flex justify-start items-start space-x-8">
               {certifiedCompaniesDataFormatted &&
                 certifiedCompaniesDataFormatted.length > 0 &&
-                certifiedCompaniesDataFormatted.map(
-                  ({
-                    id,
-                    companyProfilePhoto,
-                    companyName,
-                    certificationExpirationDate,
-                    certificationReleaseDate,
-                  }) => (
-                    <Link
-                      key={id}
-                      href={`/certified-company?id=${id}`}
-                      className="block"
-                    >
-                      <div className="rounded-[1.25rem] bg-white p-4">
-                        <div className="flex justify-start items-center w-[18rem] space-x-4">
-                          <Image
-                            src={companyProfilePhoto}
-                            width={96}
-                            height={96}
-                            alt={`${companyName} logo`}
-                            className="h-[6rem] w-[6rem] shrink-0 rounded-full bg-white object-contain"
-                          />
-                          <h3 className="text-[0.8rem] font-medium text-[#656579]">
-                            {companyName}
-                          </h3>
-                        </div>
-                        <div className="flex justify-between items-center mt-4">
-                          <div>
-                            <h4 className="text-[0.625rem] text-[#454857] font-medium">
-                              {t("Common.release_desktop")}
-                            </h4>
-                            <h4 className="text-[0.75rem] text-[#9496A3] font-medium">
-                              {certificationReleaseDate}
-                            </h4>
+                certifiedCompaniesDataFormatted
+                  .slice(0, 3)
+                  .map(
+                    ({
+                      id,
+                      companyProfilePhoto,
+                      companyName,
+                      certificationExpirationDate,
+                      certificationReleaseDate,
+                    }) => (
+                      <Link
+                        key={id}
+                        href={`/certified-company?id=${id}`}
+                        className="block"
+                      >
+                        <div className="rounded-[1.25rem] bg-white p-4">
+                          <div className="flex justify-start items-center w-[18rem] space-x-4">
+                            <Image
+                              src={companyProfilePhoto}
+                              width={96}
+                              height={96}
+                              alt={`${companyName} logo`}
+                              className="h-[6rem] w-[6rem] shrink-0 rounded-full bg-white object-contain"
+                            />
+                            <h3 className="text-[0.8rem] font-medium text-[#656579]">
+                              {companyName}
+                            </h3>
                           </div>
-                          <div>
-                            <h4 className="text-[0.625rem] text-[#454857] font-medium">
-                              {t("Common.expiration_desktop")}
-                            </h4>
-                            <h4 className="text-[0.75rem] text-[#9496A3] font-medium">
-                              {certificationExpirationDate}
-                            </h4>
+                          <div className="flex justify-between items-center mt-4">
+                            <div>
+                              <h4 className="text-[0.625rem] text-[#454857] font-medium">
+                                {t("Common.release_desktop")}
+                              </h4>
+                              <h4 className="text-[0.75rem] text-[#9496A3] font-medium">
+                                {certificationReleaseDate}
+                              </h4>
+                            </div>
+                            <div>
+                              <h4 className="text-[0.625rem] text-[#454857] font-medium">
+                                {t("Common.expiration_desktop")}
+                              </h4>
+                              <h4 className="text-[0.75rem] text-[#9496A3] font-medium">
+                                {certificationExpirationDate}
+                              </h4>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </Link>
-                  ),
-                )}
+                      </Link>
+                    ),
+                  )}
               {certifiedCompaniesDataFormatted &&
                 certifiedCompaniesDataFormatted.length === 0 && (
                   <p className="py-16 text-center text-sm">
