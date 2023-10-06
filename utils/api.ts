@@ -8,17 +8,11 @@ import {
   formatCertifiedCompanyData,
 } from "@utils";
 
-const blacklist: { [key: string]: boolean } = {
-  "651ac77c8f84fcdaee20663d": true,
-};
-
 export const fetchCompanies = async ({ queryKey }: any) => {
   const [, locale] = queryKey;
   const certifiedCompanies = await getCertifiedCompanies();
   const certifiedCompaniesData = await Promise.all(
-    certifiedCompanies
-      .filter((company) => !blacklist[company])
-      .map((company) => getCertificationData(company)),
+    certifiedCompanies.map((company) => getCertificationData(company)),
   );
   const certifiedCompaniesDataFormatted = formatCertifiedCompaniesData(
     certifiedCompaniesData,

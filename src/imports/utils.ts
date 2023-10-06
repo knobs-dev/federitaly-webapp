@@ -239,3 +239,7 @@ export const getCompanyCertificationProcessFromJsonString = (
     it,
   };
 };
+
+export function blacklistFilter(blacklist: { [key: string]: boolean } = {}) {
+  return (key: string) => !blacklist[key];
+}
