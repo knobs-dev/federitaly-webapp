@@ -73,7 +73,7 @@
       }
     },
     "CertifiedCompany": {
-      "show_certification": "Show certification",
+      "show_certification": "Download certification",
       "certification_date": "Certification date",
       "tabs": {
         "the_company": "The company",

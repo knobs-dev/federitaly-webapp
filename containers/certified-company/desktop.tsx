@@ -8,7 +8,6 @@ import { useQuery } from "react-query";
 import { fetchCertifiedCompany } from "utils/api";
 
 import {
-  Certification,
   Dialog,
   DialogContent,
   DialogTrigger,
@@ -116,23 +115,21 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
                 <button
                   type="button"
                   className="z-2 h-[2.8125rem] rounded-xl from-[#2563EB] to-[#3A4D78] bg-gradient-to-b px-6 text-lg font-bold text-white z-20"
-                  onClick={() => setShowCert(true)}
-                >
-                  {t("CertifiedCompany.show_certification")}
-                </button>
-
-                <button
-                  type="button"
-                  className="z-2 h-[2.8125rem] rounded-xl from-[#2563EB] to-[#3A4D78] bg-gradient-to-b px-6 text-lg font-bold text-white z-20"
                   onClick={() =>
                     savePdf(
                       <PdfCertification
-                        companyName=""
-                        companyAddress=""
-                        vatNumber=""
-                        expirationDate=""
+                        companyName={certifiedCompanyDataFormatted.companyName}
+                        companyAddress={
+                          certifiedCompanyDataFormatted.companyRegisteredOffice
+                        }
+                        vatNumber={
+                          certifiedCompanyDataFormatted.companyVatNumber
+                        }
+                        expirationDate={
+                          certifiedCompanyDataFormatted.certificationExpirationDate
+                        }
                       />,
-                      "my-doc.pdf",
+                      "certification.pdf",
                     )
                   }
                 >
@@ -485,37 +482,6 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
               </TabsContent>
             </Tabs>
           </div>
-
-          {showCert && (
-            <div className="fixed w-full h-screen left-[50%] top-[50%]  translate-x-[-50%] translate-y-[-50%] bg-black flex items-center justify-center z-[60]">
-              <div className=" h-[90%]">
-                <Certification
-                  onClose={() => setShowCert(false)}
-                  companyName={certifiedCompanyDataFormatted.companyName}
-                  companyAddress={
-                    certifiedCompanyDataFormatted.companyRegisteredOffice
-                  }
-                  vatNumber={certifiedCompanyDataFormatted.companyVatNumber}
-                  expirationDate={
-                    certifiedCompanyDataFormatted.certificationExpirationDate
-                  }
-                />
-              </div>
-            </div>
-          )}
-
-          <PDFViewer className="w-full h-[90rem] col-span-full">
-            <PdfCertification
-              companyName={certifiedCompanyDataFormatted.companyName}
-              companyAddress={
-                certifiedCompanyDataFormatted.companyRegisteredOffice
-              }
-              vatNumber={certifiedCompanyDataFormatted.companyVatNumber}
-              expirationDate={
-                certifiedCompanyDataFormatted.certificationExpirationDate
-              }
-            />
-          </PDFViewer>
         </section>
       )}
     </div>

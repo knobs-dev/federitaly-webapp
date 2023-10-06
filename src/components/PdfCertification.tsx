@@ -70,6 +70,26 @@ const styles = StyleSheet.create({
   logoCircle: {
     width: 200,
     height: 200,
+    marginTop: 64,
+  },
+
+  sign: {
+    width: 140,
+    height: 115,
+  },
+
+  president: {
+    color: "#858686",
+    fontWeight: "medium",
+    fontSize: "15px",
+    marginTop: 8,
+  },
+
+  presidentName: {
+    color: "#3B3B3C",
+    fontSize: "18px",
+    fontWeight: "bold",
+    marginTop: 16,
   },
 });
 
@@ -144,7 +164,7 @@ const PdfCertification: React.FC<PdfCertificationProps> = ({
             >
               <Text
                 style={{
-                  fontSize: "18px",
+                  fontSize: "28px",
                   fontWeight: "semibold",
                   textAlign: "center",
                   color: "#000000",
@@ -198,11 +218,19 @@ const PdfCertification: React.FC<PdfCertificationProps> = ({
                     {t("CertifiedCompany.certification.certified_by")}
                   </Text>
                   <Text style={styles.content}>FEDERITALY</Text>
-                  <Image
-                    src="/assets/images/qrcode.png"
-                    style={{ marginTop: 32, height: "48px", width: "48px" }}
-                  />
                 </View>
+
+                <Image
+                  src="/assets/images/qrcode.png"
+                  style={{
+                    marginTop: 32,
+                    height: 64,
+                    width: 64,
+                    position: "absolute",
+                    bottom: 0,
+                    left: 20,
+                  }}
+                />
               </View>
               <View
                 style={{
@@ -217,6 +245,19 @@ const PdfCertification: React.FC<PdfCertificationProps> = ({
                   src="/assets/images/federitaly-certified.png"
                   style={styles.logoCircle}
                 />
+                <View
+                  style={{
+                    borderBottom: "2px solid #000",
+                  }}
+                >
+                  <Image
+                    src="/assets/images/sign.png"
+                    style={styles.logoCircle}
+                  />
+                </View>
+
+                <Text style={styles.presidentName}>CARLO VERDONE</Text>
+                <Text style={styles.president}>President FEDERITALY</Text>
               </View>
             </View>
           </View>

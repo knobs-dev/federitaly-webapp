@@ -73,7 +73,7 @@
       }
     },
     "CertifiedCompany": {
-      "show_certification": "Visualizza certificato",
+      "show_certification": "Scarica certificato",
       "certification_date": "Data certificazione",
       "tabs": {
         "the_company": "L'azienda",

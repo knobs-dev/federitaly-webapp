@@ -2,6 +2,7 @@ import { useEffect, useState, type FC } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useLocale, useTranslations } from "@hooks/useTranslations";
+import { pdf } from "@react-pdf/renderer";
 import { useQuery } from "react-query";
 import { fetchCertifiedCompany } from "utils/api";
 
@@ -22,6 +23,7 @@ import {
   IconLinkedin,
   IconYoutube,
 } from "@components/icons";
+import PdfCertification from "@components/PdfCertification";
 
 import {
   getCertificationData,
@@ -56,6 +58,21 @@ const CertifiedCompanyMobile: FC<CertifiedCompanyMobileProps> = () => {
     ["certifiedCompany", id, locale],
     fetchCertifiedCompany,
   );
+
+  const saveBlob = (blob: any, filename: string) => {
+    const a = document.createElement("a");
+    document.body.appendChild(a);
+    a.style.display = "none";
+    const url = window.URL.createObjectURL(blob);
+    a.href = url;
+    a.download = filename;
+    a.click();
+    window.URL.revokeObjectURL(url);
+  };
+
+  const savePdf = async (document: any, filename: string) => {
+    saveBlob(await pdf(document).toBlob(), filename);
+  };
 
   return (
     <div className="absolute left-0 top-4 h-full w-screen flex flex-1 flex-col">
@@ -425,7 +442,21 @@ const CertifiedCompanyMobile: FC<CertifiedCompanyMobileProps> = () => {
               <button
                 type="button"
                 className="z-2 h-[2.8125rem] w-[calc(100vw-2rem)] rounded-xl from-[#2563EB] to-[#3A4D78] bg-gradient-to-b px-6 text-lg font-bold text-white z-20"
-                onClick={() => setShowCert(true)}
+                onClick={() =>
+                  savePdf(
+                    <PdfCertification
+                      companyName={certifiedCompanyDataFormatted.companyName}
+                      companyAddress={
+                        certifiedCompanyDataFormatted.companyRegisteredOffice
+                      }
+                      vatNumber={certifiedCompanyDataFormatted.companyVatNumber}
+                      expirationDate={
+                        certifiedCompanyDataFormatted.certificationExpirationDate
+                      }
+                    />,
+                    "certification.pdf",
+                  )
+                }
               >
                 {t("show_certification")}
               </button>
