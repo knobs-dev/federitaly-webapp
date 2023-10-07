@@ -2,12 +2,12 @@ import { useState, type FC } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useLocale } from "@hooks/useTranslations";
+import { pdf, PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "react-query";
 import { fetchCertifiedCompany } from "utils/api";
 
 import {
-  Certification,
   Dialog,
   DialogContent,
   DialogTrigger,
@@ -24,6 +24,7 @@ import {
   IconLinkedin,
   IconYoutube,
 } from "@components/icons";
+import PdfCertification from "@components/PdfCertification";
 
 type CertifiedCompanyDesktopProps = {};
 
@@ -50,6 +51,22 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
     youtube: <IconYoutube className={socialIconsClass} />,
     linkedin: <IconLinkedin className={socialIconsClass} />,
   };
+
+  const saveBlob = (blob: any, filename: string) => {
+    const a = document.createElement("a");
+    document.body.appendChild(a);
+    a.style.display = "none";
+    const url = window.URL.createObjectURL(blob);
+    a.href = url;
+    a.download = filename;
+    a.click();
+    window.URL.revokeObjectURL(url);
+  };
+
+  const savePdf = async (document: any, filename: string) => {
+    saveBlob(await pdf(document).toBlob(), filename);
+  };
+
   return (
     <div className="relative pb-24">
       <HeaderDesktop title={certifiedCompanyDataFormatted?.companyName} />
@@ -98,7 +115,23 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
                 <button
                   type="button"
                   className="z-2 h-[2.8125rem] rounded-xl from-[#2563EB] to-[#3A4D78] bg-gradient-to-b px-6 text-lg font-bold text-white z-20"
-                  onClick={() => setShowCert(true)}
+                  onClick={() =>
+                    savePdf(
+                      <PdfCertification
+                        companyName={certifiedCompanyDataFormatted.companyName}
+                        companyAddress={
+                          certifiedCompanyDataFormatted.companyRegisteredOffice
+                        }
+                        vatNumber={
+                          certifiedCompanyDataFormatted.companyVatNumber
+                        }
+                        expirationDate={
+                          certifiedCompanyDataFormatted.certificationExpirationDate
+                        }
+                      />,
+                      "certification.pdf",
+                    )
+                  }
                 >
                   {t("CertifiedCompany.show_certification")}
                 </button>
@@ -449,24 +482,6 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
               </TabsContent>
             </Tabs>
           </div>
-
-          {showCert && (
-            <div className="fixed w-full h-screen left-[50%] top-[50%]  translate-x-[-50%] translate-y-[-50%] bg-black flex items-center justify-center z-[60]">
-              <div className=" h-[90%]">
-                <Certification
-                  onClose={() => setShowCert(false)}
-                  companyName={certifiedCompanyDataFormatted.companyName}
-                  companyAddress={
-                    certifiedCompanyDataFormatted.companyRegisteredOffice
-                  }
-                  vatNumber={certifiedCompanyDataFormatted.companyVatNumber}
-                  expirationDate={
-                    certifiedCompanyDataFormatted.certificationExpirationDate
-                  }
-                />
-              </div>
-            </div>
-          )}
         </section>
       )}
     </div>
