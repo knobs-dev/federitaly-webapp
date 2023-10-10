@@ -74,7 +74,6 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
       x: 78,
       y: 535,
       size: 18,
-      font: customFont,
       color: rgb(0, 0, 0),
     });
 
