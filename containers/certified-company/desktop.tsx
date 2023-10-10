@@ -102,7 +102,7 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
 
     const pdfBytes = await pdfDoc.save();
 
-    download(pdfBytes, "pdf-lib_modification_example.pdf", "application/pdf");
+    download(pdfBytes, "certificate.pdf", "application/pdf");
   };
 
   return (
