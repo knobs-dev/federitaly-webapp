@@ -2,7 +2,10 @@ import { useState, type FC } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useLocale } from "@hooks/useTranslations";
+import fontkit from "@pdf-lib/fontkit";
 import { pdf, PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
+import download from "downloadjs";
+import { degrees, PDFDocument, rgb, StandardFonts } from "pdf-lib";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "react-query";
 import { fetchCertifiedCompany } from "utils/api";
@@ -52,19 +55,53 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
     linkedin: <IconLinkedin className={socialIconsClass} />,
   };
 
-  const saveBlob = (blob: any, filename: string) => {
-    const a = document.createElement("a");
-    document.body.appendChild(a);
-    a.style.display = "none";
-    const url = window.URL.createObjectURL(blob);
-    a.href = url;
-    a.download = filename;
-    a.click();
-    window.URL.revokeObjectURL(url);
-  };
+  const generateAndSavePdf = async (
+    companyName: string,
+    address: string,
+    vatNumber: string,
+    expiration: string,
+  ) => {
+    const existingPdfBytes = await fetch("/certificate.pdf").then((res) =>
+      res.arrayBuffer(),
+    );
+    const pdfDoc = await PDFDocument.load(existingPdfBytes);
 
-  const savePdf = async (document: any, filename: string) => {
-    saveBlob(await pdf(document).toBlob(), filename);
+    const pages = pdfDoc.getPages();
+
+    const firstPage = pages[0];
+
+    firstPage.drawText(companyName, {
+      x: 78,
+      y: 535,
+      size: 18,
+      color: rgb(0, 0, 0),
+    });
+
+    firstPage.drawText(address, {
+      x: 78,
+      y: 475,
+      size: 14,
+      maxWidth: 250,
+      color: rgb(0, 0, 0),
+    });
+
+    firstPage.drawText(vatNumber, {
+      x: 78,
+      y: 370,
+      size: 14,
+      color: rgb(0, 0, 0),
+    });
+
+    firstPage.drawText(expiration, {
+      x: 78,
+      y: 300,
+      size: 14,
+      color: rgb(0, 0, 0),
+    });
+
+    const pdfBytes = await pdfDoc.save();
+
+    download(pdfBytes, "certificate.pdf", "application/pdf");
   };
 
   return (
@@ -116,20 +153,11 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
                   type="button"
                   className="z-2 h-[2.8125rem] rounded-xl from-[#2563EB] to-[#3A4D78] bg-gradient-to-b px-6 text-lg font-bold text-white z-20"
                   onClick={() =>
-                    savePdf(
-                      <PdfCertification
-                        companyName={certifiedCompanyDataFormatted.companyName}
-                        companyAddress={
-                          certifiedCompanyDataFormatted.companyRegisteredOffice
-                        }
-                        vatNumber={
-                          certifiedCompanyDataFormatted.companyVatNumber
-                        }
-                        expirationDate={
-                          certifiedCompanyDataFormatted.certificationExpirationDate
-                        }
-                      />,
-                      "certification.pdf",
+                    generateAndSavePdf(
+                      certifiedCompanyDataFormatted.companyName,
+                      certifiedCompanyDataFormatted.companyRegisteredOffice,
+                      certifiedCompanyDataFormatted.companyVatNumber,
+                      certifiedCompanyDataFormatted.certificationExpirationDate,
                     )
                   }
                 >
