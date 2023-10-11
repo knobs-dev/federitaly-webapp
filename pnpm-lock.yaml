@@ -121,6 +121,9 @@ devDependencies:
   '@total-typescript/ts-reset':
     specifier: ^0.5.1
     version: 0.5.1
+  '@types/downloadjs':
+    specifier: ^1.4.4
+    version: 1.4.4
   '@types/lodash.debounce':
     specifier: ^4.0.7
     version: 4.0.7
@@ -2978,6 +2981,10 @@ packages:
 
   /@tsconfig/node16@1.0.4:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
+    dev: true
+
+  /@types/downloadjs@1.4.4:
+    resolution: {integrity: sha512-MkVGL6VdDJZvRx0rgeHVwYMQXIH3PAqTicGUq5iJ3+sB/xYbK2iHBEFDF1Q5u9jZQv9E4ZSWfCBn708u41XjVw==}
     dev: true
 
   /@types/json-schema@7.0.12:
