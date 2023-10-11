@@ -1,11 +1,10 @@
 import { useState, type FC } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { QRCodeCanvas } from "@cheprasov/qrcode";
 import { useLocale } from "@hooks/useTranslations";
-import fontkit from "@pdf-lib/fontkit";
-import { pdf, PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 import download from "downloadjs";
-import { degrees, PDFDocument, rgb, StandardFonts } from "pdf-lib";
+import { PDFDocument, rgb } from "pdf-lib";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "react-query";
 import { fetchCertifiedCompany } from "utils/api";
@@ -27,7 +26,6 @@ import {
   IconLinkedin,
   IconYoutube,
 } from "@components/icons";
-import PdfCertification from "@components/PdfCertification";
 
 type CertifiedCompanyDesktopProps = {};
 
@@ -61,10 +59,19 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
     vatNumber: string,
     expiration: string,
   ) => {
+    const qrCanvas = new QRCodeCanvas(window.location.href);
+    const dataUrlWithQRCode = qrCanvas.toDataUrl();
+    const pngImageBytes = await fetch(dataUrlWithQRCode).then((res) =>
+      res.arrayBuffer(),
+    );
+
     const existingPdfBytes = await fetch("/certificate.pdf").then((res) =>
       res.arrayBuffer(),
     );
+
     const pdfDoc = await PDFDocument.load(existingPdfBytes);
+
+    const pngImage = await pdfDoc.embedPng(pngImageBytes);
 
     const pages = pdfDoc.getPages();
 
@@ -74,20 +81,21 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
       x: 78,
       y: 535,
       size: 18,
+      maxWidth: 390,
       color: rgb(0, 0, 0),
     });
 
     firstPage.drawText(address, {
       x: 78,
-      y: 475,
+      y: 465,
       size: 14,
-      maxWidth: 250,
+      maxWidth: 270,
       color: rgb(0, 0, 0),
     });
 
     firstPage.drawText(vatNumber, {
       x: 78,
-      y: 370,
+      y: 360,
       size: 14,
       color: rgb(0, 0, 0),
     });
@@ -97,6 +105,13 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
       y: 300,
       size: 14,
       color: rgb(0, 0, 0),
+    });
+
+    firstPage.drawImage(pngImage, {
+      x: 78,
+      y: 100,
+      width: 70,
+      height: 70,
     });
 
     const pdfBytes = await pdfDoc.save();
