@@ -1,5 +1,6 @@
 import { type FC } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 
 import { Card, Slider } from "@components";
@@ -18,6 +19,8 @@ const HomeMobile: FC<HomeMobileProps> = ({
   certifiedCompaniesDataFormatted,
 }) => {
   const { t } = useTranslation();
+
+  const router = useRouter();
 
   return (
     <>
@@ -110,17 +113,21 @@ const HomeMobile: FC<HomeMobileProps> = ({
                 companyName,
                 certificationExpirationDate,
               }) => (
-                <Link
+                <div
                   key={id}
-                  href={`/certified-company?id=${id}`}
+                  // href={`/certified-company?id=${id}`}
                   className="block"
+                  onClick={() => router.push(`/certified-company?id=${id}`)}
+                  role="button"
+                  tabIndex={0}
+                  aria-hidden
                 >
                   <Card
                     profilePhoto={companyProfilePhoto}
                     name={companyName}
                     expirationDate={certificationExpirationDate}
                   />
-                </Link>
+                </div>
               ),
             )}
           {certifiedCompaniesDataFormatted &&
