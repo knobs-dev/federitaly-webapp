@@ -97,7 +97,7 @@ const HomeDesktop: FC<HomeDesktopProps> = ({
 
             <Link
               href="/certified-companies"
-              className="flex translate-x-2 p-2 text-xs font-medium"
+              className="flex translate-x-2 p-2 text-[1rem] font-medium"
             >
               {t("Home.certifications_section.show_all")}
               <IconArrowRight className="ml-2 w-2 fill-black" />
@@ -109,7 +109,8 @@ const HomeDesktop: FC<HomeDesktopProps> = ({
             {certifiedCompaniesDataFormatted &&
               certifiedCompaniesDataFormatted.length > 0 &&
               certifiedCompaniesDataFormatted
-                .slice(0, 4)
+                .slice(-3)
+                .reverse()
                 .map(
                   ({
                     id,

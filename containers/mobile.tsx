@@ -51,7 +51,9 @@ const HomeMobile: FC<HomeMobileProps> = ({
               </Link>
             </div>
             <div className="px-4 py-2">
-              <h2 className="text-xl font-semibold">{t("slides.1.title")}</h2>
+              <h2 className="text-xl font-semibold">
+                {t("Home.slides.1.title")}
+              </h2>
               <div className="relative mt-2">
                 <p className="whitespace-pre-line text-base font-medium">
                   {t("Home.slides.1.body")}
@@ -72,7 +74,9 @@ const HomeMobile: FC<HomeMobileProps> = ({
               </Link>
             </div>
             <div className="px-4 py-2">
-              <h2 className="text-xl font-semibold">{t("slides.2.title")}</h2>
+              <h2 className="text-xl font-semibold">
+                {t("Home.slides.2.title")}
+              </h2>
               <div className="mt-2 flex">
                 <p className="text-base font-medium">
                   <span className="float-shape-image-blockchain float-right ml-4 mt-12 h-full flex flex-col justify-center">

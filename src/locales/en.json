@@ -20,7 +20,7 @@
         "partner": "Partner"
       },
       "header_titles": {
-        "certified_companies": "Certified companies",
+        "certified_companies": "Last certified companies",
         "certified_company": "Certified company",
         "privacy_policy": "Privacy Policy",
         "the_certification": "The Certification",
@@ -58,7 +58,7 @@
       }
     },
     "CertifiedCompanies": {
-      "result": "{count} certified companies",
+      "result": "{{count}} certified companies",
       "filters": {
         "search_company": "Search company",
         "sort_by": {

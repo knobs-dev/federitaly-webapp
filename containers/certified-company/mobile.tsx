@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "@hooks/useTranslations";
 import { pdf } from "@react-pdf/renderer";
 import { useQuery } from "react-query";
 import { fetchCertifiedCompany } from "utils/api";
+import { generateAndSavePdf } from "utils/utils";
 
 import {
   Certification,
@@ -59,21 +60,6 @@ const CertifiedCompanyMobile: FC<CertifiedCompanyMobileProps> = () => {
     fetchCertifiedCompany,
   );
 
-  const saveBlob = (blob: any, filename: string) => {
-    const a = document.createElement("a");
-    document.body.appendChild(a);
-    a.style.display = "none";
-    const url = window.URL.createObjectURL(blob);
-    a.href = url;
-    a.download = filename;
-    a.click();
-    window.URL.revokeObjectURL(url);
-  };
-
-  const savePdf = async (document: any, filename: string) => {
-    saveBlob(await pdf(document).toBlob(), filename);
-  };
-
   return (
     <div className="absolute left-0 top-4 h-full w-screen flex flex-1 flex-col">
       {certifiedCompanyDataFormatted && (
@@ -91,10 +77,10 @@ const CertifiedCompanyMobile: FC<CertifiedCompanyMobileProps> = () => {
                 {certifiedCompanyDataFormatted.companyName}
               </h2>
               <h3 className="mt-2.5 text-sm font-medium">
-                {t("certification_date")}
+                {t("certification.expiration")}
               </h3>
               <p className="text-base font-medium text-[#95AEED]">
-                {certifiedCompanyDataFormatted.certificationReleaseDate}
+                {certifiedCompanyDataFormatted.certificationExpirationDate}
               </p>
             </div>
           </header>
@@ -443,41 +429,18 @@ const CertifiedCompanyMobile: FC<CertifiedCompanyMobileProps> = () => {
                 type="button"
                 className="z-2 h-[2.8125rem] w-[calc(100vw-2rem)] rounded-xl from-[#2563EB] to-[#3A4D78] bg-gradient-to-b px-6 text-lg font-bold text-white z-20"
                 onClick={() =>
-                  savePdf(
-                    <PdfCertification
-                      companyName={certifiedCompanyDataFormatted.companyName}
-                      companyAddress={
-                        certifiedCompanyDataFormatted.companyRegisteredOffice
-                      }
-                      vatNumber={certifiedCompanyDataFormatted.companyVatNumber}
-                      expirationDate={
-                        certifiedCompanyDataFormatted.certificationExpirationDate
-                      }
-                    />,
-                    "certification.pdf",
+                  generateAndSavePdf(
+                    certifiedCompanyDataFormatted.companyName,
+                    certifiedCompanyDataFormatted.companyRegisteredOffice,
+                    certifiedCompanyDataFormatted.companyVatNumber,
+                    certifiedCompanyDataFormatted.certificationReleaseDate,
+                    certifiedCompanyDataFormatted.certificationExpirationDate,
                   )
                 }
               >
                 {t("show_certification")}
               </button>
             </div>
-            {showCert && (
-              <div className="fixed w-full h-screen left-[50%] top-[50%]  translate-x-[-50%] translate-y-[-50%] bg-black flex items-center justify-center z-[60]">
-                <div className="w-[80%]">
-                  <Certification
-                    onClose={() => setShowCert(false)}
-                    companyName={certifiedCompanyDataFormatted.companyName}
-                    companyAddress={
-                      certifiedCompanyDataFormatted.companyRegisteredOffice
-                    }
-                    vatNumber={certifiedCompanyDataFormatted.companyVatNumber}
-                    expirationDate={
-                      certifiedCompanyDataFormatted.certificationExpirationDate
-                    }
-                  />
-                </div>
-              </div>
-            )}
           </section>
         </>
       )}
