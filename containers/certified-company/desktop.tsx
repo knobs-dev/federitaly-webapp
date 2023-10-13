@@ -8,6 +8,7 @@ import { PDFDocument, rgb } from "pdf-lib";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "react-query";
 import { fetchCertifiedCompany } from "utils/api";
+import { generateAndSavePdf } from "utils/utils";
 
 import {
   Dialog,
@@ -51,72 +52,6 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
     instagram: <IconInstagram className={socialIconsClass} />,
     youtube: <IconYoutube className={socialIconsClass} />,
     linkedin: <IconLinkedin className={socialIconsClass} />,
-  };
-
-  const generateAndSavePdf = async (
-    companyName: string,
-    address: string,
-    vatNumber: string,
-    expiration: string,
-  ) => {
-    const qrCanvas = new QRCodeCanvas(window.location.href);
-    const dataUrlWithQRCode = qrCanvas.toDataUrl();
-    const pngImageBytes = await fetch(dataUrlWithQRCode).then((res) =>
-      res.arrayBuffer(),
-    );
-
-    const existingPdfBytes = await fetch("/certificate.pdf").then((res) =>
-      res.arrayBuffer(),
-    );
-
-    const pdfDoc = await PDFDocument.load(existingPdfBytes);
-
-    const pngImage = await pdfDoc.embedPng(pngImageBytes);
-
-    const pages = pdfDoc.getPages();
-
-    const firstPage = pages[0];
-
-    firstPage.drawText(companyName, {
-      x: 78,
-      y: 535,
-      size: 18,
-      maxWidth: 390,
-      color: rgb(0, 0, 0),
-    });
-
-    firstPage.drawText(address, {
-      x: 78,
-      y: 465,
-      size: 14,
-      maxWidth: 270,
-      color: rgb(0, 0, 0),
-    });
-
-    firstPage.drawText(vatNumber, {
-      x: 78,
-      y: 360,
-      size: 14,
-      color: rgb(0, 0, 0),
-    });
-
-    firstPage.drawText(expiration, {
-      x: 78,
-      y: 300,
-      size: 14,
-      color: rgb(0, 0, 0),
-    });
-
-    firstPage.drawImage(pngImage, {
-      x: 78,
-      y: 100,
-      width: 70,
-      height: 70,
-    });
-
-    const pdfBytes = await pdfDoc.save();
-
-    download(pdfBytes, "certificate.pdf", "application/pdf");
   };
 
   return (
@@ -172,6 +107,7 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
                       certifiedCompanyDataFormatted.companyName,
                       certifiedCompanyDataFormatted.companyRegisteredOffice,
                       certifiedCompanyDataFormatted.companyVatNumber,
+                      certifiedCompanyDataFormatted.certificationReleaseDate,
                       certifiedCompanyDataFormatted.certificationExpirationDate,
                     )
                   }
@@ -211,21 +147,12 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
                       (imagePath, index) => (
                         <Dialog key={imagePath}>
                           <DialogTrigger asChild>
-                            <div className="h-[20rem] w-[20rem] relative cursor-pointer">
+                            <div className="h-[20rem] w-[20rem] relative cursor-pointer mx-2">
                               <Image
                                 src={imagePath}
                                 fill
                                 alt=""
-                                className={`w-[6.25rem] h-[6.25rem] border-1 border-[#6D6D6D] rounded-2xl ${
-                                  index === 0 ? "ml-4" : "ml-1.5"
-                                } ${
-                                  index ===
-                                  certifiedCompanyDataFormatted
-                                    .certifiedProductsImages.length -
-                                    1
-                                    ? "mr-4"
-                                    : "mr-1.5"
-                                }`}
+                                className="w-[6.25rem] h-[6.25rem] border-1 border-[#6D6D6D] rounded-2xl"
                               />
                             </div>
                           </DialogTrigger>
