@@ -167,30 +167,31 @@
         ],
         "list": [
           {
-            "title": "Origine di Qualità",
-            "body": "Lorem ipsuim Dolor Sit Amet consectetur Adipiscing Elit."
+            "title": "Origin of Quality",
+            "body": "Certify true \"100% Italian\" excellences"
           },
           {
-            "title": "Verifica",
-            "body": "Lorem ipsuim Dolor Sit Amet consectetur Adipiscing Elit."
+            "title": "Verification",
+            "body": "Seriousness and rigor in checks by Federitaly to certify only \"100% Made in Italy\""
           },
           {
-            "title": "Fiducia",
-            "body": "Lorem ipsuim Dolor Sit Amet consectetur Adipiscing Elit."
+            "title": "Trust",
+            "body": "Restore trust to consumers with immediate certification verification"
           },
           {
-            "title": "Autenticità del Prodotto",
-            "body": "Lorem ipsuim Dolor Sit Amet consectetur Adipiscing Elit."
+            "title": "Product Authenticity",
+            "body": "Thanks to blockchain, we ensure the security and transparency of information"
           }
         ],
-
-        "subtitle": "Il marchio \"federitaly 100% made in italy\" e' per le aziende italiane la porta di accesso al mercato globale",
-        "body2": "Il certificato non è solo una validazione dell'autenticità, ma anche una porta di accesso ad un'esperienza interattiva e coinvolgente, grazie alla Pagina Esperienza. Immagina questa scena: Un consumatore che acquista un prodotto italiano certificato, con il QR Code associato al certificato stampato sulla sua etichetta. Quando il QR code viene scansionato, il consumatore è immediatamente trasportato nel cuore della storia dell'azienda, esplorando la passione e l'artigianalità presente in ogni creazione.",
+        
+        "subtitle": "\"Federitaly 100% Made in Italy\" brand is the gateway for Italian companies to the global market",
+        "body2": "The certificate is not just a validation of authenticity, but also a gateway to an interactive and engaging experience, thanks to the Experience Page. Imagine this scene: A consumer purchases a certified Italian product with the QR code associated with the certificate printed on its label. When the QR code is scanned, the consumer is immediately transported into the heart of the company's story, exploring the passion and craftsmanship present in every creation.",
+        
         "bodyList": [
-          "Ecco cosa offre la Pagina Esperienza: un'opportunità per le aziende di appassionare ed ispirare il loro pubblico come mai prima d'ora.",
-          "Pensala come uno showroom digitale, dove le aziende possono esporre i loro migliori lavori attraverso un ricco mosaico di contenuti multimediali.",
-          "Video che mostrano l'arte intricata della loro maestria, immagini che catturano l'essenza del loro marchio, PDF che dettagliano le loro iniziative di sostenibilità, e brochure con le loro ultime collezioni - sono tutti accessibili con una sola scansione.",
-          "La Pagina Esperienza è più di un semplice mezzo per la condivisione dei contenuti, è un palcoscenico dove le aziende possono rivelare la loro vera essenza - dimostrando la loro autentica identità e costruendo legami significativi con i loro clienti."
+          "Here's what the Experience Page offers: an opportunity for companies to captivate and inspire their audience like never before.",
+          "Think of it as a digital showroom, where companies can showcase their best works through a rich mosaic of multimedia content.",
+          "Videos showcasing the intricate artistry of their craftsmanship, images capturing the essence of their brand, PDFs detailing their sustainability initiatives, and brochures featuring their latest collections—all accessible with a single scan.",
+          "The Experience Page is more than just a means for content sharing; it's a stage where companies can reveal their true essence—demonstrating their authentic identity and building meaningful connections with their customers."
         ]
       }
     },
