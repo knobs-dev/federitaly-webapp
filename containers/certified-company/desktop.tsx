@@ -53,7 +53,6 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
     youtube: <IconYoutube className={socialIconsClass} />,
     linkedin: <IconLinkedin className={socialIconsClass} />,
   };
-
   return (
     <div className="relative pb-24">
       <HeaderDesktop title={certifiedCompanyDataFormatted?.companyName} />
