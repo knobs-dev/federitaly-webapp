@@ -1,14 +1,12 @@
-import { useEffect, useState, type FC } from "react";
+import { useState, type FC } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useLocale, useTranslations } from "@hooks/useTranslations";
-import { pdf } from "@react-pdf/renderer";
 import { useQuery } from "react-query";
 import { fetchCertifiedCompany } from "utils/api";
 import { generateAndSavePdf } from "utils/utils";
 
 import {
-  Certification,
   Dialog,
   DialogContent,
   DialogTrigger,
@@ -24,14 +22,6 @@ import {
   IconLinkedin,
   IconYoutube,
 } from "@components/icons";
-import PdfCertification from "@components/PdfCertification";
-
-import {
-  getCertificationData,
-  getCertifiedCompanies,
-} from "@api/certifications";
-import { supportedLocales } from "@constants";
-import { formatCertifiedCompanyData } from "@utils";
 
 type CertifiedCompanyMobileProps = {};
 

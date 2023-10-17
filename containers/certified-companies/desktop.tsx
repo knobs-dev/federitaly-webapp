@@ -1,9 +1,7 @@
-import { useEffect, useRef, useState, type FC } from "react";
-import { createPortal } from "react-dom";
+import { useEffect, useState, type FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "@hooks/useTranslations";
-import { useVirtualizer } from "@tanstack/react-virtual";
 import Fuse from "fuse.js";
 import debounce from "lodash.debounce";
 import { useTranslation } from "react-i18next";
@@ -11,7 +9,6 @@ import { useQuery } from "react-query";
 import { fetchCompanies } from "utils/api";
 
 import {
-  Card,
   Checkbox,
   DropdownMenu,
   DropdownMenuContent,
@@ -30,7 +27,6 @@ type CertifiedCompaniesDesktopProps = {};
 
 const CertifiedCompaniesDesktop: FC<CertifiedCompaniesDesktopProps> = () => {
   const locale = useLocale();
-  const virtualizedListRef = useRef(null);
 
   const { data: certifiedCompaniesDataFormatted } = useQuery(
     ["certifiedCompanies", locale],
@@ -53,14 +49,6 @@ const CertifiedCompaniesDesktop: FC<CertifiedCompaniesDesktopProps> = () => {
   const prevSortBy = usePrevious(sortBy);
 
   const { t } = useTranslation();
-
-  const rowVirtualizer = useVirtualizer({
-    count: filteredCertifiedCompaniesDataFormatted
-      ? filteredCertifiedCompaniesDataFormatted.length
-      : 0,
-    getScrollElement: () => virtualizedListRef.current,
-    estimateSize: () => 70,
-  });
 
   const handleSearch = debounce((value) => {
     setSearch(value.target.value);

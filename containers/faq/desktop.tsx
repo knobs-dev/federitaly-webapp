@@ -6,7 +6,6 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  Slider,
 } from "@components";
 import HeaderDesktop from "@components/HeaderDesktop";
 
