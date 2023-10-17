@@ -1,10 +1,7 @@
 import { useState, type FC } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { QRCodeCanvas } from "@cheprasov/qrcode";
 import { useLocale } from "@hooks/useTranslations";
-import download from "downloadjs";
-import { PDFDocument, rgb } from "pdf-lib";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "react-query";
 import { fetchCertifiedCompany } from "utils/api";

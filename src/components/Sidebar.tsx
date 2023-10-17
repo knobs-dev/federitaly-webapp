@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { useTranslations } from "@hooks/useTranslations";
-// import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 
 import {
@@ -15,17 +14,9 @@ import {
 } from "@components/icons";
 import Link from "@components/RetainQueryLink";
 
-import {
-  clientLocale,
-  clientT,
-  getCurrentLanguage,
-  setCurrentLanguage,
-} from "@store/i18n";
+import { getCurrentLanguage, setCurrentLanguage } from "@store/i18n";
 
 const Sidebar = () => {
-  // const router = useRouter();
-  // const pathname = router.pathname;
-
   const t = useTranslations("Common");
 
   return (
