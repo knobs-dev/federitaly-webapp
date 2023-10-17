@@ -1,5 +1,6 @@
 import { type FC } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 
 import { Card, Slider } from "@components";
@@ -18,6 +19,8 @@ const HomeMobile: FC<HomeMobileProps> = ({
   certifiedCompaniesDataFormatted,
 }) => {
   const { t } = useTranslation();
+
+  const router = useRouter();
 
   return (
     <>
@@ -48,7 +51,9 @@ const HomeMobile: FC<HomeMobileProps> = ({
               </Link>
             </div>
             <div className="px-4 py-2">
-              <h2 className="text-xl font-semibold">{t("slides.1.title")}</h2>
+              <h2 className="text-xl font-semibold">
+                {t("Home.slides.1.title")}
+              </h2>
               <div className="relative mt-2">
                 <p className="whitespace-pre-line text-base font-medium">
                   {t("Home.slides.1.body")}
@@ -69,7 +74,9 @@ const HomeMobile: FC<HomeMobileProps> = ({
               </Link>
             </div>
             <div className="px-4 py-2">
-              <h2 className="text-xl font-semibold">{t("slides.2.title")}</h2>
+              <h2 className="text-xl font-semibold">
+                {t("Home.slides.2.title")}
+              </h2>
               <div className="mt-2 flex">
                 <p className="text-base font-medium">
                   <span className="float-shape-image-blockchain float-right ml-4 mt-12 h-full flex flex-col justify-center">
@@ -110,17 +117,21 @@ const HomeMobile: FC<HomeMobileProps> = ({
                 companyName,
                 certificationExpirationDate,
               }) => (
-                <Link
+                <div
                   key={id}
-                  href={`/certified-company/${id}`}
+                  // href={`/certified-company?id=${id}`}
                   className="block"
+                  onClick={() => router.push(`/certified-company?id=${id}`)}
+                  role="button"
+                  tabIndex={0}
+                  aria-hidden
                 >
                   <Card
                     profilePhoto={companyProfilePhoto}
                     name={companyName}
                     expirationDate={certificationExpirationDate}
                   />
-                </Link>
+                </div>
               ),
             )}
           {certifiedCompaniesDataFormatted &&

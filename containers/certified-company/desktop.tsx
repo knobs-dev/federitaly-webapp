@@ -1,13 +1,16 @@
 import { useState, type FC } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { QRCodeCanvas } from "@cheprasov/qrcode";
 import { useLocale } from "@hooks/useTranslations";
+import download from "downloadjs";
+import { PDFDocument, rgb } from "pdf-lib";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "react-query";
 import { fetchCertifiedCompany } from "utils/api";
+import { generateAndSavePdf } from "utils/utils";
 
 import {
-  Certification,
   Dialog,
   DialogContent,
   DialogTrigger,
@@ -29,6 +32,7 @@ type CertifiedCompanyDesktopProps = {};
 
 const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
   const [showCert, setShowCert] = useState(false);
+  const [showMoreDescription, setShowMoreDescription] = useState(false);
 
   const { t } = useTranslation();
 
@@ -59,7 +63,7 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
               <Image
                 src={certifiedCompanyDataFormatted.companyProfilePhoto}
                 fill
-                objectFit="cover"
+                objectFit="contain"
                 alt="company profile photo"
               />
             </div>
@@ -97,7 +101,15 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
                 <button
                   type="button"
                   className="z-2 h-[2.8125rem] rounded-xl from-[#2563EB] to-[#3A4D78] bg-gradient-to-b px-6 text-lg font-bold text-white z-20"
-                  onClick={() => setShowCert(true)}
+                  onClick={() =>
+                    generateAndSavePdf(
+                      certifiedCompanyDataFormatted.companyName,
+                      certifiedCompanyDataFormatted.companyRegisteredOffice,
+                      certifiedCompanyDataFormatted.companyVatNumber,
+                      certifiedCompanyDataFormatted.certificationReleaseDate,
+                      certifiedCompanyDataFormatted.certificationExpirationDate,
+                    )
+                  }
                 >
                   {t("CertifiedCompany.show_certification")}
                 </button>
@@ -134,21 +146,12 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
                       (imagePath, index) => (
                         <Dialog key={imagePath}>
                           <DialogTrigger asChild>
-                            <div className="h-[20rem] w-[20rem] relative cursor-pointer">
+                            <div className="h-[20rem] w-[20rem] relative cursor-pointer mx-2">
                               <Image
                                 src={imagePath}
                                 fill
                                 alt=""
-                                className={`w-[6.25rem] h-[6.25rem] border-1 border-[#6D6D6D] rounded-2xl ${
-                                  index === 0 ? "ml-4" : "ml-1.5"
-                                } ${
-                                  index ===
-                                  certifiedCompanyDataFormatted
-                                    .certifiedProductsImages.length -
-                                    1
-                                    ? "mr-4"
-                                    : "mr-1.5"
-                                }`}
+                                className="w-[6.25rem] h-[6.25rem] border-1 border-[#6D6D6D] rounded-2xl"
                               />
                             </div>
                           </DialogTrigger>
@@ -171,8 +174,33 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
                     "CertifiedCompany.sections.the_company.company_description",
                   )}
                 </h2>
+
                 <p className="mt-2 text-[1rem] font-medium text-[#615E5E]">
-                  {certifiedCompanyDataFormatted.companyDescription}
+                  {!showMoreDescription
+                    ? certifiedCompanyDataFormatted.companyDescription.slice(
+                        0,
+                        500,
+                      )
+                    : certifiedCompanyDataFormatted.companyDescription}
+                  {certifiedCompanyDataFormatted.companyDescription.length >
+                    500 && (
+                    <span
+                      className="ml-2 text-[#3D67D6] text-[1rem] cursor-pointer"
+                      onClick={() =>
+                        setShowMoreDescription(!showMoreDescription)
+                      }
+                      role="button"
+                      tabIndex={0}
+                      aria-hidden
+                    >
+                      ...
+                      {t(
+                        showMoreDescription
+                          ? "Common.see_less"
+                          : "Common.see_more",
+                      )}
+                    </span>
+                  )}
                 </p>
                 <video
                   controls
@@ -423,24 +451,6 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
               </TabsContent>
             </Tabs>
           </div>
-
-          {showCert && (
-            <div className="fixed w-full h-screen left-[50%] top-[50%]  translate-x-[-50%] translate-y-[-50%] bg-black flex items-center justify-center z-[60]">
-              <div className=" h-[90%]">
-                <Certification
-                  onClose={() => setShowCert(false)}
-                  companyName={certifiedCompanyDataFormatted.companyName}
-                  companyAddress={
-                    certifiedCompanyDataFormatted.companyRegisteredOffice
-                  }
-                  vatNumber={certifiedCompanyDataFormatted.companyVatNumber}
-                  expirationDate={
-                    certifiedCompanyDataFormatted.certificationExpirationDate
-                  }
-                />
-              </div>
-            </div>
-          )}
         </section>
       )}
     </div>

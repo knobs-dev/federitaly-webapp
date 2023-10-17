@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type FC } from "react";
 import { createPortal } from "react-dom";
+import { useRouter } from "next/router";
 import { useLocale } from "@hooks/useTranslations";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import Fuse from "fuse.js";
@@ -52,6 +53,8 @@ const CertifiedCompaniesMobile: FC<CertifiedCompaniesMobileProps> = () => {
   const prevSortBy = usePrevious(sortBy);
 
   const { t } = useTranslation();
+
+  const router = useRouter();
 
   const rowVirtualizer = useVirtualizer({
     count: filteredCertifiedCompaniesDataFormatted
@@ -210,8 +213,15 @@ const CertifiedCompaniesMobile: FC<CertifiedCompaniesMobileProps> = () => {
                         transform: `translateY(${start}px)`,
                       }}
                     >
-                      <Link
-                        href={`/certified-company/${filteredCertifiedCompaniesDataFormatted[index].id}`}
+                      <div
+                        onClick={() =>
+                          router.push(
+                            `/certified-company?id=${filteredCertifiedCompaniesDataFormatted[index].id}`,
+                          )
+                        }
+                        role="button"
+                        tabIndex={0}
+                        aria-hidden
                       >
                         <Card
                           profilePhoto={
@@ -227,7 +237,7 @@ const CertifiedCompaniesMobile: FC<CertifiedCompaniesMobileProps> = () => {
                               .certificationExpirationDate
                           }
                         />
-                      </Link>
+                      </div>
                     </div>
                   );
                 })}

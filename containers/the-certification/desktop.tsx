@@ -131,7 +131,7 @@ const TheCertificationDesktop: React.FC<TheCertificationDesktopProps> = () => {
               </p>
             </div>
           </div>
-          <div className="col-span-3 h-full flex flex-col justify-center items-center">
+          <div className="col-span-3 mt-8 h-full flex flex-col justify-center items-center">
             <div className="bg-white p-6 rounded-[1.5rem]">
               <Image
                 src="/assets/images/trust.png"
