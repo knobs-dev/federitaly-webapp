@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 
-import { Card } from "@components";
 import HeaderDesktop from "@components/HeaderDesktop";
 import { IconArrowRight } from "@components/icons";
 

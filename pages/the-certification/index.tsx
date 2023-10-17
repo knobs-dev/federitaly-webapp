@@ -1,4 +1,3 @@
-import Image from "next/image";
 import useMediaQuery from "@hooks/useMediaQuery";
 import { useTranslations } from "@hooks/useTranslations";
 import TheCertificationDesktop from "containers/the-certification/desktop";

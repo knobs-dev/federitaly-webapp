@@ -4,14 +4,6 @@ import FaqDesktop from "containers/faq/desktop";
 import FaqMobile from "containers/faq/mobile";
 import { useTranslation } from "react-i18next";
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-  Slider,
-} from "@components";
-
 type Topics = "generic" | "the_certification" | "blockchain" | "advantages";
 
 const Faq = () => {
