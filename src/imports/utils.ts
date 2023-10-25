@@ -71,7 +71,7 @@ export const formatCertifiedCompanyData = (
       companyData.__apps[0].data["Certification Expiration Date"].content.date,
     ),
     certificationReleaseDate: new Date(
-      companyData.__apps[0].data["Certification Expiration Date"].content.date,
+      companyData.__apps[0].data["Certification Issuance Date"].content.date,
     ).toLocaleDateString(),
     certificationReleaseDateFormatted: new Date(
       companyData.__apps[0].data["Certification Issuance Date"].content.date,
