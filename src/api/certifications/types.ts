@@ -125,6 +125,13 @@ export type LanguageContentObject = {
   content: SubTitleClass;
 };
 
+export type DateContentObject = {
+  language: string;
+  content: {
+    date: number;
+  };
+};
+
 type Data = {
   "Certification Platform"?: LanguageContentObject;
   "Major contributor to the Internet Computer blockchain"?: LanguageContentObject;
@@ -142,8 +149,8 @@ type Data = {
   "Certification Access Request Date"?: LanguageContentObject;
   "Company Audit Date"?: LanguageContentObject;
   Auditors?: LanguageContentObject;
-  "Certification Issuance Date": LanguageContentObject;
-  "Certification Expiration Date": LanguageContentObject;
+  "Certification Issuance Date": DateContentObject;
+  "Certification Expiration Date": DateContentObject;
   "Publication of Certificate on Blockchain"?: LanguageContentObject;
   "ATECO Code": LanguageContentObject;
   "VAT Number": LanguageContentObject;

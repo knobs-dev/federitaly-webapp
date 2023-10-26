@@ -64,19 +64,17 @@ export const formatCertifiedCompanyData = (
   return {
     id: companyData.id,
     companyName: companyData.__apps[0].data["Company Name"].content[locale],
-    certificationExpirationDate:
-      companyData.__apps[0].data["Certification Expiration Date"].content[
-        locale
-      ],
+    certificationExpirationDate: new Date(
+      companyData.__apps[0].data["Certification Expiration Date"].content.date,
+    ).toLocaleDateString(),
     certificationExpirationDateFormatted: new Date(
-      companyData.__apps[0].data["Certification Expiration Date"].content[
-        locale
-      ],
+      companyData.__apps[0].data["Certification Expiration Date"].content.date,
     ),
-    certificationReleaseDate:
-      companyData.__apps[0].data["Certification Issuance Date"].content[locale],
+    certificationReleaseDate: new Date(
+      companyData.__apps[0].data["Certification Issuance Date"].content.date,
+    ).toLocaleDateString(),
     certificationReleaseDateFormatted: new Date(
-      companyData.__apps[0].data["Certification Issuance Date"].content[locale],
+      companyData.__apps[0].data["Certification Issuance Date"].content.date,
     ),
     companyProfilePhoto: companyData.library.find(
       (resource) => resource.library_id === mainImagePath,
