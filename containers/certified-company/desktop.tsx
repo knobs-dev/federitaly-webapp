@@ -313,15 +313,23 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
                     <h2 className="text-[1rem] text-[#615E5E]">
                       {t("CertifiedCompany.sections.certificate_data.website")}
                     </h2>
-                    <a
-                      href={certifiedCompanyDataFormatted.companyWebsite}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <p className="text-[1rem] font-medium text-black">
-                        {certifiedCompanyDataFormatted.companyWebsite}
-                      </p>
-                    </a>
+                    <div className="flex flex-col">
+                      {websiteUrls.length > 0 ? (
+                        websiteUrls.map((url) => (
+                          <a
+                            key={url}
+                            href={url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-xs font-medium"
+                          >
+                            {url}
+                          </a>
+                        ))
+                      ) : (
+                        <p className="text-xs font-medium">NA</p>
+                      )}
+                    </div>
                   </span>
                   <span>
                     <h2 className="text-[1rem] text-[#615E5E]">
