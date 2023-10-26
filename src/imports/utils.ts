@@ -241,3 +241,16 @@ export const getCompanyCertificationProcessFromJsonString = (
 export function blacklistFilter(blacklist: { [key: string]: boolean } = {}) {
   return (key: string) => !blacklist[key];
 }
+
+export function extractWebsites(urls: string): string[] {
+  if (urls === "NA") return [];
+
+  return urls
+    .split(" ")
+    .filter((el) => el !== "")
+    .map((url) => url.trim())
+    .map((url) => {
+      if (url.startsWith("https://")) return url;
+      return `https://${url}`;
+    });
+}
