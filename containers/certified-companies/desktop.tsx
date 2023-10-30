@@ -196,17 +196,30 @@ const CertifiedCompaniesDesktop: FC<CertifiedCompaniesDesktopProps> = () => {
                   <Image
                     src={company.companyProfilePhoto}
                     alt={`${company.companyName} logo`}
-                    className="bg-white object-contain rounded-[1rem]"
+                    className="bg-white object-contain rounded-[1rem] p-4"
                     fill
                   />
                 </div>
-                <h4 className="mt-2 text-[1.125rem] text-[#2D303D] font-semibold h-[7rem]">
+                <h4 className="mt-2 text-[1.125rem] text-[#2D303D] font-semibold h-[6rem]">
                   {company.companyName}
                 </h4>
-                <div className="w-full">
-                  <h6 className="w-full text-right">
-                    {company.certificationExpirationDate}
-                  </h6>
+                <div className="flex justify-between items-center w-full">
+                  <div>
+                    <h4 className="text-[0.625rem] text-[#454857] font-medium">
+                      {t("Common.release_desktop")}
+                    </h4>
+                    <h4 className="text-[0.75rem] text-[#9496A3] font-medium">
+                      {company.certificationReleaseDate}
+                    </h4>
+                  </div>
+                  <div>
+                    <h4 className="text-[0.625rem] text-[#454857] font-medium">
+                      {t("Common.expiration_desktop")}
+                    </h4>
+                    <h4 className="text-[0.75rem] text-[#9496A3] font-medium">
+                      {company.certificationExpirationDate}
+                    </h4>
+                  </div>
                 </div>
               </div>
             </Link>

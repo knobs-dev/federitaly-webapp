@@ -21,7 +21,7 @@ const HomeDesktop: FC<HomeDesktopProps> = ({
   const { t } = useTranslation();
   const router = useRouter();
   return (
-    <div className="relative pb-12">
+    <div className="relative">
       <div className="absolute top-0 left-0 h-[100%] w-[70%] z-0">
         <Image
           src="/assets/images/blue-circle.png"
@@ -68,12 +68,13 @@ const HomeDesktop: FC<HomeDesktopProps> = ({
               </button>
               <button
                 type="button"
-                className="bg-white border border-[#6379C8] flex justify-center items-center relative rounded-[1rem] p-[0.8rem] text-[1.125rem] font-semibold"
+                className="bg-white border border-[#6379C8] flex justify-center items-center relative rounded-[1rem] p-[0.55rem] text-[1.125rem] font-semibold"
                 onClick={() => window.open("https://federitaly.it/")}
               >
                 <Image
                   src="/assets/images/logo-blue.png"
                   alt="logo blue"
+                  className="mt-[0.5rem]"
                   height={20}
                   width={140}
                 />
@@ -103,7 +104,7 @@ const HomeDesktop: FC<HomeDesktopProps> = ({
             </Link>
           </div>
         </section>
-        <section className="bg-[#F2F4F4] z-10 relative">
+        <section className="bg-[#F2F4F4] z-10 relative pb-12">
           <div className="container mx-auto grid grid-cols-12 py-6 gap-5">
             {certifiedCompaniesDataFormatted &&
               certifiedCompaniesDataFormatted.length > 0 &&

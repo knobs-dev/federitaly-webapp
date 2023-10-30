@@ -57,7 +57,7 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
     linkedin: <IconLinkedin className={socialIconsClass} />,
   };
   return (
-    <div className="relative pb-24">
+    <div className="relative">
       <HeaderDesktop title={certifiedCompanyDataFormatted?.companyName} />
       {certifiedCompanyDataFormatted && (
         <section className="relative container mx-auto grid grid-cols-12 mt-20">
@@ -154,7 +154,7 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
                                 src={imagePath}
                                 fill
                                 alt=""
-                                className="w-[6.25rem] h-[6.25rem] border-1 border-[#6D6D6D] rounded-2xl"
+                                className="w-[6.25rem] h-[6.25rem] border-1 border-[#6D6D6D] rounded-2xl object-contain"
                               />
                             </div>
                           </DialogTrigger>
