@@ -20,7 +20,7 @@ const TheCertificationDesktop: React.FC<TheCertificationDesktopProps> = () => {
             fill
             src="/assets/images/the-certification-hero-image.png"
             alt=""
-            className="w-full object-cover"
+            className="w-full object-cover rounded-xl"
           />
         </div>
         <div className="col-span-5">
@@ -41,7 +41,7 @@ const TheCertificationDesktop: React.FC<TheCertificationDesktopProps> = () => {
         </div>
 
         <div className="col-span-6 mt-20">
-          <div className="space-y-2 p-8 bg-[#F9F9F9] h-[15rem]">
+          <div className="space-y-2 p-8 bg-[#F9F9F9] h-[15rem] rounded-xl">
             <h3 className="text-[1.125rem] font-semibold text-[#615E5E]">
               {t("TheCertification.list.0.title")}
             </h3>
@@ -50,7 +50,7 @@ const TheCertificationDesktop: React.FC<TheCertificationDesktopProps> = () => {
             </p>
           </div>
 
-          <div className="space-y-2 p-8 bg-[#F9F9F9] mt-9 h-[17rem]">
+          <div className="space-y-2 p-8 bg-[#F9F9F9] mt-9 h-[17rem] rounded-xl">
             <h3 className="text-[1.125rem] font-semibold text-[#615E5E]">
               {t("TheCertification.list.2.title")}
             </h3>
@@ -61,7 +61,7 @@ const TheCertificationDesktop: React.FC<TheCertificationDesktopProps> = () => {
         </div>
 
         <div className="col-span-6 mt-20">
-          <div className="space-y-2 p-8 bg-[#F9F9F9] h-[15rem]">
+          <div className="space-y-2 p-8 bg-[#F9F9F9] h-[15rem] rounded-xl">
             <h3 className="text-[1.125rem] font-semibold text-[#615E5E]">
               {t("TheCertification.list.1.title")}
             </h3>
@@ -70,7 +70,7 @@ const TheCertificationDesktop: React.FC<TheCertificationDesktopProps> = () => {
             </p>
           </div>
 
-          <div className="space-y-2 p-8 bg-[#F9F9F9] mt-9 h-[17rem]">
+          <div className="space-y-2 p-8 bg-[#F9F9F9] mt-9 h-[17rem] rounded-xl">
             <h3 className="text-[1.125rem] font-semibold text-[#615E5E]">
               {t("TheCertification.list.3.title")}
             </h3>
@@ -86,8 +86,8 @@ const TheCertificationDesktop: React.FC<TheCertificationDesktopProps> = () => {
           </p>
         </div>
       </section>
-      <div className="w-full bg-[#F2F1F1]">
-        <section className="relative container mx-auto grid grid-cols-12 mt-20 gap-8">
+      <div className="w-full bg-[#F2F1F1] py-20">
+        <section className="relative container mx-auto grid grid-cols-12 gap-8">
           <div className="col-span-6 py-32">
             <h3 className="text-[2.375rem] font-semibold text-[#0A1A36]">
               {t("TheCertification.blockchain_section.title")}
@@ -101,7 +101,7 @@ const TheCertificationDesktop: React.FC<TheCertificationDesktopProps> = () => {
           </div>
 
           <div className="col-span-3 mt-8 h-full flex flex-col justify-center items-center">
-            <div className="bg-white p-6 rounded-[1.5rem]">
+            <div className="bg-white p-6 rounded-[1.5rem] h-[15.5rem]">
               <Image
                 src="/assets/images/quality.png"
                 width={64}
@@ -116,7 +116,7 @@ const TheCertificationDesktop: React.FC<TheCertificationDesktopProps> = () => {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-[1.5rem] mt-8">
+            <div className="bg-white p-6 rounded-[1.5rem] mt-8 h-[15.5rem]">
               <Image
                 src="/assets/images/verification.png"
                 width={64}
@@ -132,7 +132,7 @@ const TheCertificationDesktop: React.FC<TheCertificationDesktopProps> = () => {
             </div>
           </div>
           <div className="col-span-3 mt-8 h-full flex flex-col justify-center items-center">
-            <div className="bg-white p-6 rounded-[1.5rem]">
+            <div className="bg-white p-6 rounded-[1.5rem] h-[15.5rem]">
               <Image
                 src="/assets/images/trust.png"
                 width={64}
@@ -147,7 +147,7 @@ const TheCertificationDesktop: React.FC<TheCertificationDesktopProps> = () => {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-[1.5rem] mt-8">
+            <div className="bg-white p-6 rounded-[1.5rem] mt-8 h-[15.5rem]">
               <Image
                 src="/assets/images/authentication.png"
                 width={64}
@@ -176,7 +176,12 @@ const TheCertificationDesktop: React.FC<TheCertificationDesktopProps> = () => {
         </div>
 
         <div className="col-span-5 relative h-[37rem] w-[23rem] mt-16">
-          <Image src="/assets/images/iphones.png" alt="iphones" fill />
+          <Image
+            src="/assets/images/iphones.png"
+            alt="iphones"
+            fill
+            className="object-contain"
+          />
         </div>
 
         <div className="col-span-7 mt-16">
