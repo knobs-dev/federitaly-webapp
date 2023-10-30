@@ -25,6 +25,8 @@ import {
   IconYoutube,
 } from "@components/icons";
 
+import { extractWebsites } from "@utils";
+
 type CertifiedCompanyDesktopProps = {};
 
 const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
@@ -42,6 +44,10 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
     ["certifiedCompany", id, locale],
     fetchCertifiedCompany,
   );
+
+  const websiteUrls = certifiedCompanyDataFormatted
+    ? extractWebsites(certifiedCompanyDataFormatted?.companyWebsite)
+    : [];
 
   const socialIconsClass = "w-8 h-8 fill-white";
   const socialsIcons = {
@@ -229,19 +235,20 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
                     <h3 className="text-sm font-medium">
                       {certifiedCompanyDataFormatted.companyName}
                     </h3>
-                    {certifiedCompanyDataFormatted.companyWebsite !== "NA" ? (
-                      <a
-                        href={certifiedCompanyDataFormatted.companyWebsite}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-xs font-medium"
-                      >
-                        {certifiedCompanyDataFormatted.companyWebsite}
-                      </a>
+                    {websiteUrls.length > 0 ? (
+                      websiteUrls.map((url) => (
+                        <a
+                          key={url}
+                          href={url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-xs font-medium"
+                        >
+                          {url}
+                        </a>
+                      ))
                     ) : (
-                      <p className="text-xs font-medium">
-                        {certifiedCompanyDataFormatted.companyWebsite}
-                      </p>
+                      <p className="text-xs font-medium">NA</p>
                     )}
                   </div>
                   <div className="space-1 ml-auto w-full flex justify-end space-x-4">
@@ -306,15 +313,23 @@ const CertifiedCompanyDesktop: FC<CertifiedCompanyDesktopProps> = () => {
                     <h2 className="text-[1rem] text-[#615E5E]">
                       {t("CertifiedCompany.sections.certificate_data.website")}
                     </h2>
-                    <a
-                      href={certifiedCompanyDataFormatted.companyWebsite}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <p className="text-[1rem] font-medium text-black">
-                        {certifiedCompanyDataFormatted.companyWebsite}
-                      </p>
-                    </a>
+                    <div className="flex flex-col">
+                      {websiteUrls.length > 0 ? (
+                        websiteUrls.map((url) => (
+                          <a
+                            key={url}
+                            href={url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-xs font-medium"
+                          >
+                            {url}
+                          </a>
+                        ))
+                      ) : (
+                        <p className="text-xs font-medium">NA</p>
+                      )}
+                    </div>
                   </span>
                   <span>
                     <h2 className="text-[1rem] text-[#615E5E]">

@@ -23,6 +23,8 @@ import {
   IconYoutube,
 } from "@components/icons";
 
+import { extractWebsites } from "@utils";
+
 type CertifiedCompanyMobileProps = {};
 
 const CertifiedCompanyMobile: FC<CertifiedCompanyMobileProps> = () => {
@@ -49,6 +51,10 @@ const CertifiedCompanyMobile: FC<CertifiedCompanyMobileProps> = () => {
     ["certifiedCompany", id, locale],
     fetchCertifiedCompany,
   );
+
+  const websiteUrls = certifiedCompanyDataFormatted
+    ? extractWebsites(certifiedCompanyDataFormatted?.companyWebsite)
+    : [];
 
   return (
     <div className="absolute left-0 top-4 h-full w-screen flex flex-1 flex-col">
@@ -210,20 +216,23 @@ const CertifiedCompanyMobile: FC<CertifiedCompanyMobileProps> = () => {
                     <h3 className="text-sm font-medium">
                       {certifiedCompanyDataFormatted.companyName}
                     </h3>
-                    {certifiedCompanyDataFormatted.companyWebsite !== "NA" ? (
-                      <a
-                        href={certifiedCompanyDataFormatted.companyWebsite}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-xs font-medium"
-                      >
-                        {certifiedCompanyDataFormatted.companyWebsite}
-                      </a>
-                    ) : (
-                      <p className="text-xs font-medium">
-                        {certifiedCompanyDataFormatted.companyWebsite}
-                      </p>
-                    )}
+                    <div className="flex flex-col">
+                      {websiteUrls.length > 0 ? (
+                        websiteUrls.map((url) => (
+                          <a
+                            key={url}
+                            href={url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-xs font-medium"
+                          >
+                            {url}
+                          </a>
+                        ))
+                      ) : (
+                        <p className="text-xs font-medium">NA</p>
+                      )}
+                    </div>
                   </div>
                   <div className="space-1 ml-auto max-w-[4.75rem] w-full flex flex-wrap justify-between gap-y-3.5">
                     {Object.keys(
@@ -282,15 +291,23 @@ const CertifiedCompanyMobile: FC<CertifiedCompanyMobileProps> = () => {
                     <h2 className="text-sm font-normal text-[#BAB5B5]">
                       {t("sections.certificate_data.website")}
                     </h2>
-                    <a
-                      href={certifiedCompanyDataFormatted.companyWebsite}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <p className="text-sm font-normal text-white">
-                        {certifiedCompanyDataFormatted.companyWebsite}
-                      </p>
-                    </a>
+                    <div className="flex flex-col">
+                      {websiteUrls.length > 0 ? (
+                        websiteUrls.map((url) => (
+                          <a
+                            key={url}
+                            href={url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-xs font-medium"
+                          >
+                            {url}
+                          </a>
+                        ))
+                      ) : (
+                        <p className="text-xs font-medium">NA</p>
+                      )}
+                    </div>
                   </span>
                   <span>
                     <h2 className="text-sm font-normal text-[#BAB5B5]">
