@@ -131,7 +131,7 @@ const HomeDesktop: FC<HomeDesktopProps> = ({
                             width={96}
                             height={96}
                             alt={`${companyName} logo`}
-                            className="h-[6rem] w-[6rem] shrink-0 rounded-full bg-white object-contain"
+                            className="h-[6rem] w-[6rem] shrink-0 p-1 bg-white object-contain"
                           />
                           <h3 className="text-[0.8rem] font-medium text-[#656579]">
                             {companyName}
